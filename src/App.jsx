@@ -1,9 +1,16 @@
 import React from 'react'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Home from './pages/Home'; 
+
 function App() {
 
   return (
     <>
-      <h1 className='text-5xl text-red-700'>hi this our Tribal Earth 360</h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
+    </BrowserRouter>
     </>
   )
 }
