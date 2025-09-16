@@ -1,0 +1,882 @@
+{
+  "Tamil Nadu": {
+    "districts": {
+      "Tamil Nadu DistrictA": {
+        "talukas": {
+          "Tamil Nadu DistrictA Taluka1": {
+            "panchayats": {
+              "Tamil Nadu DistrictA Taluka1 Panchayat1": [
+                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 1",
+                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 2",
+                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Tamil Nadu DistrictA Taluka1 Panchayat2": [
+                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 1",
+                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 2",
+                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Tamil Nadu DistrictA Taluka1 Panchayat3": [
+                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 1",
+                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 2",
+                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Tamil Nadu DistrictA Taluka2": {
+            "panchayats": {
+              "Tamil Nadu DistrictA Taluka2 Panchayat1": [
+                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 1",
+                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 2",
+                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Tamil Nadu DistrictA Taluka2 Panchayat2": [
+                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 1",
+                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 2",
+                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Tamil Nadu DistrictA Taluka2 Panchayat3": [
+                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 1",
+                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 2",
+                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Tamil Nadu DistrictB": {
+        "talukas": {
+          "Tamil Nadu DistrictB Taluka1": {
+            "panchayats": {
+              "Tamil Nadu DistrictB Taluka1 Panchayat1": [
+                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 1",
+                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 2",
+                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Tamil Nadu DistrictB Taluka1 Panchayat2": [
+                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 1",
+                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 2",
+                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Tamil Nadu DistrictB Taluka1 Panchayat3": [
+                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 1",
+                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 2",
+                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Tamil Nadu DistrictB Taluka2": {
+            "panchayats": {
+              "Tamil Nadu DistrictB Taluka2 Panchayat1": [
+                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 1",
+                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 2",
+                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Tamil Nadu DistrictB Taluka2 Panchayat2": [
+                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 1",
+                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 2",
+                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Tamil Nadu DistrictB Taluka2 Panchayat3": [
+                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 1",
+                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 2",
+                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Kerala": {
+    "districts": {
+      "Kerala DistrictA": {
+        "talukas": {
+          "Kerala DistrictA Taluka1": {
+            "panchayats": {
+              "Kerala DistrictA Taluka1 Panchayat1": [
+                "Kerala DistrictA Taluka1 Panchayat1 Village 1",
+                "Kerala DistrictA Taluka1 Panchayat1 Village 2",
+                "Kerala DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Kerala DistrictA Taluka1 Panchayat2": [
+                "Kerala DistrictA Taluka1 Panchayat2 Village 1",
+                "Kerala DistrictA Taluka1 Panchayat2 Village 2",
+                "Kerala DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Kerala DistrictA Taluka1 Panchayat3": [
+                "Kerala DistrictA Taluka1 Panchayat3 Village 1",
+                "Kerala DistrictA Taluka1 Panchayat3 Village 2",
+                "Kerala DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Kerala DistrictA Taluka2": {
+            "panchayats": {
+              "Kerala DistrictA Taluka2 Panchayat1": [
+                "Kerala DistrictA Taluka2 Panchayat1 Village 1",
+                "Kerala DistrictA Taluka2 Panchayat1 Village 2",
+                "Kerala DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Kerala DistrictA Taluka2 Panchayat2": [
+                "Kerala DistrictA Taluka2 Panchayat2 Village 1",
+                "Kerala DistrictA Taluka2 Panchayat2 Village 2",
+                "Kerala DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Kerala DistrictA Taluka2 Panchayat3": [
+                "Kerala DistrictA Taluka2 Panchayat3 Village 1",
+                "Kerala DistrictA Taluka2 Panchayat3 Village 2",
+                "Kerala DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Kerala DistrictB": {
+        "talukas": {
+          "Kerala DistrictB Taluka1": {
+            "panchayats": {
+              "Kerala DistrictB Taluka1 Panchayat1": [
+                "Kerala DistrictB Taluka1 Panchayat1 Village 1",
+                "Kerala DistrictB Taluka1 Panchayat1 Village 2",
+                "Kerala DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Kerala DistrictB Taluka1 Panchayat2": [
+                "Kerala DistrictB Taluka1 Panchayat2 Village 1",
+                "Kerala DistrictB Taluka1 Panchayat2 Village 2",
+                "Kerala DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Kerala DistrictB Taluka1 Panchayat3": [
+                "Kerala DistrictB Taluka1 Panchayat3 Village 1",
+                "Kerala DistrictB Taluka1 Panchayat3 Village 2",
+                "Kerala DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Kerala DistrictB Taluka2": {
+            "panchayats": {
+              "Kerala DistrictB Taluka2 Panchayat1": [
+                "Kerala DistrictB Taluka2 Panchayat1 Village 1",
+                "Kerala DistrictB Taluka2 Panchayat1 Village 2",
+                "Kerala DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Kerala DistrictB Taluka2 Panchayat2": [
+                "Kerala DistrictB Taluka2 Panchayat2 Village 1",
+                "Kerala DistrictB Taluka2 Panchayat2 Village 2",
+                "Kerala DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Kerala DistrictB Taluka2 Panchayat3": [
+                "Kerala DistrictB Taluka2 Panchayat3 Village 1",
+                "Kerala DistrictB Taluka2 Panchayat3 Village 2",
+                "Kerala DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Karnataka": {
+    "districts": {
+      "Karnataka DistrictA": {
+        "talukas": {
+          "Karnataka DistrictA Taluka1": {
+            "panchayats": {
+              "Karnataka DistrictA Taluka1 Panchayat1": [
+                "Karnataka DistrictA Taluka1 Panchayat1 Village 1",
+                "Karnataka DistrictA Taluka1 Panchayat1 Village 2",
+                "Karnataka DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Karnataka DistrictA Taluka1 Panchayat2": [
+                "Karnataka DistrictA Taluka1 Panchayat2 Village 1",
+                "Karnataka DistrictA Taluka1 Panchayat2 Village 2",
+                "Karnataka DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Karnataka DistrictA Taluka1 Panchayat3": [
+                "Karnataka DistrictA Taluka1 Panchayat3 Village 1",
+                "Karnataka DistrictA Taluka1 Panchayat3 Village 2",
+                "Karnataka DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Karnataka DistrictA Taluka2": {
+            "panchayats": {
+              "Karnataka DistrictA Taluka2 Panchayat1": [
+                "Karnataka DistrictA Taluka2 Panchayat1 Village 1",
+                "Karnataka DistrictA Taluka2 Panchayat1 Village 2",
+                "Karnataka DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Karnataka DistrictA Taluka2 Panchayat2": [
+                "Karnataka DistrictA Taluka2 Panchayat2 Village 1",
+                "Karnataka DistrictA Taluka2 Panchayat2 Village 2",
+                "Karnataka DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Karnataka DistrictA Taluka2 Panchayat3": [
+                "Karnataka DistrictA Taluka2 Panchayat3 Village 1",
+                "Karnataka DistrictA Taluka2 Panchayat3 Village 2",
+                "Karnataka DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Karnataka DistrictB": {
+        "talukas": {
+          "Karnataka DistrictB Taluka1": {
+            "panchayats": {
+              "Karnataka DistrictB Taluka1 Panchayat1": [
+                "Karnataka DistrictB Taluka1 Panchayat1 Village 1",
+                "Karnataka DistrictB Taluka1 Panchayat1 Village 2",
+                "Karnataka DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Karnataka DistrictB Taluka1 Panchayat2": [
+                "Karnataka DistrictB Taluka1 Panchayat2 Village 1",
+                "Karnataka DistrictB Taluka1 Panchayat2 Village 2",
+                "Karnataka DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Karnataka DistrictB Taluka1 Panchayat3": [
+                "Karnataka DistrictB Taluka1 Panchayat3 Village 1",
+                "Karnataka DistrictB Taluka1 Panchayat3 Village 2",
+                "Karnataka DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Karnataka DistrictB Taluka2": {
+            "panchayats": {
+              "Karnataka DistrictB Taluka2 Panchayat1": [
+                "Karnataka DistrictB Taluka2 Panchayat1 Village 1",
+                "Karnataka DistrictB Taluka2 Panchayat1 Village 2",
+                "Karnataka DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Karnataka DistrictB Taluka2 Panchayat2": [
+                "Karnataka DistrictB Taluka2 Panchayat2 Village 1",
+                "Karnataka DistrictB Taluka2 Panchayat2 Village 2",
+                "Karnataka DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Karnataka DistrictB Taluka2 Panchayat3": [
+                "Karnataka DistrictB Taluka2 Panchayat3 Village 1",
+                "Karnataka DistrictB Taluka2 Panchayat3 Village 2",
+                "Karnataka DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Maharashtra": {
+    "districts": {
+      "Maharashtra DistrictA": {
+        "talukas": {
+          "Maharashtra DistrictA Taluka1": {
+            "panchayats": {
+              "Maharashtra DistrictA Taluka1 Panchayat1": [
+                "Maharashtra DistrictA Taluka1 Panchayat1 Village 1",
+                "Maharashtra DistrictA Taluka1 Panchayat1 Village 2",
+                "Maharashtra DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Maharashtra DistrictA Taluka1 Panchayat2": [
+                "Maharashtra DistrictA Taluka1 Panchayat2 Village 1",
+                "Maharashtra DistrictA Taluka1 Panchayat2 Village 2",
+                "Maharashtra DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Maharashtra DistrictA Taluka1 Panchayat3": [
+                "Maharashtra DistrictA Taluka1 Panchayat3 Village 1",
+                "Maharashtra DistrictA Taluka1 Panchayat3 Village 2",
+                "Maharashtra DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Maharashtra DistrictA Taluka2": {
+            "panchayats": {
+              "Maharashtra DistrictA Taluka2 Panchayat1": [
+                "Maharashtra DistrictA Taluka2 Panchayat1 Village 1",
+                "Maharashtra DistrictA Taluka2 Panchayat1 Village 2",
+                "Maharashtra DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Maharashtra DistrictA Taluka2 Panchayat2": [
+                "Maharashtra DistrictA Taluka2 Panchayat2 Village 1",
+                "Maharashtra DistrictA Taluka2 Panchayat2 Village 2",
+                "Maharashtra DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Maharashtra DistrictA Taluka2 Panchayat3": [
+                "Maharashtra DistrictA Taluka2 Panchayat3 Village 1",
+                "Maharashtra DistrictA Taluka2 Panchayat3 Village 2",
+                "Maharashtra DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Maharashtra DistrictB": {
+        "talukas": {
+          "Maharashtra DistrictB Taluka1": {
+            "panchayats": {
+              "Maharashtra DistrictB Taluka1 Panchayat1": [
+                "Maharashtra DistrictB Taluka1 Panchayat1 Village 1",
+                "Maharashtra DistrictB Taluka1 Panchayat1 Village 2",
+                "Maharashtra DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Maharashtra DistrictB Taluka1 Panchayat2": [
+                "Maharashtra DistrictB Taluka1 Panchayat2 Village 1",
+                "Maharashtra DistrictB Taluka1 Panchayat2 Village 2",
+                "Maharashtra DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Maharashtra DistrictB Taluka1 Panchayat3": [
+                "Maharashtra DistrictB Taluka1 Panchayat3 Village 1",
+                "Maharashtra DistrictB Taluka1 Panchayat3 Village 2",
+                "Maharashtra DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Maharashtra DistrictB Taluka2": {
+            "panchayats": {
+              "Maharashtra DistrictB Taluka2 Panchayat1": [
+                "Maharashtra DistrictB Taluka2 Panchayat1 Village 1",
+                "Maharashtra DistrictB Taluka2 Panchayat1 Village 2",
+                "Maharashtra DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Maharashtra DistrictB Taluka2 Panchayat2": [
+                "Maharashtra DistrictB Taluka2 Panchayat2 Village 1",
+                "Maharashtra DistrictB Taluka2 Panchayat2 Village 2",
+                "Maharashtra DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Maharashtra DistrictB Taluka2 Panchayat3": [
+                "Maharashtra DistrictB Taluka2 Panchayat3 Village 1",
+                "Maharashtra DistrictB Taluka2 Panchayat3 Village 2",
+                "Maharashtra DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Gujarat": {
+    "districts": {
+      "Gujarat DistrictA": {
+        "talukas": {
+          "Gujarat DistrictA Taluka1": {
+            "panchayats": {
+              "Gujarat DistrictA Taluka1 Panchayat1": [
+                "Gujarat DistrictA Taluka1 Panchayat1 Village 1",
+                "Gujarat DistrictA Taluka1 Panchayat1 Village 2",
+                "Gujarat DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Gujarat DistrictA Taluka1 Panchayat2": [
+                "Gujarat DistrictA Taluka1 Panchayat2 Village 1",
+                "Gujarat DistrictA Taluka1 Panchayat2 Village 2",
+                "Gujarat DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Gujarat DistrictA Taluka1 Panchayat3": [
+                "Gujarat DistrictA Taluka1 Panchayat3 Village 1",
+                "Gujarat DistrictA Taluka1 Panchayat3 Village 2",
+                "Gujarat DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Gujarat DistrictA Taluka2": {
+            "panchayats": {
+              "Gujarat DistrictA Taluka2 Panchayat1": [
+                "Gujarat DistrictA Taluka2 Panchayat1 Village 1",
+                "Gujarat DistrictA Taluka2 Panchayat1 Village 2",
+                "Gujarat DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Gujarat DistrictA Taluka2 Panchayat2": [
+                "Gujarat DistrictA Taluka2 Panchayat2 Village 1",
+                "Gujarat DistrictA Taluka2 Panchayat2 Village 2",
+                "Gujarat DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Gujarat DistrictA Taluka2 Panchayat3": [
+                "Gujarat DistrictA Taluka2 Panchayat3 Village 1",
+                "Gujarat DistrictA Taluka2 Panchayat3 Village 2",
+                "Gujarat DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Gujarat DistrictB": {
+        "talukas": {
+          "Gujarat DistrictB Taluka1": {
+            "panchayats": {
+              "Gujarat DistrictB Taluka1 Panchayat1": [
+                "Gujarat DistrictB Taluka1 Panchayat1 Village 1",
+                "Gujarat DistrictB Taluka1 Panchayat1 Village 2",
+                "Gujarat DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Gujarat DistrictB Taluka1 Panchayat2": [
+                "Gujarat DistrictB Taluka1 Panchayat2 Village 1",
+                "Gujarat DistrictB Taluka1 Panchayat2 Village 2",
+                "Gujarat DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Gujarat DistrictB Taluka1 Panchayat3": [
+                "Gujarat DistrictB Taluka1 Panchayat3 Village 1",
+                "Gujarat DistrictB Taluka1 Panchayat3 Village 2",
+                "Gujarat DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Gujarat DistrictB Taluka2": {
+            "panchayats": {
+              "Gujarat DistrictB Taluka2 Panchayat1": [
+                "Gujarat DistrictB Taluka2 Panchayat1 Village 1",
+                "Gujarat DistrictB Taluka2 Panchayat1 Village 2",
+                "Gujarat DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Gujarat DistrictB Taluka2 Panchayat2": [
+                "Gujarat DistrictB Taluka2 Panchayat2 Village 1",
+                "Gujarat DistrictB Taluka2 Panchayat2 Village 2",
+                "Gujarat DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Gujarat DistrictB Taluka2 Panchayat3": [
+                "Gujarat DistrictB Taluka2 Panchayat3 Village 1",
+                "Gujarat DistrictB Taluka2 Panchayat3 Village 2",
+                "Gujarat DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Rajasthan": {
+    "districts": {
+      "Rajasthan DistrictA": {
+        "talukas": {
+          "Rajasthan DistrictA Taluka1": {
+            "panchayats": {
+              "Rajasthan DistrictA Taluka1 Panchayat1": [
+                "Rajasthan DistrictA Taluka1 Panchayat1 Village 1",
+                "Rajasthan DistrictA Taluka1 Panchayat1 Village 2",
+                "Rajasthan DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Rajasthan DistrictA Taluka1 Panchayat2": [
+                "Rajasthan DistrictA Taluka1 Panchayat2 Village 1",
+                "Rajasthan DistrictA Taluka1 Panchayat2 Village 2",
+                "Rajasthan DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Rajasthan DistrictA Taluka1 Panchayat3": [
+                "Rajasthan DistrictA Taluka1 Panchayat3 Village 1",
+                "Rajasthan DistrictA Taluka1 Panchayat3 Village 2",
+                "Rajasthan DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Rajasthan DistrictA Taluka2": {
+            "panchayats": {
+              "Rajasthan DistrictA Taluka2 Panchayat1": [
+                "Rajasthan DistrictA Taluka2 Panchayat1 Village 1",
+                "Rajasthan DistrictA Taluka2 Panchayat1 Village 2",
+                "Rajasthan DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Rajasthan DistrictA Taluka2 Panchayat2": [
+                "Rajasthan DistrictA Taluka2 Panchayat2 Village 1",
+                "Rajasthan DistrictA Taluka2 Panchayat2 Village 2",
+                "Rajasthan DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Rajasthan DistrictA Taluka2 Panchayat3": [
+                "Rajasthan DistrictA Taluka2 Panchayat3 Village 1",
+                "Rajasthan DistrictA Taluka2 Panchayat3 Village 2",
+                "Rajasthan DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Rajasthan DistrictB": {
+        "talukas": {
+          "Rajasthan DistrictB Taluka1": {
+            "panchayats": {
+              "Rajasthan DistrictB Taluka1 Panchayat1": [
+                "Rajasthan DistrictB Taluka1 Panchayat1 Village 1",
+                "Rajasthan DistrictB Taluka1 Panchayat1 Village 2",
+                "Rajasthan DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Rajasthan DistrictB Taluka1 Panchayat2": [
+                "Rajasthan DistrictB Taluka1 Panchayat2 Village 1",
+                "Rajasthan DistrictB Taluka1 Panchayat2 Village 2",
+                "Rajasthan DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Rajasthan DistrictB Taluka1 Panchayat3": [
+                "Rajasthan DistrictB Taluka1 Panchayat3 Village 1",
+                "Rajasthan DistrictB Taluka1 Panchayat3 Village 2",
+                "Rajasthan DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Rajasthan DistrictB Taluka2": {
+            "panchayats": {
+              "Rajasthan DistrictB Taluka2 Panchayat1": [
+                "Rajasthan DistrictB Taluka2 Panchayat1 Village 1",
+                "Rajasthan DistrictB Taluka2 Panchayat1 Village 2",
+                "Rajasthan DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Rajasthan DistrictB Taluka2 Panchayat2": [
+                "Rajasthan DistrictB Taluka2 Panchayat2 Village 1",
+                "Rajasthan DistrictB Taluka2 Panchayat2 Village 2",
+                "Rajasthan DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Rajasthan DistrictB Taluka2 Panchayat3": [
+                "Rajasthan DistrictB Taluka2 Panchayat3 Village 1",
+                "Rajasthan DistrictB Taluka2 Panchayat3 Village 2",
+                "Rajasthan DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Uttar Pradesh": {
+    "districts": {
+      "Uttar Pradesh DistrictA": {
+        "talukas": {
+          "Uttar Pradesh DistrictA Taluka1": {
+            "panchayats": {
+              "Uttar Pradesh DistrictA Taluka1 Panchayat1": [
+                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 1",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 2",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Uttar Pradesh DistrictA Taluka1 Panchayat2": [
+                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 1",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 2",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Uttar Pradesh DistrictA Taluka1 Panchayat3": [
+                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 1",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 2",
+                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Uttar Pradesh DistrictA Taluka2": {
+            "panchayats": {
+              "Uttar Pradesh DistrictA Taluka2 Panchayat1": [
+                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 1",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 2",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Uttar Pradesh DistrictA Taluka2 Panchayat2": [
+                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 1",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 2",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Uttar Pradesh DistrictA Taluka2 Panchayat3": [
+                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 1",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 2",
+                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Uttar Pradesh DistrictB": {
+        "talukas": {
+          "Uttar Pradesh DistrictB Taluka1": {
+            "panchayats": {
+              "Uttar Pradesh DistrictB Taluka1 Panchayat1": [
+                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 1",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 2",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Uttar Pradesh DistrictB Taluka1 Panchayat2": [
+                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 1",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 2",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Uttar Pradesh DistrictB Taluka1 Panchayat3": [
+                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 1",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 2",
+                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Uttar Pradesh DistrictB Taluka2": {
+            "panchayats": {
+              "Uttar Pradesh DistrictB Taluka2 Panchayat1": [
+                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 1",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 2",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Uttar Pradesh DistrictB Taluka2 Panchayat2": [
+                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 1",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 2",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Uttar Pradesh DistrictB Taluka2 Panchayat3": [
+                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 1",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 2",
+                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Bihar": {
+    "districts": {
+      "Bihar DistrictA": {
+        "talukas": {
+          "Bihar DistrictA Taluka1": {
+            "panchayats": {
+              "Bihar DistrictA Taluka1 Panchayat1": [
+                "Bihar DistrictA Taluka1 Panchayat1 Village 1",
+                "Bihar DistrictA Taluka1 Panchayat1 Village 2",
+                "Bihar DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Bihar DistrictA Taluka1 Panchayat2": [
+                "Bihar DistrictA Taluka1 Panchayat2 Village 1",
+                "Bihar DistrictA Taluka1 Panchayat2 Village 2",
+                "Bihar DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Bihar DistrictA Taluka1 Panchayat3": [
+                "Bihar DistrictA Taluka1 Panchayat3 Village 1",
+                "Bihar DistrictA Taluka1 Panchayat3 Village 2",
+                "Bihar DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Bihar DistrictA Taluka2": {
+            "panchayats": {
+              "Bihar DistrictA Taluka2 Panchayat1": [
+                "Bihar DistrictA Taluka2 Panchayat1 Village 1",
+                "Bihar DistrictA Taluka2 Panchayat1 Village 2",
+                "Bihar DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Bihar DistrictA Taluka2 Panchayat2": [
+                "Bihar DistrictA Taluka2 Panchayat2 Village 1",
+                "Bihar DistrictA Taluka2 Panchayat2 Village 2",
+                "Bihar DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Bihar DistrictA Taluka2 Panchayat3": [
+                "Bihar DistrictA Taluka2 Panchayat3 Village 1",
+                "Bihar DistrictA Taluka2 Panchayat3 Village 2",
+                "Bihar DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Bihar DistrictB": {
+        "talukas": {
+          "Bihar DistrictB Taluka1": {
+            "panchayats": {
+              "Bihar DistrictB Taluka1 Panchayat1": [
+                "Bihar DistrictB Taluka1 Panchayat1 Village 1",
+                "Bihar DistrictB Taluka1 Panchayat1 Village 2",
+                "Bihar DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Bihar DistrictB Taluka1 Panchayat2": [
+                "Bihar DistrictB Taluka1 Panchayat2 Village 1",
+                "Bihar DistrictB Taluka1 Panchayat2 Village 2",
+                "Bihar DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Bihar DistrictB Taluka1 Panchayat3": [
+                "Bihar DistrictB Taluka1 Panchayat3 Village 1",
+                "Bihar DistrictB Taluka1 Panchayat3 Village 2",
+                "Bihar DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Bihar DistrictB Taluka2": {
+            "panchayats": {
+              "Bihar DistrictB Taluka2 Panchayat1": [
+                "Bihar DistrictB Taluka2 Panchayat1 Village 1",
+                "Bihar DistrictB Taluka2 Panchayat1 Village 2",
+                "Bihar DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Bihar DistrictB Taluka2 Panchayat2": [
+                "Bihar DistrictB Taluka2 Panchayat2 Village 1",
+                "Bihar DistrictB Taluka2 Panchayat2 Village 2",
+                "Bihar DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Bihar DistrictB Taluka2 Panchayat3": [
+                "Bihar DistrictB Taluka2 Panchayat3 Village 1",
+                "Bihar DistrictB Taluka2 Panchayat3 Village 2",
+                "Bihar DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "West Bengal": {
+    "districts": {
+      "West Bengal DistrictA": {
+        "talukas": {
+          "West Bengal DistrictA Taluka1": {
+            "panchayats": {
+              "West Bengal DistrictA Taluka1 Panchayat1": [
+                "West Bengal DistrictA Taluka1 Panchayat1 Village 1",
+                "West Bengal DistrictA Taluka1 Panchayat1 Village 2",
+                "West Bengal DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "West Bengal DistrictA Taluka1 Panchayat2": [
+                "West Bengal DistrictA Taluka1 Panchayat2 Village 1",
+                "West Bengal DistrictA Taluka1 Panchayat2 Village 2",
+                "West Bengal DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "West Bengal DistrictA Taluka1 Panchayat3": [
+                "West Bengal DistrictA Taluka1 Panchayat3 Village 1",
+                "West Bengal DistrictA Taluka1 Panchayat3 Village 2",
+                "West Bengal DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "West Bengal DistrictA Taluka2": {
+            "panchayats": {
+              "West Bengal DistrictA Taluka2 Panchayat1": [
+                "West Bengal DistrictA Taluka2 Panchayat1 Village 1",
+                "West Bengal DistrictA Taluka2 Panchayat1 Village 2",
+                "West Bengal DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "West Bengal DistrictA Taluka2 Panchayat2": [
+                "West Bengal DistrictA Taluka2 Panchayat2 Village 1",
+                "West Bengal DistrictA Taluka2 Panchayat2 Village 2",
+                "West Bengal DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "West Bengal DistrictA Taluka2 Panchayat3": [
+                "West Bengal DistrictA Taluka2 Panchayat3 Village 1",
+                "West Bengal DistrictA Taluka2 Panchayat3 Village 2",
+                "West Bengal DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "West Bengal DistrictB": {
+        "talukas": {
+          "West Bengal DistrictB Taluka1": {
+            "panchayats": {
+              "West Bengal DistrictB Taluka1 Panchayat1": [
+                "West Bengal DistrictB Taluka1 Panchayat1 Village 1",
+                "West Bengal DistrictB Taluka1 Panchayat1 Village 2",
+                "West Bengal DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "West Bengal DistrictB Taluka1 Panchayat2": [
+                "West Bengal DistrictB Taluka1 Panchayat2 Village 1",
+                "West Bengal DistrictB Taluka1 Panchayat2 Village 2",
+                "West Bengal DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "West Bengal DistrictB Taluka1 Panchayat3": [
+                "West Bengal DistrictB Taluka1 Panchayat3 Village 1",
+                "West Bengal DistrictB Taluka1 Panchayat3 Village 2",
+                "West Bengal DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "West Bengal DistrictB Taluka2": {
+            "panchayats": {
+              "West Bengal DistrictB Taluka2 Panchayat1": [
+                "West Bengal DistrictB Taluka2 Panchayat1 Village 1",
+                "West Bengal DistrictB Taluka2 Panchayat1 Village 2",
+                "West Bengal DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "West Bengal DistrictB Taluka2 Panchayat2": [
+                "West Bengal DistrictB Taluka2 Panchayat2 Village 1",
+                "West Bengal DistrictB Taluka2 Panchayat2 Village 2",
+                "West Bengal DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "West Bengal DistrictB Taluka2 Panchayat3": [
+                "West Bengal DistrictB Taluka2 Panchayat3 Village 1",
+                "West Bengal DistrictB Taluka2 Panchayat3 Village 2",
+                "West Bengal DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "Assam": {
+    "districts": {
+      "Assam DistrictA": {
+        "talukas": {
+          "Assam DistrictA Taluka1": {
+            "panchayats": {
+              "Assam DistrictA Taluka1 Panchayat1": [
+                "Assam DistrictA Taluka1 Panchayat1 Village 1",
+                "Assam DistrictA Taluka1 Panchayat1 Village 2",
+                "Assam DistrictA Taluka1 Panchayat1 Village 3"
+              ],
+              "Assam DistrictA Taluka1 Panchayat2": [
+                "Assam DistrictA Taluka1 Panchayat2 Village 1",
+                "Assam DistrictA Taluka1 Panchayat2 Village 2",
+                "Assam DistrictA Taluka1 Panchayat2 Village 3"
+              ],
+              "Assam DistrictA Taluka1 Panchayat3": [
+                "Assam DistrictA Taluka1 Panchayat3 Village 1",
+                "Assam DistrictA Taluka1 Panchayat3 Village 2",
+                "Assam DistrictA Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Assam DistrictA Taluka2": {
+            "panchayats": {
+              "Assam DistrictA Taluka2 Panchayat1": [
+                "Assam DistrictA Taluka2 Panchayat1 Village 1",
+                "Assam DistrictA Taluka2 Panchayat1 Village 2",
+                "Assam DistrictA Taluka2 Panchayat1 Village 3"
+              ],
+              "Assam DistrictA Taluka2 Panchayat2": [
+                "Assam DistrictA Taluka2 Panchayat2 Village 1",
+                "Assam DistrictA Taluka2 Panchayat2 Village 2",
+                "Assam DistrictA Taluka2 Panchayat2 Village 3"
+              ],
+              "Assam DistrictA Taluka2 Panchayat3": [
+                "Assam DistrictA Taluka2 Panchayat3 Village 1",
+                "Assam DistrictA Taluka2 Panchayat3 Village 2",
+                "Assam DistrictA Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      },
+      "Assam DistrictB": {
+        "talukas": {
+          "Assam DistrictB Taluka1": {
+            "panchayats": {
+              "Assam DistrictB Taluka1 Panchayat1": [
+                "Assam DistrictB Taluka1 Panchayat1 Village 1",
+                "Assam DistrictB Taluka1 Panchayat1 Village 2",
+                "Assam DistrictB Taluka1 Panchayat1 Village 3"
+              ],
+              "Assam DistrictB Taluka1 Panchayat2": [
+                "Assam DistrictB Taluka1 Panchayat2 Village 1",
+                "Assam DistrictB Taluka1 Panchayat2 Village 2",
+                "Assam DistrictB Taluka1 Panchayat2 Village 3"
+              ],
+              "Assam DistrictB Taluka1 Panchayat3": [
+                "Assam DistrictB Taluka1 Panchayat3 Village 1",
+                "Assam DistrictB Taluka1 Panchayat3 Village 2",
+                "Assam DistrictB Taluka1 Panchayat3 Village 3"
+              ]
+            }
+          },
+          "Assam DistrictB Taluka2": {
+            "panchayats": {
+              "Assam DistrictB Taluka2 Panchayat1": [
+                "Assam DistrictB Taluka2 Panchayat1 Village 1",
+                "Assam DistrictB Taluka2 Panchayat1 Village 2",
+                "Assam DistrictB Taluka2 Panchayat1 Village 3"
+              ],
+              "Assam DistrictB Taluka2 Panchayat2": [
+                "Assam DistrictB Taluka2 Panchayat2 Village 1",
+                "Assam DistrictB Taluka2 Panchayat2 Village 2",
+                "Assam DistrictB Taluka2 Panchayat2 Village 3"
+              ],
+              "Assam DistrictB Taluka2 Panchayat3": [
+                "Assam DistrictB Taluka2 Panchayat3 Village 1",
+                "Assam DistrictB Taluka2 Panchayat3 Village 2",
+                "Assam DistrictB Taluka2 Panchayat3 Village 3"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
