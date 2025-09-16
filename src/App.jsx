@@ -7,6 +7,11 @@ import { Footer } from './components/Footer'
 import Individual from './pages/Individual'
 import Community from './pages/Community'
 import CommunityResource from './pages/CommunityResource'
+import Map from './pages/Map'
+import {Login} from './components/Login';
+import { Signup } from './components/Signup';
+import { Digitalization } from './pages/Digitalization';
+import { Loginform } from './pages/Loginform';
 
 function App() {
   return (
@@ -18,6 +23,11 @@ function App() {
         <Route path='/individual' element={<Individual />}></Route>
         <Route path='/community' element={<Community />}></Route>
         <Route path='/resource' element={<CommunityResource />}></Route>
+        <Route path='/map' element={<Map />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
+      <Route path='/loginform' element={<Loginform />} />
+      <Route path='/digitalization' element={<Digitalization />} />
       </Routes>
       <Footer />
     </BrowserRouter>
