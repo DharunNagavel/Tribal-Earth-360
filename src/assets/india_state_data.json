@@ -1,882 +1,1624 @@
 {
-  "Tamil Nadu": {
-    "districts": {
-      "Tamil Nadu DistrictA": {
-        "talukas": {
-          "Tamil Nadu DistrictA Taluka1": {
-            "panchayats": {
-              "Tamil Nadu DistrictA Taluka1 Panchayat1": [
-                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 1",
-                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 2",
-                "Tamil Nadu DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Tamil Nadu DistrictA Taluka1 Panchayat2": [
-                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 1",
-                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 2",
-                "Tamil Nadu DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Tamil Nadu DistrictA Taluka1 Panchayat3": [
-                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 1",
-                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 2",
-                "Tamil Nadu DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Tamil Nadu DistrictA Taluka2": {
-            "panchayats": {
-              "Tamil Nadu DistrictA Taluka2 Panchayat1": [
-                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 1",
-                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 2",
-                "Tamil Nadu DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Tamil Nadu DistrictA Taluka2 Panchayat2": [
-                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 1",
-                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 2",
-                "Tamil Nadu DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Tamil Nadu DistrictA Taluka2 Panchayat3": [
-                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 1",
-                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 2",
-                "Tamil Nadu DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Tamil Nadu DistrictB": {
-        "talukas": {
-          "Tamil Nadu DistrictB Taluka1": {
-            "panchayats": {
-              "Tamil Nadu DistrictB Taluka1 Panchayat1": [
-                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 1",
-                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 2",
-                "Tamil Nadu DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Tamil Nadu DistrictB Taluka1 Panchayat2": [
-                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 1",
-                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 2",
-                "Tamil Nadu DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Tamil Nadu DistrictB Taluka1 Panchayat3": [
-                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 1",
-                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 2",
-                "Tamil Nadu DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Tamil Nadu DistrictB Taluka2": {
-            "panchayats": {
-              "Tamil Nadu DistrictB Taluka2 Panchayat1": [
-                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 1",
-                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 2",
-                "Tamil Nadu DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Tamil Nadu DistrictB Taluka2 Panchayat2": [
-                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 1",
-                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 2",
-                "Tamil Nadu DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Tamil Nadu DistrictB Taluka2 Panchayat3": [
-                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 1",
-                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 2",
-                "Tamil Nadu DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Kerala": {
-    "districts": {
-      "Kerala DistrictA": {
-        "talukas": {
-          "Kerala DistrictA Taluka1": {
-            "panchayats": {
-              "Kerala DistrictA Taluka1 Panchayat1": [
-                "Kerala DistrictA Taluka1 Panchayat1 Village 1",
-                "Kerala DistrictA Taluka1 Panchayat1 Village 2",
-                "Kerala DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Kerala DistrictA Taluka1 Panchayat2": [
-                "Kerala DistrictA Taluka1 Panchayat2 Village 1",
-                "Kerala DistrictA Taluka1 Panchayat2 Village 2",
-                "Kerala DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Kerala DistrictA Taluka1 Panchayat3": [
-                "Kerala DistrictA Taluka1 Panchayat3 Village 1",
-                "Kerala DistrictA Taluka1 Panchayat3 Village 2",
-                "Kerala DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Kerala DistrictA Taluka2": {
-            "panchayats": {
-              "Kerala DistrictA Taluka2 Panchayat1": [
-                "Kerala DistrictA Taluka2 Panchayat1 Village 1",
-                "Kerala DistrictA Taluka2 Panchayat1 Village 2",
-                "Kerala DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Kerala DistrictA Taluka2 Panchayat2": [
-                "Kerala DistrictA Taluka2 Panchayat2 Village 1",
-                "Kerala DistrictA Taluka2 Panchayat2 Village 2",
-                "Kerala DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Kerala DistrictA Taluka2 Panchayat3": [
-                "Kerala DistrictA Taluka2 Panchayat3 Village 1",
-                "Kerala DistrictA Taluka2 Panchayat3 Village 2",
-                "Kerala DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Kerala DistrictB": {
-        "talukas": {
-          "Kerala DistrictB Taluka1": {
-            "panchayats": {
-              "Kerala DistrictB Taluka1 Panchayat1": [
-                "Kerala DistrictB Taluka1 Panchayat1 Village 1",
-                "Kerala DistrictB Taluka1 Panchayat1 Village 2",
-                "Kerala DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Kerala DistrictB Taluka1 Panchayat2": [
-                "Kerala DistrictB Taluka1 Panchayat2 Village 1",
-                "Kerala DistrictB Taluka1 Panchayat2 Village 2",
-                "Kerala DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Kerala DistrictB Taluka1 Panchayat3": [
-                "Kerala DistrictB Taluka1 Panchayat3 Village 1",
-                "Kerala DistrictB Taluka1 Panchayat3 Village 2",
-                "Kerala DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Kerala DistrictB Taluka2": {
-            "panchayats": {
-              "Kerala DistrictB Taluka2 Panchayat1": [
-                "Kerala DistrictB Taluka2 Panchayat1 Village 1",
-                "Kerala DistrictB Taluka2 Panchayat1 Village 2",
-                "Kerala DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Kerala DistrictB Taluka2 Panchayat2": [
-                "Kerala DistrictB Taluka2 Panchayat2 Village 1",
-                "Kerala DistrictB Taluka2 Panchayat2 Village 2",
-                "Kerala DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Kerala DistrictB Taluka2 Panchayat3": [
-                "Kerala DistrictB Taluka2 Panchayat3 Village 1",
-                "Kerala DistrictB Taluka2 Panchayat3 Village 2",
-                "Kerala DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Karnataka": {
-    "districts": {
-      "Karnataka DistrictA": {
-        "talukas": {
-          "Karnataka DistrictA Taluka1": {
-            "panchayats": {
-              "Karnataka DistrictA Taluka1 Panchayat1": [
-                "Karnataka DistrictA Taluka1 Panchayat1 Village 1",
-                "Karnataka DistrictA Taluka1 Panchayat1 Village 2",
-                "Karnataka DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Karnataka DistrictA Taluka1 Panchayat2": [
-                "Karnataka DistrictA Taluka1 Panchayat2 Village 1",
-                "Karnataka DistrictA Taluka1 Panchayat2 Village 2",
-                "Karnataka DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Karnataka DistrictA Taluka1 Panchayat3": [
-                "Karnataka DistrictA Taluka1 Panchayat3 Village 1",
-                "Karnataka DistrictA Taluka1 Panchayat3 Village 2",
-                "Karnataka DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Karnataka DistrictA Taluka2": {
-            "panchayats": {
-              "Karnataka DistrictA Taluka2 Panchayat1": [
-                "Karnataka DistrictA Taluka2 Panchayat1 Village 1",
-                "Karnataka DistrictA Taluka2 Panchayat1 Village 2",
-                "Karnataka DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Karnataka DistrictA Taluka2 Panchayat2": [
-                "Karnataka DistrictA Taluka2 Panchayat2 Village 1",
-                "Karnataka DistrictA Taluka2 Panchayat2 Village 2",
-                "Karnataka DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Karnataka DistrictA Taluka2 Panchayat3": [
-                "Karnataka DistrictA Taluka2 Panchayat3 Village 1",
-                "Karnataka DistrictA Taluka2 Panchayat3 Village 2",
-                "Karnataka DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Karnataka DistrictB": {
-        "talukas": {
-          "Karnataka DistrictB Taluka1": {
-            "panchayats": {
-              "Karnataka DistrictB Taluka1 Panchayat1": [
-                "Karnataka DistrictB Taluka1 Panchayat1 Village 1",
-                "Karnataka DistrictB Taluka1 Panchayat1 Village 2",
-                "Karnataka DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Karnataka DistrictB Taluka1 Panchayat2": [
-                "Karnataka DistrictB Taluka1 Panchayat2 Village 1",
-                "Karnataka DistrictB Taluka1 Panchayat2 Village 2",
-                "Karnataka DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Karnataka DistrictB Taluka1 Panchayat3": [
-                "Karnataka DistrictB Taluka1 Panchayat3 Village 1",
-                "Karnataka DistrictB Taluka1 Panchayat3 Village 2",
-                "Karnataka DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Karnataka DistrictB Taluka2": {
-            "panchayats": {
-              "Karnataka DistrictB Taluka2 Panchayat1": [
-                "Karnataka DistrictB Taluka2 Panchayat1 Village 1",
-                "Karnataka DistrictB Taluka2 Panchayat1 Village 2",
-                "Karnataka DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Karnataka DistrictB Taluka2 Panchayat2": [
-                "Karnataka DistrictB Taluka2 Panchayat2 Village 1",
-                "Karnataka DistrictB Taluka2 Panchayat2 Village 2",
-                "Karnataka DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Karnataka DistrictB Taluka2 Panchayat3": [
-                "Karnataka DistrictB Taluka2 Panchayat3 Village 1",
-                "Karnataka DistrictB Taluka2 Panchayat3 Village 2",
-                "Karnataka DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Maharashtra": {
-    "districts": {
-      "Maharashtra DistrictA": {
-        "talukas": {
-          "Maharashtra DistrictA Taluka1": {
-            "panchayats": {
-              "Maharashtra DistrictA Taluka1 Panchayat1": [
-                "Maharashtra DistrictA Taluka1 Panchayat1 Village 1",
-                "Maharashtra DistrictA Taluka1 Panchayat1 Village 2",
-                "Maharashtra DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Maharashtra DistrictA Taluka1 Panchayat2": [
-                "Maharashtra DistrictA Taluka1 Panchayat2 Village 1",
-                "Maharashtra DistrictA Taluka1 Panchayat2 Village 2",
-                "Maharashtra DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Maharashtra DistrictA Taluka1 Panchayat3": [
-                "Maharashtra DistrictA Taluka1 Panchayat3 Village 1",
-                "Maharashtra DistrictA Taluka1 Panchayat3 Village 2",
-                "Maharashtra DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Maharashtra DistrictA Taluka2": {
-            "panchayats": {
-              "Maharashtra DistrictA Taluka2 Panchayat1": [
-                "Maharashtra DistrictA Taluka2 Panchayat1 Village 1",
-                "Maharashtra DistrictA Taluka2 Panchayat1 Village 2",
-                "Maharashtra DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Maharashtra DistrictA Taluka2 Panchayat2": [
-                "Maharashtra DistrictA Taluka2 Panchayat2 Village 1",
-                "Maharashtra DistrictA Taluka2 Panchayat2 Village 2",
-                "Maharashtra DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Maharashtra DistrictA Taluka2 Panchayat3": [
-                "Maharashtra DistrictA Taluka2 Panchayat3 Village 1",
-                "Maharashtra DistrictA Taluka2 Panchayat3 Village 2",
-                "Maharashtra DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Maharashtra DistrictB": {
-        "talukas": {
-          "Maharashtra DistrictB Taluka1": {
-            "panchayats": {
-              "Maharashtra DistrictB Taluka1 Panchayat1": [
-                "Maharashtra DistrictB Taluka1 Panchayat1 Village 1",
-                "Maharashtra DistrictB Taluka1 Panchayat1 Village 2",
-                "Maharashtra DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Maharashtra DistrictB Taluka1 Panchayat2": [
-                "Maharashtra DistrictB Taluka1 Panchayat2 Village 1",
-                "Maharashtra DistrictB Taluka1 Panchayat2 Village 2",
-                "Maharashtra DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Maharashtra DistrictB Taluka1 Panchayat3": [
-                "Maharashtra DistrictB Taluka1 Panchayat3 Village 1",
-                "Maharashtra DistrictB Taluka1 Panchayat3 Village 2",
-                "Maharashtra DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Maharashtra DistrictB Taluka2": {
-            "panchayats": {
-              "Maharashtra DistrictB Taluka2 Panchayat1": [
-                "Maharashtra DistrictB Taluka2 Panchayat1 Village 1",
-                "Maharashtra DistrictB Taluka2 Panchayat1 Village 2",
-                "Maharashtra DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Maharashtra DistrictB Taluka2 Panchayat2": [
-                "Maharashtra DistrictB Taluka2 Panchayat2 Village 1",
-                "Maharashtra DistrictB Taluka2 Panchayat2 Village 2",
-                "Maharashtra DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Maharashtra DistrictB Taluka2 Panchayat3": [
-                "Maharashtra DistrictB Taluka2 Panchayat3 Village 1",
-                "Maharashtra DistrictB Taluka2 Panchayat3 Village 2",
-                "Maharashtra DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Gujarat": {
-    "districts": {
-      "Gujarat DistrictA": {
-        "talukas": {
-          "Gujarat DistrictA Taluka1": {
-            "panchayats": {
-              "Gujarat DistrictA Taluka1 Panchayat1": [
-                "Gujarat DistrictA Taluka1 Panchayat1 Village 1",
-                "Gujarat DistrictA Taluka1 Panchayat1 Village 2",
-                "Gujarat DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Gujarat DistrictA Taluka1 Panchayat2": [
-                "Gujarat DistrictA Taluka1 Panchayat2 Village 1",
-                "Gujarat DistrictA Taluka1 Panchayat2 Village 2",
-                "Gujarat DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Gujarat DistrictA Taluka1 Panchayat3": [
-                "Gujarat DistrictA Taluka1 Panchayat3 Village 1",
-                "Gujarat DistrictA Taluka1 Panchayat3 Village 2",
-                "Gujarat DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Gujarat DistrictA Taluka2": {
-            "panchayats": {
-              "Gujarat DistrictA Taluka2 Panchayat1": [
-                "Gujarat DistrictA Taluka2 Panchayat1 Village 1",
-                "Gujarat DistrictA Taluka2 Panchayat1 Village 2",
-                "Gujarat DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Gujarat DistrictA Taluka2 Panchayat2": [
-                "Gujarat DistrictA Taluka2 Panchayat2 Village 1",
-                "Gujarat DistrictA Taluka2 Panchayat2 Village 2",
-                "Gujarat DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Gujarat DistrictA Taluka2 Panchayat3": [
-                "Gujarat DistrictA Taluka2 Panchayat3 Village 1",
-                "Gujarat DistrictA Taluka2 Panchayat3 Village 2",
-                "Gujarat DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Gujarat DistrictB": {
-        "talukas": {
-          "Gujarat DistrictB Taluka1": {
-            "panchayats": {
-              "Gujarat DistrictB Taluka1 Panchayat1": [
-                "Gujarat DistrictB Taluka1 Panchayat1 Village 1",
-                "Gujarat DistrictB Taluka1 Panchayat1 Village 2",
-                "Gujarat DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Gujarat DistrictB Taluka1 Panchayat2": [
-                "Gujarat DistrictB Taluka1 Panchayat2 Village 1",
-                "Gujarat DistrictB Taluka1 Panchayat2 Village 2",
-                "Gujarat DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Gujarat DistrictB Taluka1 Panchayat3": [
-                "Gujarat DistrictB Taluka1 Panchayat3 Village 1",
-                "Gujarat DistrictB Taluka1 Panchayat3 Village 2",
-                "Gujarat DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Gujarat DistrictB Taluka2": {
-            "panchayats": {
-              "Gujarat DistrictB Taluka2 Panchayat1": [
-                "Gujarat DistrictB Taluka2 Panchayat1 Village 1",
-                "Gujarat DistrictB Taluka2 Panchayat1 Village 2",
-                "Gujarat DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Gujarat DistrictB Taluka2 Panchayat2": [
-                "Gujarat DistrictB Taluka2 Panchayat2 Village 1",
-                "Gujarat DistrictB Taluka2 Panchayat2 Village 2",
-                "Gujarat DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Gujarat DistrictB Taluka2 Panchayat3": [
-                "Gujarat DistrictB Taluka2 Panchayat3 Village 1",
-                "Gujarat DistrictB Taluka2 Panchayat3 Village 2",
-                "Gujarat DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Rajasthan": {
-    "districts": {
-      "Rajasthan DistrictA": {
-        "talukas": {
-          "Rajasthan DistrictA Taluka1": {
-            "panchayats": {
-              "Rajasthan DistrictA Taluka1 Panchayat1": [
-                "Rajasthan DistrictA Taluka1 Panchayat1 Village 1",
-                "Rajasthan DistrictA Taluka1 Panchayat1 Village 2",
-                "Rajasthan DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Rajasthan DistrictA Taluka1 Panchayat2": [
-                "Rajasthan DistrictA Taluka1 Panchayat2 Village 1",
-                "Rajasthan DistrictA Taluka1 Panchayat2 Village 2",
-                "Rajasthan DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Rajasthan DistrictA Taluka1 Panchayat3": [
-                "Rajasthan DistrictA Taluka1 Panchayat3 Village 1",
-                "Rajasthan DistrictA Taluka1 Panchayat3 Village 2",
-                "Rajasthan DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Rajasthan DistrictA Taluka2": {
-            "panchayats": {
-              "Rajasthan DistrictA Taluka2 Panchayat1": [
-                "Rajasthan DistrictA Taluka2 Panchayat1 Village 1",
-                "Rajasthan DistrictA Taluka2 Panchayat1 Village 2",
-                "Rajasthan DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Rajasthan DistrictA Taluka2 Panchayat2": [
-                "Rajasthan DistrictA Taluka2 Panchayat2 Village 1",
-                "Rajasthan DistrictA Taluka2 Panchayat2 Village 2",
-                "Rajasthan DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Rajasthan DistrictA Taluka2 Panchayat3": [
-                "Rajasthan DistrictA Taluka2 Panchayat3 Village 1",
-                "Rajasthan DistrictA Taluka2 Panchayat3 Village 2",
-                "Rajasthan DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Rajasthan DistrictB": {
-        "talukas": {
-          "Rajasthan DistrictB Taluka1": {
-            "panchayats": {
-              "Rajasthan DistrictB Taluka1 Panchayat1": [
-                "Rajasthan DistrictB Taluka1 Panchayat1 Village 1",
-                "Rajasthan DistrictB Taluka1 Panchayat1 Village 2",
-                "Rajasthan DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Rajasthan DistrictB Taluka1 Panchayat2": [
-                "Rajasthan DistrictB Taluka1 Panchayat2 Village 1",
-                "Rajasthan DistrictB Taluka1 Panchayat2 Village 2",
-                "Rajasthan DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Rajasthan DistrictB Taluka1 Panchayat3": [
-                "Rajasthan DistrictB Taluka1 Panchayat3 Village 1",
-                "Rajasthan DistrictB Taluka1 Panchayat3 Village 2",
-                "Rajasthan DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Rajasthan DistrictB Taluka2": {
-            "panchayats": {
-              "Rajasthan DistrictB Taluka2 Panchayat1": [
-                "Rajasthan DistrictB Taluka2 Panchayat1 Village 1",
-                "Rajasthan DistrictB Taluka2 Panchayat1 Village 2",
-                "Rajasthan DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Rajasthan DistrictB Taluka2 Panchayat2": [
-                "Rajasthan DistrictB Taluka2 Panchayat2 Village 1",
-                "Rajasthan DistrictB Taluka2 Panchayat2 Village 2",
-                "Rajasthan DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Rajasthan DistrictB Taluka2 Panchayat3": [
-                "Rajasthan DistrictB Taluka2 Panchayat3 Village 1",
-                "Rajasthan DistrictB Taluka2 Panchayat3 Village 2",
-                "Rajasthan DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Uttar Pradesh": {
-    "districts": {
-      "Uttar Pradesh DistrictA": {
-        "talukas": {
-          "Uttar Pradesh DistrictA Taluka1": {
-            "panchayats": {
-              "Uttar Pradesh DistrictA Taluka1 Panchayat1": [
-                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 1",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 2",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Uttar Pradesh DistrictA Taluka1 Panchayat2": [
-                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 1",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 2",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Uttar Pradesh DistrictA Taluka1 Panchayat3": [
-                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 1",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 2",
-                "Uttar Pradesh DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Uttar Pradesh DistrictA Taluka2": {
-            "panchayats": {
-              "Uttar Pradesh DistrictA Taluka2 Panchayat1": [
-                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 1",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 2",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Uttar Pradesh DistrictA Taluka2 Panchayat2": [
-                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 1",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 2",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Uttar Pradesh DistrictA Taluka2 Panchayat3": [
-                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 1",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 2",
-                "Uttar Pradesh DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Uttar Pradesh DistrictB": {
-        "talukas": {
-          "Uttar Pradesh DistrictB Taluka1": {
-            "panchayats": {
-              "Uttar Pradesh DistrictB Taluka1 Panchayat1": [
-                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 1",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 2",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Uttar Pradesh DistrictB Taluka1 Panchayat2": [
-                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 1",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 2",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Uttar Pradesh DistrictB Taluka1 Panchayat3": [
-                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 1",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 2",
-                "Uttar Pradesh DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Uttar Pradesh DistrictB Taluka2": {
-            "panchayats": {
-              "Uttar Pradesh DistrictB Taluka2 Panchayat1": [
-                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 1",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 2",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Uttar Pradesh DistrictB Taluka2 Panchayat2": [
-                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 1",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 2",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Uttar Pradesh DistrictB Taluka2 Panchayat3": [
-                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 1",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 2",
-                "Uttar Pradesh DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Bihar": {
-    "districts": {
-      "Bihar DistrictA": {
-        "talukas": {
-          "Bihar DistrictA Taluka1": {
-            "panchayats": {
-              "Bihar DistrictA Taluka1 Panchayat1": [
-                "Bihar DistrictA Taluka1 Panchayat1 Village 1",
-                "Bihar DistrictA Taluka1 Panchayat1 Village 2",
-                "Bihar DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Bihar DistrictA Taluka1 Panchayat2": [
-                "Bihar DistrictA Taluka1 Panchayat2 Village 1",
-                "Bihar DistrictA Taluka1 Panchayat2 Village 2",
-                "Bihar DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Bihar DistrictA Taluka1 Panchayat3": [
-                "Bihar DistrictA Taluka1 Panchayat3 Village 1",
-                "Bihar DistrictA Taluka1 Panchayat3 Village 2",
-                "Bihar DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Bihar DistrictA Taluka2": {
-            "panchayats": {
-              "Bihar DistrictA Taluka2 Panchayat1": [
-                "Bihar DistrictA Taluka2 Panchayat1 Village 1",
-                "Bihar DistrictA Taluka2 Panchayat1 Village 2",
-                "Bihar DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Bihar DistrictA Taluka2 Panchayat2": [
-                "Bihar DistrictA Taluka2 Panchayat2 Village 1",
-                "Bihar DistrictA Taluka2 Panchayat2 Village 2",
-                "Bihar DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Bihar DistrictA Taluka2 Panchayat3": [
-                "Bihar DistrictA Taluka2 Panchayat3 Village 1",
-                "Bihar DistrictA Taluka2 Panchayat3 Village 2",
-                "Bihar DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Bihar DistrictB": {
-        "talukas": {
-          "Bihar DistrictB Taluka1": {
-            "panchayats": {
-              "Bihar DistrictB Taluka1 Panchayat1": [
-                "Bihar DistrictB Taluka1 Panchayat1 Village 1",
-                "Bihar DistrictB Taluka1 Panchayat1 Village 2",
-                "Bihar DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Bihar DistrictB Taluka1 Panchayat2": [
-                "Bihar DistrictB Taluka1 Panchayat2 Village 1",
-                "Bihar DistrictB Taluka1 Panchayat2 Village 2",
-                "Bihar DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Bihar DistrictB Taluka1 Panchayat3": [
-                "Bihar DistrictB Taluka1 Panchayat3 Village 1",
-                "Bihar DistrictB Taluka1 Panchayat3 Village 2",
-                "Bihar DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Bihar DistrictB Taluka2": {
-            "panchayats": {
-              "Bihar DistrictB Taluka2 Panchayat1": [
-                "Bihar DistrictB Taluka2 Panchayat1 Village 1",
-                "Bihar DistrictB Taluka2 Panchayat1 Village 2",
-                "Bihar DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Bihar DistrictB Taluka2 Panchayat2": [
-                "Bihar DistrictB Taluka2 Panchayat2 Village 1",
-                "Bihar DistrictB Taluka2 Panchayat2 Village 2",
-                "Bihar DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Bihar DistrictB Taluka2 Panchayat3": [
-                "Bihar DistrictB Taluka2 Panchayat3 Village 1",
-                "Bihar DistrictB Taluka2 Panchayat3 Village 2",
-                "Bihar DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "West Bengal": {
-    "districts": {
-      "West Bengal DistrictA": {
-        "talukas": {
-          "West Bengal DistrictA Taluka1": {
-            "panchayats": {
-              "West Bengal DistrictA Taluka1 Panchayat1": [
-                "West Bengal DistrictA Taluka1 Panchayat1 Village 1",
-                "West Bengal DistrictA Taluka1 Panchayat1 Village 2",
-                "West Bengal DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "West Bengal DistrictA Taluka1 Panchayat2": [
-                "West Bengal DistrictA Taluka1 Panchayat2 Village 1",
-                "West Bengal DistrictA Taluka1 Panchayat2 Village 2",
-                "West Bengal DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "West Bengal DistrictA Taluka1 Panchayat3": [
-                "West Bengal DistrictA Taluka1 Panchayat3 Village 1",
-                "West Bengal DistrictA Taluka1 Panchayat3 Village 2",
-                "West Bengal DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "West Bengal DistrictA Taluka2": {
-            "panchayats": {
-              "West Bengal DistrictA Taluka2 Panchayat1": [
-                "West Bengal DistrictA Taluka2 Panchayat1 Village 1",
-                "West Bengal DistrictA Taluka2 Panchayat1 Village 2",
-                "West Bengal DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "West Bengal DistrictA Taluka2 Panchayat2": [
-                "West Bengal DistrictA Taluka2 Panchayat2 Village 1",
-                "West Bengal DistrictA Taluka2 Panchayat2 Village 2",
-                "West Bengal DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "West Bengal DistrictA Taluka2 Panchayat3": [
-                "West Bengal DistrictA Taluka2 Panchayat3 Village 1",
-                "West Bengal DistrictA Taluka2 Panchayat3 Village 2",
-                "West Bengal DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "West Bengal DistrictB": {
-        "talukas": {
-          "West Bengal DistrictB Taluka1": {
-            "panchayats": {
-              "West Bengal DistrictB Taluka1 Panchayat1": [
-                "West Bengal DistrictB Taluka1 Panchayat1 Village 1",
-                "West Bengal DistrictB Taluka1 Panchayat1 Village 2",
-                "West Bengal DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "West Bengal DistrictB Taluka1 Panchayat2": [
-                "West Bengal DistrictB Taluka1 Panchayat2 Village 1",
-                "West Bengal DistrictB Taluka1 Panchayat2 Village 2",
-                "West Bengal DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "West Bengal DistrictB Taluka1 Panchayat3": [
-                "West Bengal DistrictB Taluka1 Panchayat3 Village 1",
-                "West Bengal DistrictB Taluka1 Panchayat3 Village 2",
-                "West Bengal DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "West Bengal DistrictB Taluka2": {
-            "panchayats": {
-              "West Bengal DistrictB Taluka2 Panchayat1": [
-                "West Bengal DistrictB Taluka2 Panchayat1 Village 1",
-                "West Bengal DistrictB Taluka2 Panchayat1 Village 2",
-                "West Bengal DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "West Bengal DistrictB Taluka2 Panchayat2": [
-                "West Bengal DistrictB Taluka2 Panchayat2 Village 1",
-                "West Bengal DistrictB Taluka2 Panchayat2 Village 2",
-                "West Bengal DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "West Bengal DistrictB Taluka2 Panchayat3": [
-                "West Bengal DistrictB Taluka2 Panchayat3 Village 1",
-                "West Bengal DistrictB Taluka2 Panchayat3 Village 2",
-                "West Bengal DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  },
-  "Assam": {
-    "districts": {
-      "Assam DistrictA": {
-        "talukas": {
-          "Assam DistrictA Taluka1": {
-            "panchayats": {
-              "Assam DistrictA Taluka1 Panchayat1": [
-                "Assam DistrictA Taluka1 Panchayat1 Village 1",
-                "Assam DistrictA Taluka1 Panchayat1 Village 2",
-                "Assam DistrictA Taluka1 Panchayat1 Village 3"
-              ],
-              "Assam DistrictA Taluka1 Panchayat2": [
-                "Assam DistrictA Taluka1 Panchayat2 Village 1",
-                "Assam DistrictA Taluka1 Panchayat2 Village 2",
-                "Assam DistrictA Taluka1 Panchayat2 Village 3"
-              ],
-              "Assam DistrictA Taluka1 Panchayat3": [
-                "Assam DistrictA Taluka1 Panchayat3 Village 1",
-                "Assam DistrictA Taluka1 Panchayat3 Village 2",
-                "Assam DistrictA Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Assam DistrictA Taluka2": {
-            "panchayats": {
-              "Assam DistrictA Taluka2 Panchayat1": [
-                "Assam DistrictA Taluka2 Panchayat1 Village 1",
-                "Assam DistrictA Taluka2 Panchayat1 Village 2",
-                "Assam DistrictA Taluka2 Panchayat1 Village 3"
-              ],
-              "Assam DistrictA Taluka2 Panchayat2": [
-                "Assam DistrictA Taluka2 Panchayat2 Village 1",
-                "Assam DistrictA Taluka2 Panchayat2 Village 2",
-                "Assam DistrictA Taluka2 Panchayat2 Village 3"
-              ],
-              "Assam DistrictA Taluka2 Panchayat3": [
-                "Assam DistrictA Taluka2 Panchayat3 Village 1",
-                "Assam DistrictA Taluka2 Panchayat3 Village 2",
-                "Assam DistrictA Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      },
-      "Assam DistrictB": {
-        "talukas": {
-          "Assam DistrictB Taluka1": {
-            "panchayats": {
-              "Assam DistrictB Taluka1 Panchayat1": [
-                "Assam DistrictB Taluka1 Panchayat1 Village 1",
-                "Assam DistrictB Taluka1 Panchayat1 Village 2",
-                "Assam DistrictB Taluka1 Panchayat1 Village 3"
-              ],
-              "Assam DistrictB Taluka1 Panchayat2": [
-                "Assam DistrictB Taluka1 Panchayat2 Village 1",
-                "Assam DistrictB Taluka1 Panchayat2 Village 2",
-                "Assam DistrictB Taluka1 Panchayat2 Village 3"
-              ],
-              "Assam DistrictB Taluka1 Panchayat3": [
-                "Assam DistrictB Taluka1 Panchayat3 Village 1",
-                "Assam DistrictB Taluka1 Panchayat3 Village 2",
-                "Assam DistrictB Taluka1 Panchayat3 Village 3"
-              ]
-            }
-          },
-          "Assam DistrictB Taluka2": {
-            "panchayats": {
-              "Assam DistrictB Taluka2 Panchayat1": [
-                "Assam DistrictB Taluka2 Panchayat1 Village 1",
-                "Assam DistrictB Taluka2 Panchayat1 Village 2",
-                "Assam DistrictB Taluka2 Panchayat1 Village 3"
-              ],
-              "Assam DistrictB Taluka2 Panchayat2": [
-                "Assam DistrictB Taluka2 Panchayat2 Village 1",
-                "Assam DistrictB Taluka2 Panchayat2 Village 2",
-                "Assam DistrictB Taluka2 Panchayat2 Village 3"
-              ],
-              "Assam DistrictB Taluka2 Panchayat3": [
-                "Assam DistrictB Taluka2 Panchayat3 Village 1",
-                "Assam DistrictB Taluka2 Panchayat3 Village 2",
-                "Assam DistrictB Taluka2 Panchayat3 Village 3"
-              ]
-            }
-          }
-        }
-      }
-    }
-  }
+"Tamil Nadu": {
+"districts": {
+"Chennai": {
+"talukas": {
+"Egmore-Nungambakam": {
+"panchayats": {
+"Koyambedu": [
+"Koyambedu",
+"MMDA Colony",
+"Kolathur",
+"Villivakkam",
+"Anna Nagar",
+"Aminjikarai",
+"Purasawalkam",
+"Perambur"
+],
+"Nungambakkam": [
+"Nungambakkam",
+"Puliyur",
+"T.Nagar",
+"Alwarpet",
+"Mylapore",
+"RA Puram",
+"Adyar",
+"Guindy"
+],
+"Tondiarpet": [
+"Tondiarpet",
+"Royapuram",
+"Washermanpet",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills"
+],
+"Ambattur": [
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Alandur": [
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Pallavaram",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Sholinganallur": [
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam",
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam"
+],
+"Saidapet": [
+"Saidapet",
+"Gandhi Nagar",
+"Kotturpuram",
+"Jafferkhanpet",
+"Ashok Nagar",
+"KK Nagar",
+"Vadapalani",
+"Saligramam"
+],
+"Thiruvallur": [
+"Thiruvallur",
+"Poonamallee",
+"Avadi",
+"Tiruvallur",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet"
+]
+}
+},
+"Mylapore-Triplicane": {
+"panchayats": {
+"Mylapore": [
+"Mylapore",
+"Mandaveli",
+"RA Puram",
+"Alwarpet",
+"Teynampet",
+"Nandanam",
+"Cit Nagar",
+"Kotturpuram"
+],
+"Triplicane": [
+"Triplicane",
+"Chepauk",
+"Thiruvallikeni",
+"Marina Beach",
+"Chintadripet",
+"Pudupet",
+"Egmore",
+"Choolai"
+],
+"Santhome": [
+"Santhome",
+"Luz",
+"Mylapore",
+"Mandaveli",
+"RA Puram",
+"Adyar",
+"Besant Nagar",
+"Thiruvanmiyur"
+],
+"Thousand Lights": [
+"Thousand Lights",
+"Nungambakkam",
+"T.Nagar",
+"Pondy Bazaar",
+"Thyagaraya Nagar",
+"Kodambakkam",
+"Vadapalani",
+"Ashok Nagar"
+],
+"Aminjikarai": [
+"Aminjikarai",
+"Purasawalkam",
+"Kilpauk",
+"Chetpet",
+"Egmore",
+"Poonamallee High Road",
+"Arumbakkam",
+"Villivakkam"
+],
+"Vepery": [
+"Vepery",
+"Purasawalkam",
+"Perambur",
+"Kolathur",
+"Ayanavaram",
+"Otteri",
+"Pattalam",
+"Broadway"
+],
+"Royapuram": [
+"Royapuram",
+"Washermanpet",
+"Tondiarpet",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills"
+],
+"Perambur": [
+"Perambur",
+"Ayanavaram",
+"Kolathur",
+"Villivakkam",
+"Moolakadai",
+"Ennore",
+"Tiruvottiyur",
+"Manali"
+]
+}
+},
+"Guindy": {
+"panchayats": {
+"Guindy": [
+"Guindy",
+"Saidapet",
+"Gandhi Nagar",
+"Kotturpuram",
+"Adyar",
+"Tharamani",
+"Velachery",
+"Taramani"
+],
+"Velachery": [
+"Velachery",
+"Taramani",
+"Perungudi",
+"Thoraipakkam",
+"Pallikaranai",
+"Kovilambakkam",
+"Medavakkam",
+"Nanganallur"
+],
+"Adyar": [
+"Adyar",
+"Thiruvanmiyur",
+"Besant Nagar",
+"RA Puram",
+"Kotturpuram",
+"Gandhi Nagar",
+"Saidapet",
+"Guindy"
+],
+"Thiruvanmiyur": [
+"Thiruvanmiyur",
+"Adyar",
+"Besant Nagar",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam",
+"Kottivakkam"
+],
+"Pallavaram": [
+"Pallavaram",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur",
+"Guduvancheri",
+"Urapakkam",
+"Pammal"
+],
+"Tambaram": [
+"Tambaram",
+"Chromepet",
+"Pallavaram",
+"Perungalathur",
+"Vandalur",
+"Guduvancheri",
+"Urapakkam",
+"Pammal"
+],
+"Chromepet": [
+"Chromepet",
+"Pallavaram",
+"Tambaram",
+"Perungalathur",
+"Vandalur",
+"Guduvancheri",
+"Urapakkam",
+"Pammal"
+],
+"Perungalathur": [
+"Perungalathur",
+"Tambaram",
+"Chromepet",
+"Pallavaram",
+"Vandalur",
+"Guduvancheri",
+"Urapakkam",
+"Pammal"
+]
+}
+},
+"Tiruvottiyur": {
+"panchayats": {
+"Tiruvottiyur": [
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills",
+"Ennore",
+"Kathivakkam",
+"Wimco Nagar"
+],
+"Manali": [
+"Manali",
+"Tiruvottiyur",
+"Mathur",
+"Madhavaram",
+"Red Hills",
+"Ennore",
+"Kathivakkam",
+"Wimco Nagar"
+],
+"Madhavaram": [
+"Madhavaram",
+"Red Hills",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Ennore",
+"Kathivakkam",
+"Wimco Nagar"
+],
+"Red Hills": [
+"Red Hills",
+"Madhavaram",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Ennore",
+"Kathivakkam",
+"Wimco Nagar"
+],
+"Ennore": [
+"Ennore",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills",
+"Kathivakkam",
+"Wimco Nagar"
+],
+"Kathivakkam": [
+"Kathivakkam",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills",
+"Ennore",
+"Wimco Nagar"
+],
+"Wimco Nagar": [
+"Wimco Nagar",
+"Tiruvottiyur",
+"Manali",
+"Mathur",
+"Madhavaram",
+"Red Hills",
+"Ennore",
+"Kathivakkam"
+],
+"Mathur": [
+"Mathur",
+"Manali",
+"Tiruvottiyur",
+"Madhavaram",
+"Red Hills",
+"Ennore",
+"Kathivakkam",
+"Wimco Nagar"
+]
+}
+},
+"Ambattur": {
+"panchayats": {
+"Ambattur": [
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Korattur": [
+"Korattur",
+"Ambattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Mogappair": [
+"Mogappair",
+"Ambattur",
+"Korattur",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Padi": [
+"Padi",
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Thirumangalam",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Thirumangalam": [
+"Thirumangalam",
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Anna Nagar West",
+"Valasaravakkam",
+"Porur"
+],
+"Anna Nagar West": [
+"Anna Nagar West",
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Valasaravakkam",
+"Porur"
+],
+"Valasaravakkam": [
+"Valasaravakkam",
+"Porur",
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West"
+],
+"Porur": [
+"Porur",
+"Valasaravakkam",
+"Ambattur",
+"Korattur",
+"Mogappair",
+"Padi",
+"Thirumangalam",
+"Anna Nagar West"
+]
+}
+},
+"Poonamallee": {
+"panchayats": {
+"Poonamallee": [
+"Poonamallee",
+"Avadi",
+"Tiruvallur",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet",
+"Kadambathur"
+],
+"Avadi": [
+"Avadi",
+"Poonamallee",
+"Tiruvallur",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet",
+"Kadambathur"
+],
+"Tiruvallur": [
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet",
+"Kadambathur"
+],
+"Gummidipoondi": [
+"Gummidipoondi",
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet",
+"Kadambathur"
+],
+"Tiruttani": [
+"Tiruttani",
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Gummidipoondi",
+"Pallipattu",
+"R.K.Pet",
+"Kadambathur"
+],
+"Pallipattu": [
+"Pallipattu",
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Gummidipoondi",
+"Tiruttani",
+"R.K.Pet",
+"Kadambathur"
+],
+"R.K.Pet": [
+"R.K.Pet",
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"Kadambathur"
+],
+"Kadambathur": [
+"Kadambathur",
+"Tiruvallur",
+"Poonamallee",
+"Avadi",
+"Gummidipoondi",
+"Tiruttani",
+"Pallipattu",
+"R.K.Pet"
+]
+}
+},
+"Sholinganallur": {
+"panchayats": {
+"Sholinganallur": [
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam",
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam"
+],
+"Karapakkam": [
+"Karapakkam",
+"Sholinganallur",
+"Okkiyam Thuraipakkam",
+"Perumbakkam",
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam"
+],
+"Okkiyam Thuraipakkam": [
+"Okkiyam Thuraipakkam",
+"Sholinganallur",
+"Karapakkam",
+"Perumbakkam",
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam"
+],
+"Perumbakkam": [
+"Perumbakkam",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam"
+],
+"Kottivakkam": [
+"Kottivakkam",
+"Palavakkam",
+"Neelankarai",
+"Kovalam",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam"
+],
+"Palavakkam": [
+"Palavakkam",
+"Kottivakkam",
+"Neelankarai",
+"Kovalam",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam"
+],
+"Neelankarai": [
+"Neelankarai",
+"Palavakkam",
+"Kottivakkam",
+"Kovalam",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam"
+],
+"Kovalam": [
+"Kovalam",
+"Neelankarai",
+"Palavakkam",
+"Kottivakkam",
+"Sholinganallur",
+"Karapakkam",
+"Okkiyam Thuraipakkam",
+"Perumbakkam"
+]
+}
+},
+"Alandur": {
+"panchayats": {
+"Alandur": [
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Pallavaram",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Adambakkam": [
+"Adambakkam",
+"Alandur",
+"Nanganallur",
+"Pallavaram",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Nanganallur": [
+"Nanganallur",
+"Alandur",
+"Adambakkam",
+"Pallavaram",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Pallavaram": [
+"Pallavaram",
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Chromepet",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Chromepet": [
+"Chromepet",
+"Pallavaram",
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Tambaram",
+"Perungalathur",
+"Vandalur"
+],
+"Tambaram": [
+"Tambaram",
+"Chromepet",
+"Pallavaram",
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Perungalathur",
+"Vandalur"
+],
+"Perungalathur": [
+"Perungalathur",
+"Tambaram",
+"Chromepet",
+"Pallavaram",
+"Alandur",
+"Adambakkam",
+"Nanganallur",
+"Vandalur"
+],
+"Vandalur": [
+"Vandalur",
+"Perungalathur",
+"Tambaram",
+"Chromepet",
+"Pallavaram",
+"Alandur",
+"Adambakkam",
+"Nanganallur"
+]
+}
+}
+}
+},
+"Kancheepuram": {
+"talukas": {
+"Kancheepuram": {
+"panchayats": {
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Sitheri": [
+"Sitheri",
+"Nattapettai",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Walajabad": [
+"Walajabad",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+]
+}
+},
+"Sriperumbudur": {
+"panchayats": {
+"Sriperumbudur": [
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Semmenchery",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam"
+],
+"Vadambakkam": [
+"Vadambakkam",
+"Sriperumbudur",
+"Irungattukottai",
+"Semmenchery",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam"
+],
+"Irungattukottai": [
+"Irungattukottai",
+"Sriperumbudur",
+"Vadambakkam",
+"Semmenchery",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam"
+],
+"Semmenchery": [
+"Semmenchery",
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Semmenchery",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Semmenchery",
+"Walajabad",
+"Madurantakam"
+],
+"Walajabad": [
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Semmenchery",
+"Madurantakam"
+],
+"Madurantakam": [
+"Madurantakam",
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Vadambakkam",
+"Irungattukottai",
+"Semmenchery"
+]
+}
+},
+"Uthiramerur": {
+"panchayats": {
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Walajabad": [
+"Walajabad",
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Uthiramerur",
+"Sriperumbudur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+]
+}
+},
+"Walajabad": {
+"panchayats": {
+"Walajabad": [
+"Walajabad",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Walajabad",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Uthiramerur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Uthiramerur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur"
+],
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Walajabad",
+"Sriperumbudur",
+"Uthiramerur",
+"Madurantakam",
+"Cheyyur"
+]
+}
+},
+"Madurantakam": {
+"panchayats": {
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Madurantakam",
+"Cheyyur",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Madurantakam",
+"Cheyyur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Madurantakam",
+"Cheyyur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Walajabad": [
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Madurantakam",
+"Cheyyur",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+]
+}
+},
+"Cheyyur": {
+"panchayats": {
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Cheyyur",
+"Madurantakam",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Cheyyur",
+"Madurantakam",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Cheyyur",
+"Madurantakam",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Walajabad": [
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Cheyyur",
+"Madurantakam",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Cheyyur",
+"Madurantakam"
+],
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Cheyyur",
+"Madurantakam"
+]
+}
+},
+"Periachanthangal": {
+"panchayats": {
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Periachanthangal",
+"Chinna Chanthangal",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Periachanthangal",
+"Chinna Chanthangal",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Periachanthangal",
+"Chinna Chanthangal",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Walajabad": [
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Periachanthangal",
+"Chinna Chanthangal",
+"Madurantakam",
+"Cheyyur"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Periachanthangal",
+"Chinna Chanthangal"
+]
+}
+},
+"Chinna Chanthangal": {
+"panchayats": {
+"Chinna Chanthangal": [
+"Chinna Chanthangal",
+"Periachanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Periachanthangal": [
+"Periachanthangal",
+"Chinna Chanthangal",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Kanchipuram": [
+"Kanchipuram",
+"Chinna Chanthangal",
+"Periachanthangal",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Sriperumbudur": [
+"Sriperumbudur",
+"Kanchipuram",
+"Chinna Chanthangal",
+"Periachanthangal",
+"Uthiramerur",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Uthiramerur": [
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Chinna Chanthangal",
+"Periachanthangal",
+"Walajabad",
+"Madurantakam",
+"Cheyyur"
+],
+"Walajabad": [
+"Walajabad",
+"Uthiramerur",
+"Kanchipuram",
+"Sriperumbudur",
+"Chinna Chanthangal",
+"Periachanthangal",
+"Madurantakam",
+"Cheyyur"
+],
+"Madurantakam": [
+"Madurantakam",
+"Cheyyur",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Chinna Chanthangal",
+"Periachanthangal"
+],
+"Cheyyur": [
+"Cheyyur",
+"Madurantakam",
+"Kanchipuram",
+"Sriperumbudur",
+"Uthiramerur",
+"Walajabad",
+"Chinna Chanthangal",
+"Periachanthangal"
+]
+}
+}
+}
+},
+"Coimbatore": {
+"talukas": {
+"Coimbatore North": {
+"panchayats": {
+"Coimbatore": [
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Saibaba Colony",
+"Race Course",
+"Vadavalli",
+"Thondamuthur",
+"Perur"
+],
+"Gandhipuram": [
+"Gandhipuram",
+"Coimbatore",
+"RS Puram",
+"Saibaba Colony",
+"Race Course",
+"Vadavalli",
+"Thondamuthur",
+"Perur"
+],
+"RS Puram": [
+"RS Puram",
+"Coimbatore",
+"Gandhipuram",
+"Saibaba Colony",
+"Race Course",
+"Vadavalli",
+"Thondamuthur",
+"Perur"
+],
+"Saibaba Colony": [
+"Saibaba Colony",
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Race Course",
+"Vadavalli",
+"Thondamuthur",
+"Perur"
+],
+"Race Course": [
+"Race Course",
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Saibaba Colony",
+"Vadavalli",
+"Thondamuthur",
+"Perur"
+],
+"Vadavalli": [
+"Vadavalli",
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Saibaba Colony",
+"Race Course",
+"Thondamuthur",
+"Perur"
+],
+"Thondamuthur": [
+"Thondamuthur",
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Saibaba Colony",
+"Race Course",
+"Vadavalli",
+"Perur"
+],
+"Perur": [
+"Perur",
+"Coimbatore",
+"Gandhipuram",
+"RS Puram",
+"Saibaba Colony",
+"Race Course",
+"Vadavalli",
+"Thondamuthur"
+]
+}
+},
+"Coimbatore South": {
+"panchayats": {
+"Peelamedu": [
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Kuniyamuthur",
+"Ganapathy",
+"Saraswathipuram",
+"Sitra",
+"Kovaipudur"
+],
+"Singanallur": [
+"Singanallur",
+"Peelamedu",
+"Kurichi",
+"Kuniyamuthur",
+"Ganapathy",
+"Saraswathipuram",
+"Sitra",
+"Kovaipudur"
+],
+"Kurichi": [
+"Kurichi",
+"Peelamedu",
+"Singanallur",
+"Kuniyamuthur",
+"Ganapathy",
+"Saraswathipuram",
+"Sitra",
+"Kovaipudur"
+],
+"Kuniyamuthur": [
+"Kuniyamuthur",
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Ganapathy",
+"Saraswathipuram",
+"Sitra",
+"Kovaipudur"
+],
+"Ganapathy": [
+"Ganapathy",
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Kuniyamuthur",
+"Saraswathipuram",
+"Sitra",
+"Kovaipudur"
+],
+"Saraswathipuram": [
+"Saraswathipuram",
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Kuniyamuthur",
+"Ganapathy",
+"Sitra",
+"Kovaipudur"
+],
+"Sitra": [
+"Sitra",
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Kuniyamuthur",
+"Ganapathy",
+"Saraswathipuram",
+"Kovaipudur"
+],
+"Kovaipudur": [
+"Kovaipudur",
+"Peelamedu",
+"Singanallur",
+"Kurichi",
+"Kuniyamuthur",
+"Ganapathy",
+"Saraswathipuram",
+"Sitra"
+]
+}
+},
+"Pollachi": {
+"panchayats": {
+"Pollachi": [
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Valparai",
+"Udumalpet",
+"Pongalur",
+"Madathukulam",
+"Avanashi"
+],
+"Kinathukadavu": [
+"Kinathukadavu",
+"Pollachi",
+"Anamalai",
+"Valparai",
+"Udumalpet",
+"Pongalur",
+"Madathukulam",
+"Avanashi"
+],
+"Anamalai": [
+"Anamalai",
+"Pollachi",
+"Kinathukadavu",
+"Valparai",
+"Udumalpet",
+"Pongalur",
+"Madathukulam",
+"Avanashi"
+],
+"Valparai": [
+"Valparai",
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Udumalpet",
+"Pongalur",
+"Madathukulam",
+"Avanashi"
+],
+"Udumalpet": [
+"Udumalpet",
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Valparai",
+"Pongalur",
+"Madathukulam",
+"Avanashi"
+],
+"Pongalur": [
+"Pongalur",
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Valparai",
+"Udumalpet",
+"Madathukulam",
+"Avanashi"
+],
+"Madathukulam": [
+"Madathukulam",
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Valparai",
+"Udumalpet",
+"Pongalur",
+"Avanashi"
+],
+"Avanashi": [
+"Avanashi",
+"Pollachi",
+"Kinathukadavu",
+"Anamalai",
+"Valparai",
+"Udumalpet",
+"Pongalur",
+"Madathukulam"
+]
+}
+},
+"Tiruppur": {
+"panchayats": {
+"Tiruppur": [
+"Tiruppur",
+"Kangeyam",
+"Dharapuram",
+"Udumalpet",
+"Palladam",
+"Av"]}
+}
+}
+}
+}
+}
 }
