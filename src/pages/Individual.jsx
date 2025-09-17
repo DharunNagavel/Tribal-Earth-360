@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import indiaStateData from "../assets/india_state_data.json";
-const stateData = indiaStateData;
+import axios from 'axios';
+
 const Individual = () => {
-  
   const [currentSection, setCurrentSection] = useState(1);
-  const [memberCount, setMemberCount] = useState(1);
-  const [claimantDetails, setClaimantDetails] = useState({
+  const [formData, setFormData] = useState({
     nameoftheclaimant: '',
     nameofthespouse: '',
     nameofFather: '',
@@ -28,45 +27,22 @@ const Individual = () => {
     extentOfLandInForestVillages: '',
     anyOtherTraditionalRight: '',
     evidenceInSupport: '',
-    anyOtherInformation: ''
-  });
-  const [formData, setFormData] = useState({
-    claimantName: '',
-    spouseName: '',
-    parentName: '',
-    address: '',
-    state: '',
-    district: '',
-    tehsil: '',
-    gramPanchayat: '',
-    village: '',
-    scheduledTribe: '',
-    traditionalForestDweller: '',
-    familyMembers: [{ name: '', age: '' }],
-    habitationLand: '',
-    cultivationLand: '',
-    disputedLands: '',
-    pattasLeases: '',
-    rehabilitationLand: '',
-    displacedLand: '',
-    forestVillageLand: '',
-    traditionalRights: '',
-    evidence: '',
-    additionalInfo: '',
+    anyOtherInformation: '',
     declaration: false
   });
+
   const [filePreviews, setFilePreviews] = useState({
     stCertificate: [],
     spouseStCertificate: [],
     evidenceFiles: []
   });
+
   const [errors, setErrors] = useState({});
   const [filteredDistricts, setFilteredDistricts] = useState([]);
   const [filteredTalukas, setFilteredTalukas] = useState([]);
   const [filteredPanchayats, setFilteredPanchayats] = useState([]);
   const [filteredVillages, setFilteredVillages] = useState([]);
 
- 
   useEffect(() => {
     if (formData.state && indiaStateData[formData.state]) {
       setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts));
@@ -77,7 +53,7 @@ const Individual = () => {
     setFormData(prev => ({
       ...prev,
       district: '',
-      tehsil: '',
+      taluka: '',
       gramPanchayat: '',
       village: ''
     }));
@@ -86,7 +62,6 @@ const Individual = () => {
     setFilteredVillages([]);
   }, [formData.state]);
 
-  
   useEffect(() => {
     if (formData.state && formData.district && indiaStateData[formData.state]?.districts[formData.district]) {
       setFilteredTalukas(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas));
@@ -96,7 +71,7 @@ const Individual = () => {
     
     setFormData(prev => ({
       ...prev,
-      tehsil: '',
+      taluka: '',
       gramPanchayat: '',
       village: ''
     }));
@@ -104,11 +79,10 @@ const Individual = () => {
     setFilteredVillages([]);
   }, [formData.district]);
 
-  
   useEffect(() => {
-    if (formData.state && formData.district && formData.tehsil && 
-        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.tehsil]) {
-      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.tehsil].panchayats));
+    if (formData.state && formData.district && formData.taluka && 
+        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]) {
+      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats));
     } else {
       setFilteredPanchayats([]);
     }
@@ -119,13 +93,12 @@ const Individual = () => {
       village: ''
     }));
     setFilteredVillages([]);
-  }, [formData.tehsil]);
+  }, [formData.taluka]);
 
-  
   useEffect(() => {
-    if (formData.state && formData.district && formData.tehsil && formData.gramPanchayat && 
-        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.tehsil]?.panchayats[formData.gramPanchayat]) {
-      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.tehsil].panchayats[formData.gramPanchayat]);
+    if (formData.state && formData.district && formData.taluka && formData.gramPanchayat && 
+        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]?.panchayats[formData.gramPanchayat]) {
+      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats[formData.gramPanchayat]);
     } else {
       setFilteredVillages([]);
     }
@@ -136,23 +109,19 @@ const Individual = () => {
     }));
   }, [formData.gramPanchayat]);
 
- 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     
-   
     if (name === 'scheduledTribe') {
       setFormData(prev => ({
         ...prev,
         [name]: value,
-       
-        traditionalForestDweller: value === 'no' ? 'yes' : prev.traditionalForestDweller
+        otherTraditionalForestDweller: value === 'no' ? 'yes' : prev.otherTraditionalForestDweller
       }));
-    } else if (name === 'traditionalForestDweller') {
+    } else if (name === 'otherTraditionalForestDweller') {
       setFormData(prev => ({
         ...prev,
         [name]: value,
-       
         scheduledTribe: value === 'no' ? 'yes' : prev.scheduledTribe
       }));
     } else {
@@ -163,36 +132,6 @@ const Individual = () => {
     }
   };
 
- 
-  const handleFamilyMemberChange = (index, field, value) => {
-    const updatedMembers = [...formData.familyMembers];
-    updatedMembers[index][field] = value;
-    setFormData(prev => ({
-      ...prev,
-      familyMembers: updatedMembers
-    }));
-  };
-
-  
-  const addFamilyMember = () => {
-    setFormData(prev => ({
-      ...prev,
-      familyMembers: [...prev.familyMembers, { name: '', age: '' }]
-    }));
-    setMemberCount(prev => prev + 1);
-  };
-
-  
-  const removeFamilyMember = (index) => {
-    if (formData.familyMembers.length <= 1) return;
-    
-    setFormData(prev => ({
-      ...prev,
-      familyMembers: prev.familyMembers.filter((_, i) => i !== index)
-    }));
-  };
-
-  
   const handleFileUpload = (e, fileType) => {
     const files = Array.from(e.target.files);
     
@@ -207,7 +146,6 @@ const Individual = () => {
     }));
   };
 
-  
   const removeFilePreview = (fileType, index) => {
     setFilePreviews(prev => ({
       ...prev,
@@ -215,34 +153,28 @@ const Individual = () => {
     }));
   };
 
-  
   const validateSection = (sectionNum) => {
     const newErrors = {};
     
     if (sectionNum === 1) {
-      if (!formData.claimantName) newErrors.claimantName = 'Please enter claimant name';
-      if (!formData.parentName) newErrors.parentName = 'Please enter parent name';
+      if (!formData.nameoftheclaimant) newErrors.nameoftheclaimant = 'Please enter claimant name';
+      if (!formData.nameofFather) newErrors.nameofFather = 'Please enter parent name';
       if (!formData.address) newErrors.address = 'Please enter your address';
       if (!formData.state) newErrors.state = 'Please select state';
       if (!formData.district) newErrors.district = 'Please select district';
       if (!formData.village) newErrors.village = 'Please select village';
       if (!formData.gramPanchayat) newErrors.gramPanchayat = 'Please select gram panchayat';
-      if (!formData.tehsil) newErrors.tehsil = 'Please select tehsil/taluka';
+      if (!formData.taluka) newErrors.taluka = 'Please select tehsil/taluka';
       if (!formData.scheduledTribe) newErrors.scheduledTribe = 'Please select an option';
-      if (!formData.traditionalForestDweller) newErrors.traditionalForestDweller = 'Please select an option';
-      
-      
-      formData.familyMembers.forEach((member, index) => {
-        if (!member.name) newErrors[`memberName-${index}`] = 'Please enter name';
-        if (!member.age) newErrors[`memberAge-${index}`] = 'Please enter age';
-      });
+      if (!formData.otherTraditionalForestDweller) newErrors.otherTraditionalForestDweller = 'Please select an option';
+      if (!formData.name) newErrors.name = 'Please enter family member name';
+      if (!formData.age) newErrors.age = 'Please enter family member age';
     }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  
   const showSection = (sectionNum) => {
     if (sectionNum > currentSection && !validateSection(currentSection)) {
       alert('Please complete all required fields before proceeding.');
@@ -252,7 +184,6 @@ const Individual = () => {
     setCurrentSection(sectionNum);
   };
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -260,44 +191,51 @@ const Individual = () => {
       setErrors(prev => ({ ...prev, declaration: 'You must accept the declaration' }));
       return;
     }
-    
-    
-    alert('Form submitted successfully! Your claim has been received and will be processed.');
-    
-    // Reset form
-    setFormData({
-      claimantName: '',
-      spouseName: '',
-      parentName: '',
-      address: '',
-      state: '',
-      district: '',
-      tehsil: '',
-      gramPanchayat: '',
-      village: '',
-      scheduledTribe: '',
-      traditionalForestDweller: '',
-      familyMembers: [{ name: '', age: '' }],
-      habitationLand: '',
-      cultivationLand: '',
-      disputedLands: '',
-      pattasLeases: '',
-      rehabilitationLand: '',
-      displacedLand: '',
-      forestVillageLand: '',
-      traditionalRights: '',
-      evidence: '',
-      additionalInfo: '',
-      declaration: false
-    });
-    
-    setFilePreviews({
-      stCertificate: [],
-      spouseStCertificate: [],
-      evidenceFiles: []
-    });
-    
-    setCurrentSection(1);
+    axios.post('http://localhost:7000/api/v1/patta/individual', formData)
+    .then((res)=>
+      {
+        console.log(res);
+        alert('Form submitted successfully! Your claim has been received and will be processed.');
+        // Reset form
+        setFormData({
+          nameoftheclaimant: '',
+          nameofthespouse: '',
+          nameofFather: '',
+          address: '',
+          state: '',
+          district: '',
+          taluka: '',
+          gramPanchayat: '',
+          village: '',
+          scheduledTribe: '',
+          otherTraditionalForestDweller: '',
+          name: '',
+          age: '',
+          forHabitation: '',
+          forSelfCultivation: '',
+          disputedLands: '',
+          pattas: '',
+          alternativeLand: '',
+          landFromWhereDisplacedWithoutCompensation: '',
+          extentOfLandInForestVillages: '',
+          anyOtherTraditionalRight: '',
+          evidenceInSupport: '',
+          anyOtherInformation: '',
+          declaration: false
+        });
+        
+        setFilePreviews({
+          stCertificate: [],
+          spouseStCertificate: [],
+          evidenceFiles: []
+        });
+        
+        setCurrentSection(1);
+      })
+    .catch((err)=>
+      {
+        console.log(err);
+      });
   };
 
   return (
@@ -340,12 +278,12 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="claimantName"
-                  value={formData.claimantName}
+                  name="nameoftheclaimant"
+                  value={formData.nameoftheclaimant}
                   onChange={handleInputChange}
-                  className={`w-full p-3 border rounded-lg ${errors.claimantName ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
+                  className={`w-full p-3 border rounded-lg ${errors.nameoftheclaimant ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 />
-                {errors.claimantName && <p className="text-red-600 text-sm mt-1">{errors.claimantName}</p>}
+                {errors.nameoftheclaimant && <p className="text-red-600 text-sm mt-1">{errors.nameoftheclaimant}</p>}
               </div>
 
               <div className="mb-4">
@@ -354,8 +292,8 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="spouseName"
-                  value={formData.spouseName}
+                  name="nameofthespouse"
+                  value={formData.nameofthespouse}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                 />
@@ -367,12 +305,12 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="parentName"
-                  value={formData.parentName}
+                  name="nameofFather"
+                  value={formData.nameofFather}
                   onChange={handleInputChange}
-                  className={`w-full p-3 border rounded-lg ${errors.parentName ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
+                  className={`w-full p-3 border rounded-lg ${errors.nameofFather ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 />
-                {errors.parentName && <p className="text-red-600 text-sm mt-1">{errors.parentName}</p>}
+                {errors.nameofFather && <p className="text-red-600 text-sm mt-1">{errors.nameofFather}</p>}
               </div>
 
               <div className="mb-4">
@@ -431,10 +369,10 @@ const Individual = () => {
                   7. Tehsil/Taluka: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="tehsil"
-                  value={formData.tehsil}
+                  name="taluka"
+                  value={formData.taluka}
                   onChange={handleInputChange}
-                  className={`w-full p-3 border rounded-lg ${errors.tehsil ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
+                  className={`w-full p-3 border rounded-lg ${errors.taluka ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                   disabled={!formData.district}
                 >
                   <option value="">Select Tehsil/Taluka</option>
@@ -442,7 +380,7 @@ const Individual = () => {
                     <option key={taluka} value={taluka}>{taluka}</option>
                   ))}
                 </select>
-                {errors.tehsil && <p className="text-red-600 text-sm mt-1">{errors.tehsil}</p>}
+                {errors.taluka && <p className="text-red-600 text-sm mt-1">{errors.taluka}</p>}
               </div>
 
               <div className="mb-4">
@@ -454,7 +392,7 @@ const Individual = () => {
                   value={formData.gramPanchayat}
                   onChange={handleInputChange}
                   className={`w-full p-3 border rounded-lg ${errors.gramPanchayat ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                  disabled={!formData.tehsil}
+                  disabled={!formData.taluka}
                 >
                   <option value="">Select Gram Panchayat</option>
                   {filteredPanchayats.map(panchayat => (
@@ -551,9 +489,9 @@ const Individual = () => {
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
-                      name="traditionalForestDweller"
+                      name="otherTraditionalForestDweller"
                       value="yes"
-                      checked={formData.traditionalForestDweller === 'yes'}
+                      checked={formData.otherTraditionalForestDweller === 'yes'}
                       onChange={handleInputChange}
                       className="text-green-600 focus:ring-green-500"
                       disabled={formData.scheduledTribe === 'yes'}
@@ -563,9 +501,9 @@ const Individual = () => {
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
-                      name="traditionalForestDweller"
+                      name="otherTraditionalForestDweller"
                       value="no"
-                      checked={formData.traditionalForestDweller === 'no'}
+                      checked={formData.otherTraditionalForestDweller === 'no'}
                       onChange={handleInputChange}
                       className="text-green-600 focus:ring-green-500"
                       disabled={formData.scheduledTribe === 'yes'}
@@ -573,9 +511,9 @@ const Individual = () => {
                     <span className="ml-2">No</span>
                   </label>
                 </div>
-                {errors.traditionalForestDweller && <p className="text-red-600 text-sm mt-1">{errors.traditionalForestDweller}</p>}
+                {errors.otherTraditionalForestDweller && <p className="text-red-600 text-sm mt-1">{errors.otherTraditionalForestDweller}</p>}
                 
-                {formData.traditionalForestDweller === 'yes' && formData.scheduledTribe !== 'yes' && (
+                {formData.otherTraditionalForestDweller === 'yes' && formData.scheduledTribe !== 'yes' && (
                   <>
                     <label className="block text-green-900 font-medium mb-1 mt-3">
                       If Spouse is Scheduled Tribe, attach certificate:
@@ -606,58 +544,42 @@ const Individual = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block text-green-900 font-medium mb-1">
+                <label className="block text-green-900 font-medium mb-3">
                   11. Other Family Members (with age):
                 </label>
                 
-                {formData.familyMembers.map((member, index) => (
-                  <div key={index} className="border border-green-300 p-4 rounded-lg mb-3 relative">
-                    {formData.familyMembers.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => removeFamilyMember(index)}
-                        className="absolute top-2 right-2 text-red-600 text-xl"
-                      >
-                        ×
-                      </button>
-                    )}
-                    
-                    <div className="mb-3">
-                      <label className="block text-green-900 font-medium mb-1">
-                        Name: <span className="text-red-600">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        value={member.name}
-                        onChange={(e) => handleFamilyMemberChange(index, 'name', e.target.value)}
-                        className={`w-full p-2 border rounded-lg ${errors[`memberName-${index}`] ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                      />
-                      {errors[`memberName-${index}`] && <p className="text-red-600 text-sm mt-1">{errors[`memberName-${index}`]}</p>}
-                    </div>
-                    
-                    <div>
-                      <label className="block text-green-900 font-medium mb-1">
-                        Age: <span className="text-red-600">*</span>
-                      </label>
-                      <input
-                        type="number"
-                        value={member.age}
-                        onChange={(e) => handleFamilyMemberChange(index, 'age', e.target.value)}
-                        min="0"
-                        className={`w-full p-2 border rounded-lg ${errors[`memberAge-${index}`] ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                      />
-                      {errors[`memberAge-${index}`] && <p className="text-red-600 text-sm mt-1">{errors[`memberAge-${index}`]}</p>}
-                    </div>
+                <div className="border border-green-200 rounded-lg p-4 bg-green-25">
+                  <div className="mb-3">
+                    <label className="block text-green-900 font-medium mb-1">
+                      Name: <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className={`w-full p-3 border rounded-lg ${errors.name ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
+                      placeholder="Enter family member name"
+                    />
+                    {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
                   </div>
-                ))}
-                
-                <button
-                  type="button"
-                  onClick={addFamilyMember}
-                  className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm"
-                >
-                  Add Another Family Member
-                </button>
+                  
+                  <div className="mb-3">
+                    <label className="block text-green-900 font-medium mb-1">
+                      Age: <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="number"
+                      name="age"
+                      value={formData.age}
+                      onChange={handleInputChange}
+                      min="0"
+                      className={`w-full p-3 border rounded-lg ${errors.age ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
+                      placeholder="Enter age"
+                    />
+                    {errors.age && <p className="text-red-600 text-sm mt-1">{errors.age}</p>}
+                  </div>
+                </div>
               </div>
               
               <div className="flex justify-between mt-6">
@@ -686,7 +608,7 @@ const Individual = () => {
               
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-3">
-                  1. Extent of Forest Land Occupied:
+                  13. Extent of Forest Land Occupied:
                 </label>
                 
                 <div className="mb-3">
@@ -695,8 +617,8 @@ const Individual = () => {
                   </label>
                   <input
                     type="number"
-                    name="habitationLand"
-                    value={formData.habitationLand}
+                    name="forHabitation"
+                    value={formData.forHabitation}
                     onChange={handleInputChange}
                     min="0"
                     step="0.01"
@@ -710,8 +632,8 @@ const Individual = () => {
                   </label>
                   <input
                     type="number"
-                    name="cultivationLand"
-                    value={formData.cultivationLand}
+                    name="forSelfCultivation"
+                    value={formData.forSelfCultivation}
                     onChange={handleInputChange}
                     min="0"
                     step="0.01"
@@ -722,7 +644,7 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  2. Disputed Lands, if any:
+                  14. Disputed Lands, if any:
                 </label>
                 <textarea
                   name="disputedLands"
@@ -735,11 +657,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  3. Pattas/Leases/Grants, if any:
+                  15. Pattas/Leases/Grants, if any:
                 </label>
                 <textarea
-                  name="pattasLeases"
-                  value={formData.pattasLeases}
+                  name="pattas"
+                  value={formData.pattas}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -748,11 +670,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  4. Land for In Situ Rehabilitation or Alternative Land, if any:
+                  16. Land for In Situ Rehabilitation or Alternative Land, if any:
                 </label>
                 <textarea
-                  name="rehabilitationLand"
-                  value={formData.rehabilitationLand}
+                  name="alternativeLand"
+                  value={formData.alternativeLand}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -761,11 +683,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  5. Land from Where Displaced Without Compensation:
+                  17. Land from Where Displaced Without Compensation:
                 </label>
                 <textarea
-                  name="displacedLand"
-                  value={formData.displacedLand}
+                  name="landFromWhereDisplacedWithoutCompensation"
+                  value={formData.landFromWhereDisplacedWithoutCompensation}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -774,12 +696,12 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  6. Extent of Land in Forest Villages, if any (in acres):
+                  18. Extent of Land in Forest Villages, if any (in acres):
                 </label>
                 <input
                   type="number"
-                  name="forestVillageLand"
-                  value={formData.forestVillageLand}
+                  name="extentOfLandInForestVillages"
+                  value={formData.extentOfLandInForestVillages}
                   onChange={handleInputChange}
                   min="0"
                   step="0.01"
@@ -789,11 +711,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  7. Any Other Traditional Right, if any:
+                  19. Any Other Traditional Right, if any:
                 </label>
                 <textarea
-                  name="traditionalRights"
-                  value={formData.traditionalRights}
+                  name="anyOtherTraditionalRight"
+                  value={formData.anyOtherTraditionalRight}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -802,11 +724,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  8. Evidence in Support:
+                  20. Evidence in Support:
                 </label>
                 <textarea
-                  name="evidence"
-                  value={formData.evidence}
+                  name="evidenceInSupport"
+                  value={formData.evidenceInSupport}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -841,11 +763,11 @@ const Individual = () => {
 
               <div className="mb-4">
                 <label className="block text-green-900 font-medium mb-1">
-                  9. Any Other Information:
+                  21. Any Other Information:
                 </label>
                 <textarea
-                  name="additionalInfo"
-                  value={formData.additionalInfo}
+                  name="anyOtherInformation"
+                  value={formData.anyOtherInformation}
                   onChange={handleInputChange}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
@@ -878,33 +800,25 @@ const Individual = () => {
               
               <div className="mb-6">
                 <h3 className="text-lg font-medium text-green-800 mb-2">Claimant Details</h3>
-                <p><strong>Name:</strong> {formData.claimantName || 'Not provided'}</p>
-                <p><strong>Spouse Name:</strong> {formData.spouseName || 'Not provided'}</p>
-                <p><strong>Parent Name:</strong> {formData.parentName || 'Not provided'}</p>
+                <p><strong>Name:</strong> {formData.nameoftheclaimant || 'Not provided'}</p>
+                <p><strong>Spouse Name:</strong> {formData.nameofthespouse || 'Not provided'}</p>
+                <p><strong>Parent Name:</strong> {formData.nameofFather || 'Not provided'}</p>
                 <p><strong>Address:</strong> {formData.address || 'Not provided'}</p>
                 <p><strong>State:</strong> {formData.state || 'Not provided'}</p>
                 <p><strong>District:</strong> {formData.district || 'Not provided'}</p>
                 <p><strong>Village:</strong> {formData.village || 'Not provided'}</p>
                 <p><strong>Gram Panchayat:</strong> {formData.gramPanchayat || 'Not provided'}</p>
-                <p><strong>Tehsil/Taluka:</strong> {formData.tehsil || 'Not provided'}</p>
+                <p><strong>Tehsil/Taluka:</strong> {formData.taluka || 'Not provided'}</p>
                 <p><strong>Scheduled Tribe:</strong> {formData.scheduledTribe || 'Not provided'}</p>
-               
-                <h3 className="text-lg font-medium text-green-800 mt-4 mb-2">Family Members</h3>
-                {formData.familyMembers.length > 0 ? (
-                  <ul className="list-disc pl-5">
-                    {formData.familyMembers.map((member, index) => (
-                      <li key={index}>{member.name} ({member.age} years)</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No family members added</p>
-                )}
+                <p><strong>Other Traditional Forest Dweller:</strong> {formData.otherTraditionalForestDweller || 'Not provided'}</p>
+                <p><strong>Family Member Name:</strong> {formData.name || 'Not provided'}</p>
+                <p><strong>Family Member Age:</strong> {formData.age || 'Not provided'}</p>
                 
                 <h3 className="text-lg font-medium text-green-800 mt-4 mb-2">Land Details</h3>
-                <p><strong>Land for Habitation:</strong> {formData.habitationLand || '0'} acres</p>
-                <p><strong>Land for Cultivation:</strong> {formData.cultivationLand || '0'} acres</p>
+                <p><strong>Land for Habitation:</strong> {formData.forHabitation || '0'} acres</p>
+                <p><strong>Land for Cultivation:</strong> {formData.forSelfCultivation || '0'} acres</p>
                 <p><strong>Disputed Lands:</strong> {formData.disputedLands || 'None'}</p>
-                <p><strong>Forest Village Land:</strong> {formData.forestVillageLand || '0'} acres</p>
+                <p><strong>Forest Village Land:</strong> {formData.extentOfLandInForestVillages || '0'} acres</p>
               </div>
               
               <div className="mb-4">
