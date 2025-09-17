@@ -1,4 +1,5 @@
 @import "tailwindcss";
-*{
-    
+/* remove black focus box on clicked states */
+.leaflet-interactive:focus {
+  outline: none;
 }

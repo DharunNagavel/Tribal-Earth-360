@@ -1,8 +1,25 @@
 import React from 'react'
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import { Link } from 'react-router-dom'
 import { Login } from './Login';
 import  { useState } from 'react';
-export const Signup = () => {
+export const Signup = ({setvisible}) => {
+    const formRef = useRef(null);
+    const titleRef = useRef(null);
+
+    useEffect(() => {
+        gsap.fromTo(
+            formRef.current,
+            { y: 60, opacity: 0, scale: 0.95 },
+            { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' }
+        );
+        gsap.fromTo(
+            titleRef.current,
+            { y: -40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.2 }
+        );
+    }, []);
     const stateDistricts = {
   "Andhra Pradesh": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Krishna", "Kurnool", "Prakasam", "SPS Nellore", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari", "YSR Kadapa"],
   "Arunachal Pradesh": ["Tawang", "West Kameng", "East Kameng", "Papum Pare", "Kurung Kumey", "Kra Daadi", "Lower Subansiri", "Upper Subansiri", "West Siang", "East Siang", "Siang", "Upper Siang", "Lower Siang", "Lower Dibang Valley", "Dibang Valley", "Anjaw", "Lohit", "Namsai", "Changlang", "Tirap", "Longding"],
@@ -67,12 +84,11 @@ export const Signup = () => {
     const handleDistrictChange = (e) => {
         setSelectedDistrict(e.target.value);
     };
-
     return (
-        <div className='bg-green-100 w-full h-screen flex justify-center items-center flex-col'>
-            <div>
-                <form action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg'>
-                    <h1 className='text-5xl font-bold text-center text-green-700 m-3'>SignUp</h1>
+        <div className='bg-green-100 w-full h-screen flex justify-center items-center'>
+            <div className='w-full max-w-md'>
+                <form ref={formRef} action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg w-full justify-center'>
+                    <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>SignUp</h1>
                     <input type="text" placeholder='Enter the Username' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
                     <input type="mail" placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
                     <input type="tel" placeholder='Enter the Aadar No' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
@@ -139,7 +155,7 @@ export const Signup = () => {
                         </button>
                     </div>
                     <button className='bg-green-600 text-white p-2 rounded-xl text-2xl'>Submit</button>
-                    <p className='text-center'>Do you already have an account? <Link to="/login" className='text-green-500'>Login</Link></p>
+                    <p className='text-center'>Do you already have an account? <button onClick={()=>{setvisible('login')}} className='text-green-500 cursor-pointer'>Login</button></p>
                 </form>
             </div>
         </div>
