@@ -5,6 +5,31 @@ const Individual = () => {
   
   const [currentSection, setCurrentSection] = useState(1);
   const [memberCount, setMemberCount] = useState(1);
+  const [claimantDetails, setClaimantDetails] = useState({
+    nameoftheclaimant: '',
+    nameofthespouse: '',
+    nameofFather: '',
+    address: '',
+    state: '',
+    district: '',
+    taluka: '',
+    gramPanchayat: '',
+    village: '',
+    scheduledTribe: '',
+    otherTraditionalForestDweller: '',
+    name: '',
+    age: '',
+    forHabitation: '',
+    forSelfCultivation: '',
+    disputedLands: '',
+    pattas: '',
+    alternativeLand: '',
+    landFromWhereDisplacedWithoutCompensation: '',
+    extentOfLandInForestVillages: '',
+    anyOtherTraditionalRight: '',
+    evidenceInSupport: '',
+    anyOtherInformation: ''
+  });
   const [formData, setFormData] = useState({
     claimantName: '',
     spouseName: '',
