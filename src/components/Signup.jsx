@@ -47,7 +47,7 @@ import axios from 'axios';
   "Puducherry": ["Karaikal", "Mahe", "Puducherry", "Yanam"]
 };
 
-export const Signup = ({setvisible}) => {
+export const Signup = ({setvisible,setuser}) => {
 
     const formRef = useRef(null);
     const titleRef = useRef(null);
@@ -103,6 +103,7 @@ export const Signup = ({setvisible}) => {
         .then((res)=>
             {
                 console.log(res);
+                setuser(true);
                 navigate('/');
             })
         .catch(err=>console.log(err))

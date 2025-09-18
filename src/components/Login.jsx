@@ -3,7 +3,7 @@ import { useEffect, useRef,useState } from 'react';
 import { gsap } from 'gsap';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
-export const Login = ({setvisible}) => {
+export const Login = ({setvisible,setuser}) => {
 
   const [mail, setmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +38,7 @@ export const Login = ({setvisible}) => {
       .then((res)=>
         {
           console.log(res);
+          setuser(true);
           Navigate('/');
         })
         .catch((err)=>

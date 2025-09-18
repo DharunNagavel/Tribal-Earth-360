@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import indiaStateData from "../assets/india_state_data.json";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Individual = () => {
   const [currentSection, setCurrentSection] = useState(1);
@@ -37,6 +38,7 @@ const Individual = () => {
     evidenceFiles: []
   });
 
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [filteredDistricts, setFilteredDistricts] = useState([]);
   const [filteredTalukas, setFilteredTalukas] = useState([]);
@@ -231,6 +233,7 @@ const Individual = () => {
         });
         
         setCurrentSection(1);
+        navigate('/final');
       })
     .catch((err)=>
       {

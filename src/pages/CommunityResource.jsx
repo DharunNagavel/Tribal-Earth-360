@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CommunityResource = () => {
   const [currentSection, setCurrentSection] = useState(1);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     village: "",
     grampanchayat: "",
@@ -71,6 +73,7 @@ const CommunityResource = () => {
           declaration: false,
     });
     setCurrentSection(1);
+    navigate('/final');
       })
     .catch((err)=>
       {
