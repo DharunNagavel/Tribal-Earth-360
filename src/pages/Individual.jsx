@@ -182,61 +182,28 @@ const Individual = () => {
       alert('Please complete all required fields before proceeding.');
       return;
     }
-    
+
     setCurrentSection(sectionNum);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!formData.declaration) {
-      setErrors(prev => ({ ...prev, declaration: 'You must accept the declaration' }));
+      setErrors((prev) => ({
+        ...prev,
+        declaration: "You must accept the declaration",
+      }));
       return;
     }
-    axios.post('http://localhost:7000/api/v1/patta/individual', formData)
-    .then((res)=>
-      {
+    axios.post("http://localhost:7000/api/v1/patta/individual", formData)
+      .then((res) => {
         console.log(res);
-        alert('Form submitted successfully! Your claim has been received and will be processed.');
-        // Reset form
-        setFormData({
-          nameoftheclaimant: '',
-          nameofthespouse: '',
-          nameofFather: '',
-          address: '',
-          state: '',
-          district: '',
-          taluka: '',
-          gramPanchayat: '',
-          village: '',
-          scheduledTribe: '',
-          otherTraditionalForestDweller: '',
-          name: '',
-          age: '',
-          forHabitation: '',
-          forSelfCultivation: '',
-          disputedLands: '',
-          pattas: '',
-          alternativeLand: '',
-          landFromWhereDisplacedWithoutCompensation: '',
-          extentOfLandInForestVillages: '',
-          anyOtherTraditionalRight: '',
-          evidenceInSupport: '',
-          anyOtherInformation: '',
-          declaration: false
-        });
         
-        setFilePreviews({
-          stCertificate: [],
-          spouseStCertificate: [],
-          evidenceFiles: []
-        });
-        
-        setCurrentSection(1);
-        navigate('/schemes');
+        // ✅ Pass formData to Displayscheme
+        navigate("/schemes", { state: { formData:formData,formType: "individual" } });
       })
-    .catch((err)=>
-      {
+      .catch((err) => {
         console.log(err);
       });
   };

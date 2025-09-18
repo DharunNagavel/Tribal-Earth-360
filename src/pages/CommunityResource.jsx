@@ -33,7 +33,6 @@ const CommunityResource = () => {
     setFormData((prev) => ({ ...prev, borderingvillages: updated }));
   };
 
-  // Validate current section before navigation or submit
   const validateSection = (section) => {
     const newErrors = {};
     if (section === 3 && !formData.declaration) {
@@ -52,33 +51,73 @@ const CommunityResource = () => {
     setErrors({});
   };
 
-  const handleSubmit = (e) => {
+  // Transform formData to AI API format
+  const transformForAI = (data) => ({
+    State: data.district,
+    "Village": data.village,
+    "Gram Panchayat": data.grampanchayat,
+    "Taluka": data.taluka,
+    "District": data.district,
+    "Compartment No": data.compartmentno,
+    "Bordering Villages": data.borderingvillages.join(", "),
+    "List of Evidence": data.listofevidenceinsupport,
+    "FDST community": "N/A",
+    "OTFD community": "N/A",
+    "Community rights such as nistar": "No",
+    "Rights over minor forest produce": "No",
+    "Uses": "N/A",
+    "Grazing": "No",
+    "Traditional resource access for nomadic and pastoralist": "No",
+    "Community tenures of habitat and habitation": "No",
+    "Right to access biodiversity": "No",
+    "Other traditional rights": "No"
+  });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateSection(currentSection)) return;
-    axios.post('http://localhost:7000/api/v1/patta/communityresource', formData)
-    .then((res)=>
-      {
-        console.log(res);
-        alert("Community Forest Rights Form submitted successfully!");
-        setErrors({});
-        setFormData({
-          village: "",
-          grampanchayat: "",
-          taluka: "",
-          district: "",
-          nameofmembersofthegramsabha: "",
-          compartmentno: "",
-          borderingvillages: ["", "", ""],
-          listofevidenceinsupport: "",
-          declaration: false,
-    });
-    setCurrentSection(1);
-    navigate('/final');
-      })
-    .catch((err)=>
-      {
-        console.log(err);
-      })
+
+    try {
+      // 1️⃣ Submit form to Node.js backend
+      await axios.post(
+        "http://localhost:7000/api/v1/patta/communityresource",
+        formData
+      );
+
+      // 2️⃣ Call Flask AI API
+      const aiResponse = await axios.post(
+        "http://localhost:5000/api/community-resources/predict",
+        { userData: transformForAI(formData) }
+      );
+
+      // 3️⃣ Navigate to Displayscheme with AI recommendations
+      navigate("/schemes", {
+        state: {
+          formData,
+          formType: "communityResources",
+          recommendedSchemes: aiResponse.data.recommendedSchemes || [],
+          communityName: formData.village,
+        },
+      });
+
+      // 4️⃣ Reset form
+      setFormData({
+        village: "",
+        grampanchayat: "",
+        taluka: "",
+        district: "",
+        nameofmembersofthegramsabha: "",
+        compartmentno: "",
+        borderingvillages: ["", "", ""],
+        listofevidenceinsupport: "",
+        declaration: false,
+      });
+      setCurrentSection(1);
+      setErrors({});
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -95,7 +134,9 @@ const CommunityResource = () => {
             {[1, 2, 3].map((step) => (
               <div
                 key={step}
-                className={`flex items-center mb-6 md:mb-0 ${step !== 1 ? "md:ml-4" : ""}`}
+                className={`flex items-center mb-6 md:mb-0 ${
+                  step !== 1 ? "md:ml-4" : ""
+                }`}
               >
                 <div
                   className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white ${
@@ -107,7 +148,9 @@ const CommunityResource = () => {
                 <div className="ml-3">
                   <div
                     className={`text-sm ${
-                      currentSection === step ? "text-green-800 font-medium" : "text-gray-600"
+                      currentSection === step
+                        ? "text-green-800 font-medium"
+                        : "text-gray-600"
                     }`}
                   >
                     {step === 1 && "Basic Info"}
@@ -121,11 +164,13 @@ const CommunityResource = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          {/* Section 1: Basic Info */}
+          {/* Section 1 */}
           {currentSection === 1 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
-                <label className="block font-medium mb-1">1. Village / Gram Sabha:</label>
+                <label className="block font-medium mb-1">
+                  1. Village / Gram Sabha:
+                </label>
                 <input
                   type="text"
                   name="village"
@@ -185,7 +230,9 @@ const CommunityResource = () => {
               </div>
 
               <div>
-                <label className="block font-medium mb-1">6. Khasra / Compartment No(s):</label>
+                <label className="block font-medium mb-1">
+                  6. Khasra / Compartment No(s):
+                </label>
                 <input
                   type="text"
                   name="compartmentno"
@@ -207,7 +254,7 @@ const CommunityResource = () => {
             </div>
           )}
 
-          {/* Section 2: Bordering Villages */}
+          {/* Section 2 */}
           {currentSection === 2 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
@@ -246,11 +293,13 @@ const CommunityResource = () => {
             </div>
           )}
 
-          {/* Section 3: Evidence & Declaration */}
+          {/* Section 3 */}
           {currentSection === 3 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
-                <label className="block font-medium mb-1">8. List of Evidence in Support:</label>
+                <label className="block font-medium mb-1">
+                  8. List of Evidence in Support:
+                </label>
                 <textarea
                   name="listofevidenceinsupport"
                   placeholder="Attach supporting documents"

@@ -140,10 +140,11 @@ const Community = () => {
       return;
     }
     axios.post('http://localhost:7000/api/v1/patta/community',{formData})
-    .then((res)=>
+    .then(async (res)=>
       {
         console.log(res);
-        alert('Community Rights Form submitted successfully!');
+        await axios.post('http://localhost:7000/api/v1/patta/community', { formData });
+        navigate('/schemes', { state: { formData, formType: "community" } });
         setErrors({});
         setCurrentSection(1);
         setFormData({
@@ -166,7 +167,6 @@ const Community = () => {
           anyotherinformation: '',
           declaration: false,
         });
-        navigate('/final');
       })
     .catch((err)=>
       {
