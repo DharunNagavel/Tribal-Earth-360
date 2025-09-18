@@ -1,16 +1,17 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const CommunityResource = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [formData, setFormData] = useState({
     village: "",
-    gramPanchayat: "",
-    tehsil: "",
+    grampanchayat: "",
+    taluka: "",
     district: "",
-    members: "",
-    khasra: "",
-    borderingVillages: ["", "", ""],
-    evidence: "",
+    nameofmembersofthegramsabha: "",
+    compartmentno: "",
+    borderingvillages: ["", "", ""],
+    listofevidenceinsupport: "",
     declaration: false,
   });
 
@@ -25,9 +26,9 @@ const CommunityResource = () => {
   };
 
   const handleBorderingChange = (index, value) => {
-    const updated = [...formData.borderingVillages];
+    const updated = [...formData.borderingvillages];
     updated[index] = value;
-    setFormData((prev) => ({ ...prev, borderingVillages: updated }));
+    setFormData((prev) => ({ ...prev, borderingvillages: updated }));
   };
 
   // Validate current section before navigation or submit
@@ -52,21 +53,29 @@ const CommunityResource = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!validateSection(currentSection)) return;
-
-    alert("Community Forest Rights Form submitted successfully!");
-    setErrors({});
-    setFormData({
-      village: "",
-      gramPanchayat: "",
-      tehsil: "",
-      district: "",
-      members: "",
-      khasra: "",
-      borderingVillages: ["", "", ""],
-      evidence: "",
-      declaration: false,
+    axios.post('http://localhost:7000/api/v1/patta/communityresource', formData)
+    .then((res)=>
+      {
+        console.log(res);
+        alert("Community Forest Rights Form submitted successfully!");
+        setErrors({});
+        setFormData({
+          village: "",
+          grampanchayat: "",
+          taluka: "",
+          district: "",
+          nameofmembersofthegramsabha: "",
+          compartmentno: "",
+          borderingvillages: ["", "", ""],
+          listofevidenceinsupport: "",
+          declaration: false,
     });
     setCurrentSection(1);
+      })
+    .catch((err)=>
+      {
+        console.log(err);
+      })
   };
 
   return (
@@ -127,8 +136,8 @@ const CommunityResource = () => {
                 <label className="block font-medium mb-1">2. Gram Panchayat:</label>
                 <input
                   type="text"
-                  name="gramPanchayat"
-                  value={formData.gramPanchayat}
+                  name="grampanchayat"
+                  value={formData.grampanchayat}
                   onChange={handleInputChange}
                   className="w-full p-2 border border-green-300 rounded-lg"
                 />
@@ -138,8 +147,8 @@ const CommunityResource = () => {
                 <label className="block font-medium mb-1">3. Tehsil / Taluka:</label>
                 <input
                   type="text"
-                  name="tehsil"
-                  value={formData.tehsil}
+                  name="taluka"
+                  value={formData.taluka}
                   onChange={handleInputChange}
                   className="w-full p-2 border border-green-300 rounded-lg"
                 />
@@ -161,9 +170,9 @@ const CommunityResource = () => {
                   5. Name(s) of members of the Gram Sabha:
                 </label>
                 <textarea
-                  name="members"
+                  name="nameofmembersofthegramsabha"
                   placeholder="Attach list with ST/OTFD status"
-                  value={formData.members}
+                  value={formData.nameofmembersofthegramsabha}
                   onChange={handleInputChange}
                   className="w-full p-2 border border-green-300 rounded-lg"
                 />
@@ -176,8 +185,8 @@ const CommunityResource = () => {
                 <label className="block font-medium mb-1">6. Khasra / Compartment No(s):</label>
                 <input
                   type="text"
-                  name="khasra"
-                  value={formData.khasra}
+                  name="compartmentno"
+                  value={formData.compartmentno}
                   onChange={handleInputChange}
                   className="w-full p-2 border border-green-300 rounded-lg"
                 />
@@ -200,7 +209,7 @@ const CommunityResource = () => {
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
                 <label className="block font-medium mb-2">7. Bordering Villages:</label>
-                {formData.borderingVillages.map((village, index) => (
+                {formData.borderingvillages.map((village, index) => (
                   <input
                     key={index}
                     type="text"
@@ -240,9 +249,9 @@ const CommunityResource = () => {
               <div>
                 <label className="block font-medium mb-1">8. List of Evidence in Support:</label>
                 <textarea
-                  name="evidence"
+                  name="listofevidenceinsupport"
                   placeholder="Attach supporting documents"
-                  value={formData.evidence}
+                  value={formData.listofevidenceinsupport}
                   onChange={handleInputChange}
                   className="w-full p-2 border border-green-300 rounded-lg"
                 />

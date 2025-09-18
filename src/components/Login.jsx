@@ -1,10 +1,15 @@
 import React from 'react'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef,useState } from 'react';
 import { gsap } from 'gsap';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 export const Login = ({setvisible}) => {
+
+  const [mail, setmail] = useState("");
+  const [password, setPassword] = useState("");
   const formRef = useRef(null);
   const titleRef = useRef(null);
+  const Navigate = useNavigate()
 
   useEffect(() => {
     // Animate the form container
@@ -26,19 +31,36 @@ export const Login = ({setvisible}) => {
     setShowPassword((prev) => !prev);
   };
 
+  const handlesubmit = (e) => 
+    {
+      e.preventDefault();
+      axios.post('http://localhost:7000/api/v1/auth/signin',{mail,password})
+      .then((res)=>
+        {
+          console.log(res);
+          Navigate('/');
+        })
+        .catch((err)=>
+        {
+          console.log(err);
+        })
+    }
+
   return (
       <div className='bg-green-100 w-full h-screen flex justify-center items-center flex-col'>
-        <form ref={formRef} action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg'>
+        <form onSubmit={handlesubmit} ref={formRef} action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg'>
           <div className=''>
             <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>Login</h1>
           </div>
-          <input type="mail" placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+          <input type="mail" value={mail} onChange={(e) => {setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
           <div style={{ position: 'relative' }}>
             <input
               type={showPassword ? "text" : "password"}
               className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400 w-full pr-10'
               placeholder='Enter the Password'
               id='login-password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <button
               type="button"
@@ -50,7 +72,7 @@ export const Login = ({setvisible}) => {
               {showPassword ? "🙈" : "👁"}
             </button>
           </div>
-          <button className='bg-green-600 text-white p-2 rounded-xl text-2xl'>Submit</button>
+          <button type='submit' className='bg-green-600 text-white p-2 rounded-xl text-2xl'>Submit</button>
           <p>you don't have an account? <button  onClick={() => setvisible('signup')} className='text-green-500 cursor-pointer'>SignUp</button></p>
         </form>
       </div>

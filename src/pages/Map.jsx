@@ -3,6 +3,8 @@ import React, { useRef, useState, useMemo, useEffect } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
+import "leaflet/dist/leaflet.css";
+import rawIndiaDistricts from "../assets/in.json"; // Your uploaded GeoJSON (districts)
 import { FcSearch } from "react-icons/fc";
 import "leaflet/dist/leaflet.css";
 import rawIndiaStates from "../assets/in.json";       // India states GeoJSON
@@ -14,8 +16,6 @@ const indiaBounds = [
   [6.4627, 68.1097], // SW
   [37.6, 97.3956],   // NE
 ];
-
-
 /* Helper to get feature name (state or district) */
 function getName(feature) {
   if (!feature || !feature.properties) return "";
@@ -25,11 +25,18 @@ function getName(feature) {
     feature.properties.NAME_1 || // state
     feature.properties.st_nm ||
     feature.properties.STATE_NAME ||
+// 🔑 Extract district name safely
+function getName(feature) {
+  if (!feature || !feature.properties) return "";
+  return (
+    feature.properties.NAME_2 ||  // District name (Datameet / Census)
+    feature.properties.district ||
+    feature.properties.DISTRICT ||
     feature.properties.name ||
-    feature.properties.state ||
     ""
   );
 }
+
 
 
 /* Handles zoom when state or district is selected */
@@ -47,6 +54,17 @@ function MapActions({ selectedRegion, stateFeatures, districtFeatures }) {
     const layer = L.geoJSON(feature);
     map.fitBounds(layer.getBounds(), { padding: [20, 20] });
   }, [selectedRegion, stateFeatures, districtFeatures, map]);
+function MapActions({ selectedRegion, features }) {
+  const map = useMap();
+  useEffect(() => {
+    if (!selectedRegion) return;
+    const feature = features.find((f) => getName(f) === selectedRegion);
+    if (!feature) return;
+
+    const layer = L.geoJSON(feature);
+    const center = layer.getBounds().getCenter();
+    map.setView(center, 7);
+  }, [selectedRegion, features, map]);
   return null;
 }
 
@@ -54,6 +72,7 @@ function MapActions({ selectedRegion, stateFeatures, districtFeatures }) {
 export default function IndiaMap() {
   const [weather, setWeather] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+<<<<<<< HEAD
   const geoJsonRef = useRef(null);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [activeState, setActiveState] = useState(null);
@@ -92,6 +111,18 @@ export default function IndiaMap() {
     }
   };
 
+  const [selectedRegion, setSelectedRegion] = useState(null);
+  const [query, setQuery] = useState("");
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // 🔑 OpenWeather key
+
+  const features = useMemo(
+    () => (rawIndiaDistricts?.features || []),
+    []
+  );
+
+  const geoJsonRef = useRef(null);
 
   // Styles
   const defaultStyle = { color: "#ffffff", weight: 1.5, fillOpacity: 0 };
@@ -187,14 +218,43 @@ export default function IndiaMap() {
     getWeather(name);
   };
 
+    if (!q) return alert("Type a district name to search");
+
+    const match = features.find((f) =>
+      getName(f).toLowerCase().includes(q)
+    );
+    if (!match) return alert("No district found: " + query);
+
+    setSelectedRegion(getName(match));
+    getWeather(getName(match));
+  };
+
+  const getWeather = async (place) => {
+    try {
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${API_KEY}&units=metric`
+      );
+      const data = await res.json();
+      if (data.cod === 200) {
+        setWeather(data);
+      } else {
+        setWeather(null);
+        alert("Weather not found for " + place);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Failed to fetch weather");
+    }
+  };
 
   // 🔄 Auto-refresh weather tiles every 5 min
   useEffect(() => {
     const interval = setInterval(() => {
+      if (selectedRegion) getWeather(selectedRegion);
       setRefreshKey((prev) => prev + 1);
     }, 5 * 60 * 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [selectedRegion]);
 
 
   return (
@@ -240,7 +300,6 @@ export default function IndiaMap() {
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {/* Close button */}
           <button
             className="absolute top-4 right-4 p-2 text-2xl"
             onClick={() => setIsOpen(false)}
@@ -263,7 +322,8 @@ export default function IndiaMap() {
                     </div>
                   ) : (
                     <h1 className="bg-green-600 text-2xl text-white rounded-xl p-3 m-2">
-                      Pick a Region
+
+                      Pick a District
                     </h1>
                   )}
                   {weather ? (
@@ -276,7 +336,7 @@ export default function IndiaMap() {
                     </div>
                   ) : (
                     <h1 className="bg-green-600 text-white rounded-xl text-2xl p-2 m-2">
-                      Pick a Region
+                      Pick a District
                     </h1>
                   )}
                 </div>
@@ -311,9 +371,9 @@ export default function IndiaMap() {
           attribution="Labels © Esri"
         />
 
-        {/* States */}
+        {/* Districts only */}
         <GeoJSON
-          data={rawIndiaStates}
+          data={rawIndiaDistricts}
           style={styleFunc}
           onEachFeature={onEachState}
           ref={geoJsonRef}
@@ -337,8 +397,6 @@ export default function IndiaMap() {
     onEachFeature={onEachDistrict}
   />
 )}
-
-
         {/* Weather overlay */}
         <TileLayer
           key={refreshKey}
@@ -353,6 +411,8 @@ export default function IndiaMap() {
           stateFeatures={stateFeatures}
           districtFeatures={districtFeatures}
         />
+        {/* Fit to district center on selection */}
+        <MapActions selectedRegion={selectedRegion} features={features} />
       </MapContainer>
     </div>
   );

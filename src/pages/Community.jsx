@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import indiaStateData from "../assets/india_state_data.json";
+import axios from 'axios';
 
 const Community = () => {
   const [currentSection, setCurrentSection] = useState(1);
 
   const [formData, setFormData] = useState({
-    fdstCommunity: '',
-    otfdCommunity: '',
+    FDSTcommunity: '',
+    OTFDcommunity: '',
     state: '',
     district: '',
-    tehsil: '',
-    gramPanchayat: '',
+    taluka: '',
+    grampanchayat: '',
     village: '',
-    nistarRights: '',
-    minorForestProduce: '',
-    communityUses: '',
+    communityrightssuchasnistar: '',
+    rightsoverminorforestproduce: '',
+    uses: '',
     grazing: '',
-    traditionalAccess: '',
-    communityTenures: '',
-    biodiversityRights: '',
-    otherTraditionalRights: '',
-    evidence: '',
-    additionalInfo: '',
+    traditionalresourceaccessfornomadicandpastoralist: '',
+    communitytenuresofhabitatandhabitation: '',
+    righttoaccessbiodiversity: '',
+    othertraditionalrights: '',
+    evidenceinsupport: '',
+    anyotherinformation: '',
     declaration: false,
   });
 
@@ -42,8 +43,8 @@ const Community = () => {
     setFormData(prev => ({
       ...prev,
       district: '',
-      tehsil: '',
-      gramPanchayat: '',
+      taluka: '',
+      grampanchayat: '',
       village: ''
     }));
     setFilteredTalukas([]);
@@ -57,7 +58,7 @@ const Community = () => {
     } else {
       setFilteredTalukas([]);
     }
-    setFormData(prev => ({ ...prev, tehsil: '', gramPanchayat: '', village: '' }));
+    setFormData(prev => ({ ...prev, taluka: '', grampanchayat: '', village: '' }));
     setFilteredPanchayats([]);
     setFilteredVillages([]);
   }, [formData.district]);
@@ -66,31 +67,31 @@ const Community = () => {
     if (
       formData.state &&
       formData.district &&
-      formData.tehsil &&
-      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.tehsil]
+      formData.taluka &&
+      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]
     ) {
-      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.tehsil].panchayats));
+      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats));
     } else {
       setFilteredPanchayats([]);
     }
-    setFormData(prev => ({ ...prev, gramPanchayat: '', village: '' }));
+    setFormData(prev => ({ ...prev, grampanchayat: '', village: '' }));
     setFilteredVillages([]);
-  }, [formData.tehsil]);
+  }, [formData.taluka]);
 
   useEffect(() => {
     if (
       formData.state &&
       formData.district &&
-      formData.tehsil &&
-      formData.gramPanchayat &&
-      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.tehsil]?.panchayats[formData.gramPanchayat]
+      formData.taluka &&
+      formData.grampanchayat &&
+      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]?.panchayats[formData.grampanchayat]
     ) {
-      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.tehsil].panchayats[formData.gramPanchayat]);
+      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats[formData.grampanchayat]);
     } else {
       setFilteredVillages([]);
     }
     setFormData(prev => ({ ...prev, village: '' }));
-  }, [formData.gramPanchayat]);
+  }, [formData.grampanchayat]);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -104,13 +105,13 @@ const Community = () => {
   const validateSection = (sectionNum) => {
     const newErrors = {};
     if (sectionNum === 1) {
-      if (!formData.fdstCommunity) newErrors.fdstCommunity = 'Please select FDST community';
-      if (!formData.otfdCommunity) newErrors.otfdCommunity = 'Please select OTFD community';
+      if (!formData.FDSTcommunity) newErrors.FDSTcommunity = 'Please select FDST community';
+      if (!formData.OTFDcommunity) newErrors.OTFDcommunity = 'Please select OTFD community';
     } else if (sectionNum === 2) {
       if (!formData.state) newErrors.state = 'Please select state';
       if (!formData.district) newErrors.district = 'Please select district';
-      if (!formData.tehsil) newErrors.tehsil = 'Please select tehsil/taluka';
-      if (!formData.gramPanchayat) newErrors.gramPanchayat = 'Please select gram panchayat';
+      if (!formData.taluka) newErrors.taluka = 'Please select tehsil/taluka';
+      if (!formData.grampanchayat) newErrors.grampanchayat = 'Please select gram panchayat';
       if (!formData.village) newErrors.village = 'Please select village';
     } else if (sectionNum === 3) {
       // No mandatory fields here, but could add if needed
@@ -137,29 +138,38 @@ const Community = () => {
       setErrors({ declaration: 'You must accept the declaration' });
       return;
     }
-    alert('Community Rights Form submitted successfully!');
-    setErrors({});
-    setCurrentSection(1);
-    setFormData({
-      fdstCommunity: '',
-      otfdCommunity: '',
-      state: '',
-      district: '',
-      tehsil: '',
-      gramPanchayat: '',
-      village: '',
-      nistarRights: '',
-      minorForestProduce: '',
-      communityUses: '',
-      grazing: '',
-      traditionalAccess: '',
-      communityTenures: '',
-      biodiversityRights: '',
-      otherTraditionalRights: '',
-      evidence: '',
-      additionalInfo: '',
-      declaration: false,
-    });
+    axios.post('http://localhost:7000/api/v1/patta/community',{formData})
+    .then((res)=>
+      {
+        console.log(res);
+        alert('Community Rights Form submitted successfully!');
+        setErrors({});
+        setCurrentSection(1);
+        setFormData({
+          FDSTcommunity: '',
+          OTFDcommunity: '',
+          state: '',
+          district: '',
+          taluka: '',
+          grampanchayat: '',
+          village: '',
+          communityrightssuchasnistar: '',
+          rightsoverminorforestproduce: '',
+          uses: '',
+          grazing: '',
+          traditionalresourceaccessfornomadicandpastoralist: '',
+          communitytenuresofhabitatandhabitation: '',
+          righttoaccessbiodiversity: '',
+          othertraditionalrights: '',
+          evidenceinsupport: '',
+          anyotherinformation: '',
+          declaration: false,
+        });
+      })
+    .catch((err)=>
+      {
+        console.log(err);
+      })
   };
 
   return (
@@ -209,38 +219,38 @@ const Community = () => {
               <label className="block mb-4">
                 FDST community: <span className="text-red-600">*</span>
                 <select
-                  name="fdstCommunity"
-                  value={formData.fdstCommunity}
+                  name="FDSTcommunity"
+                  value={formData.FDSTcommunity}
                   onChange={handleInputChange}
                   className={`w-full p-2 border rounded-lg mt-1 ${
-                    errors.fdstCommunity ? 'border-red-500' : 'border-green-300'
+                    errors.FDSTcommunity ? 'border-red-500' : 'border-green-300'
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {errors.fdstCommunity && (
-                  <p className="text-red-600 text-sm mt-1">{errors.fdstCommunity}</p>
+                {errors.FDSTcommunity && (
+                  <p className="text-red-600 text-sm mt-1">{errors.FDSTcommunity}</p>
                 )}
               </label>
 
               <label className="block">
                 OTFD community: <span className="text-red-600">*</span>
                 <select
-                  name="otfdCommunity"
-                  value={formData.otfdCommunity}
+                  name="OTFDcommunity"
+                  value={formData.OTFDcommunity}
                   onChange={handleInputChange}
                   className={`w-full p-2 border rounded-lg mt-1 ${
-                    errors.otfdCommunity ? 'border-red-500' : 'border-green-300'
+                    errors.OTFDcommunity ? 'border-red-500' : 'border-green-300'
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {errors.otfdCommunity && (
-                  <p className="text-red-600 text-sm mt-1">{errors.otfdCommunity}</p>
+                {errors.OTFDcommunity && (
+                  <p className="text-red-600 text-sm mt-1">{errors.OTFDcommunity}</p>
                 )}
               </label>
 
@@ -307,12 +317,12 @@ const Community = () => {
               <label className="block mb-4">
                 Tehsil/Taluka: <span className="text-red-600">*</span>
                 <select
-                  name="tehsil"
-                  value={formData.tehsil}
+                  name="taluka"
+                  value={formData.taluka}
                   onChange={handleInputChange}
                   disabled={!formData.district}
                   className={`w-full p-2 border rounded-lg ${
-                    errors.tehsil ? 'border-red-500' : 'border-green-300'
+                    errors.taluka ? 'border-red-500' : 'border-green-300'
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select Tehsil/Taluka</option>
@@ -322,18 +332,18 @@ const Community = () => {
                     </option>
                   ))}
                 </select>
-                {errors.tehsil && <p className="text-red-600 text-sm mt-1">{errors.tehsil}</p>}
+                {errors.taluka && <p className="text-red-600 text-sm mt-1">{errors.taluka}</p>}
               </label>
 
               <label className="block mb-4">
                 Gram Panchayat: <span className="text-red-600">*</span>
                 <select
-                  name="gramPanchayat"
-                  value={formData.gramPanchayat}
+                  name="grampanchayat"
+                  value={formData.grampanchayat}
                   onChange={handleInputChange}
-                  disabled={!formData.tehsil}
+                  disabled={!formData.taluka}
                   className={`w-full p-2 border rounded-lg ${
-                    errors.gramPanchayat ? 'border-red-500' : 'border-green-300'
+                    errors.grampanchayat ? 'border-red-500' : 'border-green-300'
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select Gram Panchayat</option>
@@ -343,8 +353,8 @@ const Community = () => {
                     </option>
                   ))}
                 </select>
-                {errors.gramPanchayat && (
-                  <p className="text-red-600 text-sm mt-1">{errors.gramPanchayat}</p>
+                {errors.grampanchayat && (
+                  <p className="text-red-600 text-sm mt-1">{errors.grampanchayat}</p>
                 )}
               </label>
 
@@ -354,7 +364,7 @@ const Community = () => {
                   name="village"
                   value={formData.village}
                   onChange={handleInputChange}
-                  disabled={!formData.gramPanchayat}
+                  disabled={!formData.grampanchayat}
                   className={`w-full p-2 border rounded-lg ${
                     errors.village ? 'border-red-500' : 'border-green-300'
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
@@ -396,23 +406,23 @@ const Community = () => {
               </h2>
 
               <textarea
-                name="nistarRights"
+                name="communityrightssuchasnistar"
                 placeholder="1. Community rights such as nistar, if any"
-                value={formData.nistarRights}
+                value={formData.communityrightssuchasnistar}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="minorForestProduce"
+                name="rightsoverminorforestproduce"
                 placeholder="2. Rights over minor forest produce, if any"
-                value={formData.minorForestProduce}
+                value={formData.rightsoverminorforestproduce}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="communityUses"
+                name="uses"
                 placeholder="3(a). Uses/entitlements (fish, water bodies), if any"
-                value={formData.communityUses}
+                value={formData.uses}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
@@ -424,44 +434,44 @@ const Community = () => {
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="traditionalAccess"
+                name="traditionalresourceaccessfornomadicandpastoralist"
                 placeholder="3(c). Traditional resource access for nomadic and pastoralist, if any"
-                value={formData.traditionalAccess}
+                value={formData.traditionalresourceaccessfornomadicandpastoralist}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="communityTenures"
+                name="communitytenuresofhabitatandhabitation"
                 placeholder="4. Community tenures of habitat and habitation (PTGs, pre-agricultural)"
-                value={formData.communityTenures}
+                value={formData.communitytenuresofhabitatandhabitation}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="biodiversityRights"
+                name="righttoaccessbiodiversity"
                 placeholder="5. Right to access biodiversity, traditional knowledge, etc."
-                value={formData.biodiversityRights}
+                value={formData.righttoaccessbiodiversity}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="otherTraditionalRights"
+                name="othertraditionalrights"
                 placeholder="6. Other traditional rights, if any"
-                value={formData.otherTraditionalRights}
+                value={formData.othertraditionalrights}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="evidence"
+                name="evidenceinsupport"
                 placeholder="7. Evidence in support (attach documents if any)"
-                value={formData.evidence}
+                value={formData.evidenceinsupport}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
-                name="additionalInfo"
+                name="anyotherinformation"
                 placeholder="8. Any other information"
-                value={formData.additionalInfo}
+                value={formData.anyotherinformation}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
