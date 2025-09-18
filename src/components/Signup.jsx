@@ -5,16 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import  { useState } from 'react';
 import axios from 'axios';
 
-export const Signup = ({setvisible}) => {
 
-    const formRef = useRef(null);
-    const titleRef = useRef(null);
-    const [username,setusername]=useState("");
-    const [mail,setmail]=useState("");
-    const [aadar,setaadar]=useState("");
-    const [password,setpassword]=useState("");
-    const [department,setdepartment]=useState("");
-    const navigate = useNavigate();
 
 // Move stateDistricts object outside the component
  const stateDistricts = {
@@ -57,8 +48,15 @@ export const Signup = ({setvisible}) => {
 };
 
 export const Signup = ({setvisible}) => {
+
     const formRef = useRef(null);
     const titleRef = useRef(null);
+    const [username,setusername]=useState("");
+    const [mail,setmail]=useState("");
+    const [aadar,setaadar]=useState("");
+    const [password,setpassword]=useState("");
+    const [department,setdepartment]=useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         gsap.fromTo(

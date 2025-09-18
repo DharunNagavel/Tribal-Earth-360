@@ -1,234 +1,72 @@
 // src/components/IndiaMap.jsx
-import React, { useRef, useState, useMemo, useEffect } from "react";
+import { useRef, useState, useMemo, useEffect } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
-import "leaflet/dist/leaflet.css";
-import rawIndiaDistricts from "../assets/in.json"; // Your uploaded GeoJSON (districts)
 import { FcSearch } from "react-icons/fc";
 import "leaflet/dist/leaflet.css";
 import rawIndiaStates from "../assets/in.json";       // India states GeoJSON
 import rawIndiaDistricts from "../assets/in_districts.json"; // India districts GeoJSON
-
 
 /* India bounding box */
 const indiaBounds = [
   [6.4627, 68.1097], // SW
   [37.6, 97.3956],   // NE
 ];
-/* Helper to get feature name (state or district) */
+
+/* 🔑 Extract state/district name safely */
 function getName(feature) {
   if (!feature || !feature.properties) return "";
   return (
     feature.properties.NAME_2 || // district
+    feature.properties.district ||
     feature.properties.DISTRICT ||
     feature.properties.NAME_1 || // state
     feature.properties.st_nm ||
     feature.properties.STATE_NAME ||
-// 🔑 Extract district name safely
-function getName(feature) {
-  if (!feature || !feature.properties) return "";
-  return (
-    feature.properties.NAME_2 ||  // District name (Datameet / Census)
-    feature.properties.district ||
-    feature.properties.DISTRICT ||
     feature.properties.name ||
     ""
   );
 }
 
-
-
-/* Handles zoom when state or district is selected */
-function MapActions({ selectedRegion, stateFeatures, districtFeatures }) {
-  const map = useMap();
-  useEffect(() => {
-    if (!selectedRegion) return;
-
-    let feature =
-      stateFeatures.find((f) => getName(f) === selectedRegion) ||
-      districtFeatures.find((f) => getName(f) === selectedRegion);
-
-    if (!feature) return;
-
-    const layer = L.geoJSON(feature);
-    map.fitBounds(layer.getBounds(), { padding: [20, 20] });
-  }, [selectedRegion, stateFeatures, districtFeatures, map]);
+/* Handles zoom when region is selected */
 function MapActions({ selectedRegion, features }) {
   const map = useMap();
   useEffect(() => {
     if (!selectedRegion) return;
+
     const feature = features.find((f) => getName(f) === selectedRegion);
     if (!feature) return;
 
     const layer = L.geoJSON(feature);
-    const center = layer.getBounds().getCenter();
-    map.setView(center, 7);
+    map.fitBounds(layer.getBounds(), { padding: [20, 20] });
   }, [selectedRegion, features, map]);
+
   return null;
 }
-
 
 export default function IndiaMap() {
   const [weather, setWeather] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-<<<<<<< HEAD
   const geoJsonRef = useRef(null);
+
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [activeState, setActiveState] = useState(null);
   const [query, setQuery] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
 
-
-  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // 🔑 OpenWeather API
-
+  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // 🔑 OpenWeather key
 
   const stateFeatures = useMemo(
-    () => (rawIndiaStates && rawIndiaStates.features) || [],
+    () => rawIndiaStates?.features || [],
     []
   );
   const districtFeatures = useMemo(
-    () => (rawIndiaDistricts && rawIndiaDistricts.features) || [],
+    () => rawIndiaDistricts?.features || [],
     []
   );
-
 
   // Weather fetch
-  const getWeather = async (place) => {
-    try {
-      const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${API_KEY}&units=metric`
-      );
-      const data = await res.json();
-      if (data.cod === 200) {
-        setWeather(data);
-      } else {
-        alert("City not found");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("Failed to fetch weather");
-    }
-  };
-
-  const [selectedRegion, setSelectedRegion] = useState(null);
-  const [query, setQuery] = useState("");
-  const [refreshKey, setRefreshKey] = useState(0);
-
-  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // 🔑 OpenWeather key
-
-  const features = useMemo(
-    () => (rawIndiaDistricts?.features || []),
-    []
-  );
-
-  const geoJsonRef = useRef(null);
-
-  // Styles
-  const defaultStyle = { color: "#ffffff", weight: 1.5, fillOpacity: 0 };
-  const highlightBase = { color: "#f97316", weight: 3, fillOpacity: 0 };
-
-
-  const styleFunc = (feature) => {
-    const name = getName(feature);
-    return name === selectedRegion ? highlightBase : defaultStyle;
-  };
-
-
-  // State-level interaction
-  const onEachState = (feature, layer) => {
-    const name = getName(feature);
-    layer.bindTooltip(name, { sticky: true, direction: "auto" });
-    layer.on({
-      mouseover: (e) => {
-        e.target.setStyle({ weight: 3, color: "#FFD700", fillOpacity: 0 });
-        e.target.openTooltip();
-      },
-      mouseout: (e) => {
-        try {
-          if (geoJsonRef.current?.resetStyle) {
-            geoJsonRef.current.resetStyle(e.target);
-          } else {
-            e.target.setStyle(defaultStyle);
-          }
-        } catch {
-          e.target.setStyle(defaultStyle);
-        }
-        e.target.closeTooltip();
-      },
-      click: () => {
-        setSelectedRegion(name);
-        setActiveState(name); // store active state for districts
-        getWeather(name);
-      },
-    });
-  };
-
-
-  // District-level interaction
-  const onEachDistrict = (feature, layer) => {
-    const name = getName(feature);
-    layer.bindTooltip(name, { sticky: true, direction: "auto" });
-    layer.on({
-      click: () => {
-        setSelectedRegion(name);
-        getWeather(name);
-      },
-    });
-  };
-
-
-  // Filter districts by selected state with debug log
-  const filteredDistricts = useMemo(() => {
-    if (!activeState) return [];
-    const districts = districtFeatures.filter((f) => {
-      const stateProp = f.properties.STATE_NAME || f.properties.st_nm || f.properties.NAME_1;
-      return stateProp?.toLowerCase() === activeState.toLowerCase();
-    });
-    console.log("Selected State:", activeState, "Filtered District Count:", districts.length);
-    return districts;
-  }, [activeState, districtFeatures]);
-
-
-  // Search with debug log for activeState update
-  const handleSearch = (evt) => {
-    evt?.preventDefault?.();
-    const q = query.trim().toLowerCase();
-    if (!q) return alert("Type a state or district name to search");
-
-    const match =
-      stateFeatures.find((f) => getName(f).toLowerCase().includes(q)) ||
-      districtFeatures.find((f) => getName(f).toLowerCase().includes(q));
-
-    if (!match) return alert("No match found: " + query);
-
-    const name = getName(match);
-    setSelectedRegion(name);
-
-    // If it's a state, also activate its districts
-    const isState = stateFeatures.some((f) => getName(f) === name);
-    if (isState) {
-      setActiveState(name);
-      console.log("Active State set to:", name);
-    } else {
-      // reset districts if selecting district directly
-      setActiveState(null);
-    }
-
-    getWeather(name);
-  };
-
-    if (!q) return alert("Type a district name to search");
-
-    const match = features.find((f) =>
-      getName(f).toLowerCase().includes(q)
-    );
-    if (!match) return alert("No district found: " + query);
-
-    setSelectedRegion(getName(match));
-    getWeather(getName(match));
-  };
-
   const getWeather = async (place) => {
     try {
       const res = await fetch(
@@ -247,7 +85,85 @@ export default function IndiaMap() {
     }
   };
 
-  // 🔄 Auto-refresh weather tiles every 5 min
+  // Styles
+  const defaultStyle = { color: "#ffffff", weight: 1.5, fillOpacity: 0 };
+  const highlightStyle = { color: "#f97316", weight: 3, fillOpacity: 0 };
+
+  const styleFunc = (feature) => {
+    const name = getName(feature);
+    return name === selectedRegion ? highlightStyle : defaultStyle;
+  };
+
+  // State-level interaction
+  const onEachState = (feature, layer) => {
+    const name = getName(feature);
+    layer.bindTooltip(name, { sticky: true, direction: "auto" });
+    layer.on({
+      mouseover: (e) => {
+        e.target.setStyle({ weight: 3, color: "#FFD700", fillOpacity: 0 });
+        e.target.openTooltip();
+      },
+      mouseout: (e) => {
+        if (geoJsonRef.current?.resetStyle) {
+          geoJsonRef.current.resetStyle(e.target);
+        } else {
+          e.target.setStyle(defaultStyle);
+        }
+        e.target.closeTooltip();
+      },
+      click: () => {
+        setSelectedRegion(name);
+        setActiveState(name);
+        getWeather(name);
+      },
+    });
+  };
+
+  // District-level interaction
+  const onEachDistrict = (feature, layer) => {
+    const name = getName(feature);
+    layer.bindTooltip(name, { sticky: true, direction: "auto" });
+    layer.on({
+      click: () => {
+        setSelectedRegion(name);
+        getWeather(name);
+      },
+    });
+  };
+
+  // Filter districts by active state
+  const filteredDistricts = useMemo(() => {
+    if (!activeState) return [];
+    return districtFeatures.filter((f) => {
+      const stateProp =
+        f.properties.STATE_NAME || f.properties.st_nm || f.properties.NAME_1;
+      return stateProp?.toLowerCase() === activeState.toLowerCase();
+    });
+  }, [activeState, districtFeatures]);
+
+  // Search handler
+  const handleSearch = (evt) => {
+    evt?.preventDefault?.();
+    const q = query.trim().toLowerCase();
+    if (!q) return alert("Type a state or district name to search");
+
+    const match =
+      stateFeatures.find((f) => getName(f).toLowerCase().includes(q)) ||
+      districtFeatures.find((f) => getName(f).toLowerCase().includes(q));
+
+    if (!match) return alert("No match found: " + query);
+
+    const name = getName(match);
+    setSelectedRegion(name);
+
+    // If it’s a state, activate its districts
+    const isState = stateFeatures.some((f) => getName(f) === name);
+    setActiveState(isState ? name : null);
+
+    getWeather(name);
+  };
+
+  // Auto-refresh weather every 5 min
   useEffect(() => {
     const interval = setInterval(() => {
       if (selectedRegion) getWeather(selectedRegion);
@@ -255,7 +171,6 @@ export default function IndiaMap() {
     }, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, [selectedRegion]);
-
 
   return (
     <div className="relative w-full h-screen">
@@ -277,10 +192,7 @@ export default function IndiaMap() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  handleSearch();
-                }
+                if (e.key === "Enter") handleSearch();
               }}
             />
             <button
@@ -314,35 +226,23 @@ export default function IndiaMap() {
                 Weather
                 <div className="flex justify-evenly align-items-center">
                   {weather ? (
-                    <div className="bg-green-600 rounded-xl text-white p-2 m-2">
-                      <h2 className="text-xl">{weather.name}</h2>
-                      <p className="mt-1">
-                        🌡 Temperature : {weather.main.temp} °C
-                      </p>
-                    </div>
+                    <>
+                      <div className="bg-green-600 rounded-xl text-white p-2 m-2">
+                        <h2 className="text-xl">{weather.name}</h2>
+                        <p>🌡 Temp: {weather.main.temp} °C</p>
+                      </div>
+                      <div className="bg-green-600 text-white rounded-xl p-2 m-2">
+                        <p>☁ {weather.weather[0].description}</p>
+                        <p>💨 Wind: {weather.wind.speed} m/s</p>
+                      </div>
+                    </>
                   ) : (
                     <h1 className="bg-green-600 text-2xl text-white rounded-xl p-3 m-2">
-
-                      Pick a District
-                    </h1>
-                  )}
-                  {weather ? (
-                    <div className="bg-green-600 text-white rounded-xl p-2 m-2">
-                      <h2 className="text-xl">{weather.name}</h2>
-                      <p className="mt-1">
-                        ☁ Condition : {weather.weather[0].description}
-                      </p>
-                      <p>💨 Wind : {weather.wind.speed} m/s</p>
-                    </div>
-                  ) : (
-                    <h1 className="bg-green-600 text-white rounded-xl text-2xl p-2 m-2">
                       Pick a District
                     </h1>
                   )}
                 </div>
               </li>
-              <li className="cursor-pointer">Option 2</li>
-              <li className="cursor-pointer">Option 3</li>
             </ul>
           </div>
         </div>
@@ -371,32 +271,23 @@ export default function IndiaMap() {
           attribution="Labels © Esri"
         />
 
-        {/* Districts only */}
+        {/* States */}
         <GeoJSON
-          data={rawIndiaDistricts}
+          data={rawIndiaStates}
           style={styleFunc}
           onEachFeature={onEachState}
           ref={geoJsonRef}
         />
 
-        {/* Districts of selected state with debug styling */}
-         {activeState && (
-  <GeoJSON
-    data={rawIndiaDistricts}
-    filter={(feature) => {
-      const stateProp = feature.properties.STATE_NAME || feature.properties.st_nm || feature.properties.NAME_1;
-      if (!stateProp) return false;
-      return stateProp.toLowerCase() === activeState.toLowerCase();
-    }}
-    style={{
-      color: "#ffffff",
-      weight: 2,
-      opacity: 1,
-      fillOpacity: 0,
-    }}
-    onEachFeature={onEachDistrict}
-  />
-)}
+        {/* Districts of selected state */}
+        {activeState && (
+          <GeoJSON
+            data={filteredDistricts}
+            style={{ color: "#ffffff", weight: 2, fillOpacity: 0 }}
+            onEachFeature={onEachDistrict}
+          />
+        )}
+
         {/* Weather overlay */}
         <TileLayer
           key={refreshKey}
@@ -405,14 +296,11 @@ export default function IndiaMap() {
           opacity={0.5}
         />
 
-        {/* Fit to region center on selection */}
+        {/* Fit to region center */}
         <MapActions
           selectedRegion={selectedRegion}
-          stateFeatures={stateFeatures}
-          districtFeatures={districtFeatures}
+          features={[...stateFeatures, ...districtFeatures]}
         />
-        {/* Fit to district center on selection */}
-        <MapActions selectedRegion={selectedRegion} features={features} />
       </MapContainer>
     </div>
   );
