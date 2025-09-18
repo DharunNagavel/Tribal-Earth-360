@@ -11,11 +11,14 @@ import Map from './pages/Map'
 import { Digitalization } from './pages/Digitalization';
 import { Auth } from './pages/Auth'
 import Final from './pages/Final'
+import { useState } from 'react'
 
 function AppContent() {
   const location = useLocation();
   const hideNavbarFooterRoutes = ["/auth", "/map"]; 
   const shouldHideNavbarFooter = hideNavbarFooterRoutes.includes(location.pathname);
+ 
+
   return (
     <>
       {!shouldHideNavbarFooter && <Navbar />}

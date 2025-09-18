@@ -76,6 +76,9 @@ export const Navbar = () => {
           <li>
             <Link to="/" className={hoverColor}>Home</Link>
           </li>
+          <li>
+            <Link to="/digitalization" className={hoverColor}>Digitalize</Link>
+          </li>
           <li className="relative">
             <button
               onClick={() => setIsPattaOpenDesktop(!isPattaOpenDesktop)}
@@ -130,6 +133,9 @@ export const Navbar = () => {
             <li>
               <Link to="/" className={hoverColor}>Home</Link>
             </li>
+            <li>
+            <Link to="/digitalization" className={hoverColor}>Digitalize</Link>
+          </li>
             <li className="relative">
               <button
                 className={`flex justify-between items-center w-full ${hoverColor}`}
