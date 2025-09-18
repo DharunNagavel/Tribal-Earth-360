@@ -172,7 +172,7 @@ export default function IndiaMap() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed top-6 left-2 z-[1200] bg-green-600 text-white p-3 rounded-full shadow-md hover:bg-green-700"
+          className="fixed top-6 left-2 z-[1200] bg-[#78C6A3] text-white p-3 rounded-full shadow-md hover:bg-green-700"
         >
           <PiDotsThreeOutlineVerticalFill size={28} />
         </button>
@@ -203,7 +203,7 @@ export default function IndiaMap() {
         }`}
       >
         {/* Sidebar Header with Close Button */}
-        <div className="flex items-center justify-between bg-green-600 text-white p-4">
+        <div className="flex items-center justify-between bg-[#78C6A3] text-white p-4">
           <h2 className="text-xl font-bold">Dashboard</h2>
           <button
             onClick={() => setIsOpen(false)}
@@ -217,40 +217,40 @@ export default function IndiaMap() {
         <div className="p-6 overflow-y-auto h-[calc(100%-64px)]">
           <ul className="space-y-4">
             <li>
-              <h3 className="text-lg font-semibold text-green-700">Weather</h3>
+              <h3 className="text-lg font-semibold text-black">Weather</h3>
               <div className="flex flex-col space-y-2 mt-2">
                 {weather ? (
                   <>
-                    <div className="bg-green-600 rounded-xl text-white p-3">
+                    <div className="bg-[#78C6A3] rounded-xl text-white p-3">
                       <h2 className="text-xl">{weather.name}</h2>
                       <p>🌡 Temp: {weather.main.temp} °C</p>
                     </div>
-                    <div className="bg-green-600 text-white rounded-xl p-3">
+                    <div className="bg-[#78C6A3] text-white rounded-xl p-3">
                       <p>☁ {weather.weather[0].description}</p>
                       <p>💨 Wind: {weather.wind.speed} m/s</p>
                     </div>
                   </>
                 ) : (
-                  <h1 className="bg-green-600 text-xl text-white rounded-xl p-3">
+                  <h1 className="bg-[#78C6A3] text-xl text-white rounded-xl p-3">
                     Pick a State
                   </h1>
                 )}
                 <li>
-              <h3 className="text-lg font-semibold text-green-700">FRA Claims</h3>
+              <h3 className="text-lg font-semibold text-black mt-4">FRA Claims</h3>
               <div className="grid grid-cols-2 gap-3 mt-2">
-                <div className=" text-black rounded-xl p-3 shadow">
-                  <h4 className="font-bold">Patta Registered</h4>
+                <div className=" text-black rounded-xl p-3 shadow bg-[#78C6A3]">
+                  <h4 className="font-bold ">Patta Registered</h4>
                   <p className="text-2xl">120</p>
                 </div>
-                <div className=" text-black rounded-xl p-3 shadow">
+                <div className=" text-black rounded-xl p-3 shadow bg-[#78C6A3]">
                   <h4 className="font-bold">Claimed</h4>
                   <p className="text-2xl">85</p>
                 </div>
-                <div className=" text-black rounded-xl p-3 shadow">
+                <div className=" text-black rounded-xl p-3 shadow bg-[#78C6A3]">
                   <h4 className="font-bold">Declined</h4>
                   <p className="text-2xl">15</p>
                 </div>
-                <div className=" text-black rounded-xl p-3 shadow">
+                <div className=" text-black rounded-xl p-3 shadow bg-[#78C6A3]">
                   <h4 className="font-bold">In Progress</h4>
                   <p className="text-2xl">20</p>
                 </div>
