@@ -48,7 +48,7 @@ function MapActions({ selectedRegion, features }) {
 
 export default function IndiaMap() {
   const [weather, setWeather] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // <-- Sidebar open by default
   const geoJsonRef = useRef(null);
 
   const [selectedRegion, setSelectedRegion] = useState(null);
@@ -56,16 +56,10 @@ export default function IndiaMap() {
   const [query, setQuery] = useState("");
   const [refreshKey, setRefreshKey] = useState(0);
 
-  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // 🔑 OpenWeather key
+  const API_KEY = "2c427abccabf23a389369450d97b65c4"; // OpenWeather key
 
-  const stateFeatures = useMemo(
-    () => rawIndiaStates?.features || [],
-    []
-  );
-  const districtFeatures = useMemo(
-    () => rawIndiaDistricts?.features || [],
-    []
-  );
+  const stateFeatures = useMemo(() => rawIndiaStates?.features || [], []);
+  const districtFeatures = useMemo(() => rawIndiaDistricts?.features || [], []);
 
   // Weather fetch
   const getWeather = async (place) => {
@@ -136,8 +130,7 @@ export default function IndiaMap() {
   const filteredDistricts = useMemo(() => {
     if (!activeState) return [];
     return districtFeatures.filter((f) => {
-      const stateProp =
-        f.properties.STATE_NAME || f.properties.st_nm || f.properties.NAME_1;
+      const stateProp = f.properties.STATE_NAME || f.properties.st_nm || f.properties.NAME_1;
       return stateProp?.toLowerCase() === activeState.toLowerCase();
     });
   }, [activeState, districtFeatures]);
@@ -175,77 +168,97 @@ export default function IndiaMap() {
 
   return (
     <div className="relative w-full h-screen">
-      {/* Search + Sidebar */}
-      <div className="absolute z-[1000] w-full">
-        <div className="flex justify-between m-5">
-          {/* Sidebar button */}
-          <div className="sidebar">
-            <button onClick={() => setIsOpen(true)}>
-              <PiDotsThreeOutlineVerticalFill className="bg-white text-5xl rounded-full p-2" />
-            </button>
-          </div>
-
-          {/* Search Bar */}
-          <div className="flex">
-            <input
-              className="bg-white text-2xl rounded-4xl rounded-e-none p-4 focus:outline-none"
-              placeholder="Search State or District"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSearch();
-              }}
-            />
-            <button
-              type="submit"
-              className="bg-white rounded-4xl rounded-s-none p-2"
-              title="Search"
-              onClick={handleSearch}
-            >
-              <FcSearch size={22} />
-            </button>
-          </div>
-        </div>
-
-        {/* Sidebar Drawer */}
-        <div
-          className={`fixed top-0 left-0 h-[700px] w-130 bg-white rounded-4xl my-2 shadow-lg transform transition-transform duration-300 z-[1100] ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+      {/* Sidebar Toggle Button (only if sidebar is closed) */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed top-6 left-2 z-[1200] bg-green-600 text-white p-3 rounded-full shadow-md hover:bg-green-700"
         >
+          <PiDotsThreeOutlineVerticalFill size={28} />
+        </button>
+      )}
+
+      {/* Search Bar at top-right */}
+      <div className="absolute top-6 right-6 z-[1200] flex items-center bg-white rounded-full shadow-md overflow-hidden">
+        <input
+          type="text"
+          placeholder="Search State or District"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+          className="px-4 py-2 w-64 outline-none"
+        />
+        <button
+          onClick={handleSearch}
+          className="p-2 flex items-center justify-center hover:bg-green-700"
+        >
+          <FcSearch size={22} />
+        </button>
+      </div>
+
+      {/* Sidebar Drawer */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[350px] bg-white shadow-lg transform transition-transform duration-300 z-[1100] ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Sidebar Header with Close Button */}
+        <div className="flex items-center justify-between bg-green-600 text-white p-4">
+          <h2 className="text-xl font-bold">Dashboard</h2>
           <button
-            className="absolute top-4 right-4 p-2 text-2xl"
             onClick={() => setIsOpen(false)}
+            className="p-2 rounded-full hover:bg-green-700"
           >
             ✕
           </button>
+        </div>
 
-          <div className="p-6">
-            <h2 className="text-xl font-bold text-green-700 mb-4">Menu</h2>
-            <ul className="space-y-3">
-              <li className="cursor-pointer w-[500px]">
-                Weather
-                <div className="flex justify-evenly align-items-center">
-                  {weather ? (
-                    <>
-                      <div className="bg-green-600 rounded-xl text-white p-2 m-2">
-                        <h2 className="text-xl">{weather.name}</h2>
-                        <p>🌡 Temp: {weather.main.temp} °C</p>
-                      </div>
-                      <div className="bg-green-600 text-white rounded-xl p-2 m-2">
-                        <p>☁ {weather.weather[0].description}</p>
-                        <p>💨 Wind: {weather.wind.speed} m/s</p>
-                      </div>
-                    </>
-                  ) : (
-                    <h1 className="bg-green-600 text-2xl text-white rounded-xl p-3 m-2">
-                      Pick a State
-                    </h1>
-                  )}
+        {/* Sidebar Content */}
+        <div className="p-6 overflow-y-auto h-[calc(100%-64px)]">
+          <ul className="space-y-4">
+            <li>
+              <h3 className="text-lg font-semibold text-green-700">Weather</h3>
+              <div className="flex flex-col space-y-2 mt-2">
+                {weather ? (
+                  <>
+                    <div className="bg-green-600 rounded-xl text-white p-3">
+                      <h2 className="text-xl">{weather.name}</h2>
+                      <p>🌡 Temp: {weather.main.temp} °C</p>
+                    </div>
+                    <div className="bg-green-600 text-white rounded-xl p-3">
+                      <p>☁ {weather.weather[0].description}</p>
+                      <p>💨 Wind: {weather.wind.speed} m/s</p>
+                    </div>
+                  </>
+                ) : (
+                  <h1 className="bg-green-600 text-xl text-white rounded-xl p-3">
+                    Pick a State
+                  </h1>
+                )}
+                <li>
+              <h3 className="text-lg font-semibold text-green-700">FRA Claims</h3>
+              <div className="grid grid-cols-2 gap-3 mt-2">
+                <div className=" text-black rounded-xl p-3 shadow">
+                  <h4 className="font-bold">Patta Registered</h4>
+                  <p className="text-2xl">120</p>
                 </div>
-              </li>
-            </ul>
-          </div>
+                <div className=" text-black rounded-xl p-3 shadow">
+                  <h4 className="font-bold">Claimed</h4>
+                  <p className="text-2xl">85</p>
+                </div>
+                <div className=" text-black rounded-xl p-3 shadow">
+                  <h4 className="font-bold">Declined</h4>
+                  <p className="text-2xl">15</p>
+                </div>
+                <div className=" text-black rounded-xl p-3 shadow">
+                  <h4 className="font-bold">In Progress</h4>
+                  <p className="text-2xl">20</p>
+                </div>
+              </div>
+            </li>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -299,7 +312,7 @@ export default function IndiaMap() {
 
         {/* Fit to region center */}
         <MapActions
-          selectedRegion={selectedRegion}  
+          selectedRegion={selectedRegion}
           features={[...stateFeatures, ...districtFeatures]}
         />
       </MapContainer>

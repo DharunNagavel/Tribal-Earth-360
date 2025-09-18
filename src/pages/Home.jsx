@@ -90,7 +90,7 @@ export const Home = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-16 sm:bottom-24 md:bottom-32 lg:bottom-40">
           <button
             onClick={handleScrollToFeatures}
-            className="bg-black text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base md:text-lg"
+            className="bg-[#78C6A3] text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-black transition text-base md:text-lg"
           >
             Get Started
           </button>
@@ -107,7 +107,7 @@ export const Home = () => {
             <div
               key={idx}
               ref={(el) => (cardRefs.current[idx] = el)}
-              className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition duration-300 group hover:bg-green-600 hover:text-white"
+              className="bg-white shadow-lg rounded-2xl p-6 text-center hover:shadow-xl transition duration-300 group hover:bg-[#78C6A3] hover:text-black"
             >
               <h4 className="text-xl font-bold mb-2 inline-flex items-center justify-center gap-2">
                 {feature.icon} <span>{feature.title}</span>
