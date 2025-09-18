@@ -3,7 +3,7 @@ import { useEffect, useRef,useState } from 'react';
 import { gsap } from 'gsap';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
-export const Login = ({setvisible}) => {
+export const Login = ({setvisible,setuser}) => {
 
   const [mail, setmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +38,7 @@ export const Login = ({setvisible}) => {
       .then((res)=>
         {
           console.log(res);
+          setuser(true);
           Navigate('/');
         })
         .catch((err)=>
@@ -52,12 +53,13 @@ export const Login = ({setvisible}) => {
           <div className=''>
             <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>Login</h1>
           </div>
-          <input type="mail" value={mail} onChange={(e) => {setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+          <input type="mail" value={mail} required onChange={(e) => {setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
           <div style={{ position: 'relative' }}>
             <input
               type={showPassword ? "text" : "password"}
               className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400 w-full pr-10'
               placeholder='Enter the Password'
+              required
               id='login-password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}

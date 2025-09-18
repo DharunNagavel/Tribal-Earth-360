@@ -1,17 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
+import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 
-export const Navbar = () => {
+export const Navbar = ({ user,setuser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPattaOpenMobile, setIsPattaOpenMobile] = useState(false);
   const [isPattaOpenDesktop, setIsPattaOpenDesktop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+
   const pattaDropdownRef = useRef(null);
+  const desktopDropdownRef = useRef(null);
+  const mobileDropdownWrapperRef = useRef(null);
   const location = useLocation();
 
+  // Animate Mobile dropdown
   useEffect(() => {
     if (pattaDropdownRef.current) {
       if (isPattaOpenMobile) {
@@ -32,17 +38,36 @@ export const Navbar = () => {
     }
   }, [isPattaOpenMobile]);
 
+  // Scroll effect only on home page
   useEffect(() => {
     if (location.pathname === "/") {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 50);
-      };
+      const handleScroll = () => setIsScrolled(window.scrollY > 50);
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     } else {
       setIsScrolled(false);
     }
   }, [location]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        desktopDropdownRef.current &&
+        !desktopDropdownRef.current.contains(e.target)
+      ) {
+        setIsPattaOpenDesktop(false);
+      }
+      if (
+        mobileDropdownWrapperRef.current &&
+        !mobileDropdownWrapperRef.current.contains(e.target)
+      ) {
+        setIsPattaOpenMobile(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navbarClasses =
     location.pathname === "/"
@@ -51,10 +76,43 @@ export const Navbar = () => {
         : "bg-white/20 backdrop-blur-md border border-white/30 shadow-lg"
       : "bg-green-700 shadow-md";
 
-  // Determine hover color based on navbar state
-  const hoverColor = (location.pathname === "/" && !isScrolled) 
-    ? "hover:text-[#590d22]" 
-    : "hover:text-yellow-300";
+  const hoverColor =
+    location.pathname === "/" && !isScrolled
+      ? "hover:text-[#590d22]"
+      : "hover:text-yellow-300";
+
+  // Dynamic routes: different for logged in vs logged out
+  const menuItems = user
+    ? [
+        { name: "Home", path: "/" },
+        { name: "Digitalize", path: "/digitalization" },
+        {
+          name: "Patta",
+          subMenu: [
+            { name: "Individual", path: "/individual" },
+            { name: "Community", path: "/community" },
+            { name: "Community Resource", path: "/resource" },
+          ],
+        },
+        { name: "Map", path: "/map" },
+        { name: "About FRA", path: "/about" },
+        { name: "Logout", action: () => { setuser(false); navigate("/auth"); } }, // or handle logout differently
+      ]
+    : [
+        { name: "Home", path: "/auth" },
+        { name: "Digitalize", path: "/auth" },
+        {
+          name: "Patta",
+          subMenu: [
+            { name: "Individual", path: "/auth" },
+            { name: "Community", path: "/auth" },
+            { name: "Community Resource", path: "/auth" },
+          ],
+        },
+        { name: "Map", path: "/auth" },
+        { name: "About FRA", path: "/auth" },
+        { name: "Signup/Login", path: "/auth" },
+      ];
 
   return (
     <nav
@@ -73,48 +131,38 @@ export const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-5 text-base sm:text-lg items-center">
-          <li>
-            <Link to="/" className={hoverColor}>Home</Link>
-          </li>
-          <li>
-            <Link to="/digitalization" className={hoverColor}>Digitalize</Link>
-          </li>
-          <li className="relative">
-            <button
-              onClick={() => setIsPattaOpenDesktop(!isPattaOpenDesktop)}
-              className={`flex items-center gap-1 sm:gap-2 ${hoverColor} focus:outline-none`}
-            >
-              Patta <ChevronDown size={16} />
-            </button>
-            {isPattaOpenDesktop && (
-              <ul className="absolute left-0 top-full bg-green-800 mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
-                <li>
-                  <Link to="/individual" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
-                    Individual
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/community" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
-                    Community
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/resource" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
-                    Community Resource
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link to="/map" className={hoverColor}>Map</Link>
-          </li>
-          <li>
-            <Link to="/about" className={hoverColor}>About FRA</Link>
-          </li>
-          <li>
-            <Link to="/auth" className={hoverColor}>Signup/Login</Link>
-          </li>
+          {menuItems.map((item, i) =>
+            item.subMenu ? (
+              <li key={i} className="relative" ref={desktopDropdownRef}>
+                <button
+                  onClick={() => setIsPattaOpenDesktop(!isPattaOpenDesktop)}
+                  className={`flex items-center gap-1 sm:gap-2 ${hoverColor} focus:outline-none`}
+                >
+                  {item.name} <ChevronDown size={16} />
+                </button>
+                {isPattaOpenDesktop && (
+                  <ul className="absolute left-0 top-full bg-green-800 mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
+                    {item.subMenu.map((sub, j) => (
+                      <li key={j}>
+                        <Link
+                          to={sub.path}
+                          className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300"
+                        >
+                          {sub.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ) : (
+              <li key={i}>
+                <Link to={item.path} className={hoverColor}>
+                  {item.name}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Mobile Toggle */}
@@ -130,49 +178,36 @@ export const Navbar = () => {
       {isOpen && (
         <div className="lg:hidden bg-green-800 px-4 pb-3">
           <ul className="flex flex-col gap-3 text-base">
-            <li>
-              <Link to="/" className={hoverColor}>Home</Link>
-            </li>
-            <li>
-            <Link to="/digitalization" className={hoverColor}>Digitalize</Link>
-          </li>
-            <li className="relative">
-              <button
-                className={`flex justify-between items-center w-full ${hoverColor}`}
-                onClick={() => setIsPattaOpenMobile(!isPattaOpenMobile)}
-              >
-                Patta <ChevronDown size={16} />
-              </button>
-              <ul
-                ref={pattaDropdownRef}
-                className="ml-3 mt-2 flex flex-col gap-2 text-sm overflow-hidden h-0 opacity-0"
-              >
-                <li>
-                  <Link to="/individual" className={hoverColor}>
-                    Individual
+            {menuItems.map((item, i) =>
+              item.subMenu ? (
+                <li key={i} className="relative" ref={mobileDropdownWrapperRef}>
+                  <button
+                    className={`flex justify-between items-center w-full ${hoverColor}`}
+                    onClick={() => setIsPattaOpenMobile(!isPattaOpenMobile)}
+                  >
+                    {item.name} <ChevronDown size={16} />
+                  </button>
+                  <ul
+                    ref={pattaDropdownRef}
+                    className="ml-3 mt-2 flex flex-col gap-2 text-sm overflow-hidden h-0 opacity-0"
+                  >
+                    {item.subMenu.map((sub, j) => (
+                      <li key={j}>
+                        <Link to={sub.path} className={hoverColor}>
+                          {sub.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={i}>
+                  <Link to={item.path} className={hoverColor}>
+                    {item.name}
                   </Link>
                 </li>
-                <li>
-                  <Link to="/community" className={hoverColor}>
-                    Community
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/resource" className={hoverColor}>
-                    Community Resource
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <Link to="/map" className={hoverColor}>Map</Link>
-            </li>
-            <li>
-              <Link to="/about" className={hoverColor}>About FRA</Link>
-            </li>
-            <li>
-              <Link to="/auth" className={hoverColor}>Signup/Login</Link>
-            </li>
+              )
+            )}
           </ul>
         </div>
       )}

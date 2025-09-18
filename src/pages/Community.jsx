@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import indiaStateData from "../assets/india_state_data.json";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Community = () => {
   const [currentSection, setCurrentSection] = useState(1);
@@ -27,7 +28,7 @@ const Community = () => {
   });
 
   const [errors, setErrors] = useState({});
-
+  const navigate = useNavigate();
   const [filteredDistricts, setFilteredDistricts] = useState([]);
   const [filteredTalukas, setFilteredTalukas] = useState([]);
   const [filteredPanchayats, setFilteredPanchayats] = useState([]);
@@ -165,6 +166,7 @@ const Community = () => {
           anyotherinformation: '',
           declaration: false,
         });
+        navigate('/final');
       })
     .catch((err)=>
       {

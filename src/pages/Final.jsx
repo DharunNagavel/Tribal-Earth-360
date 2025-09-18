@@ -55,7 +55,7 @@ const Final = () => {
           />
         </svg>
         <h1 className="text-3xl font-semibold text-gray-800 text-center">
-          Patta successfully registered
+          Patta successfully Registered
         </h1>
       </div>
     </div>
