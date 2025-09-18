@@ -18,7 +18,7 @@ export const About = () => {
             <FaDownload className="text-3xl text-white " />
            </a>
           <span className="absolute right-1/2 transform translate-x-1/2 top-full mt-2 bg-[#1b4332] text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 whitespace-nowrap z-10">
-          Download FRA rule book
+          Download FRA Rule Book
           </span>
        </div>
 
