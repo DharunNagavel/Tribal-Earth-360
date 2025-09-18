@@ -9,15 +9,15 @@ export const About = () => {
         
         <div className="flex items-start justify-between mb-6 mt-5">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-green-800">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#1b4332]">
               About the Forest Rights Act (FRA)
             </h1>
           </div>
           <div className="relative group">
-            <a href="/FRARulesBook.pdf" download="FRARulesBook.pdf" className="bg-green-700 p-3 rounded-full shadow hover:shadow-md transition inline-block">
+            <a href="/FRARulesBook.pdf" download="FRARulesBook.pdf" className="bg-[#1b4332] p-3 rounded-full shadow hover:shadow-md transition inline-block">
             <FaDownload className="text-3xl text-white " />
            </a>
-          <span className="absolute right-1/2 transform translate-x-1/2 top-full mt-2 bg-green-700 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 whitespace-nowrap z-10">
+          <span className="absolute right-1/2 transform translate-x-1/2 top-full mt-2 bg-[#1b4332] text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 whitespace-nowrap z-10">
           Download FRA rule book
           </span>
        </div>
@@ -28,7 +28,7 @@ export const About = () => {
         </p>
       </div>
       <div className="max-w-5xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#1b4332] mb-4">
           Objectives of FRA
         </h2>
         <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
@@ -39,11 +39,11 @@ export const About = () => {
         </ul>
       </div>
       <div className="max-w-5xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#1b4332] mb-6 text-center">
           Types of Rights under FRA
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-green-700 hover:text-white">
+          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-[#78C6A3]">
             <h3 className="text-xl font-bold mb-2 text-center inline-flex items-center justify-center gap-2">
               <FaPerson className="text-2xl" />
               <span>Individual Rights</span>
@@ -52,7 +52,7 @@ export const About = () => {
               Rights to hold and live on forest land for self-cultivation and habitation.
             </p>
           </div>
-          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-green-700 hover:text-white">
+          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-[#78C6A3]">
             <h3 className="text-xl font-bold mb-2 text-center inline-flex items-center justify-center gap-2">
               <FaPeopleGroup className="text-2xl" />
               <span>Community Rights</span>
@@ -61,7 +61,7 @@ export const About = () => {
               Rights over common forest resources like grazing land, fuel wood, and minor forest produce.
             </p>
           </div>
-          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-green-700 hover:text-white">
+          <div className="bg-white shadow-md rounded-2xl p-6 transition transform hover:-translate-y-1 hover:bg-[#78C6A3] ">
             <h3 className="text-xl font-bold mb-2 text-center inline-flex items-center justify-center gap-2">
               <GiForest className="text-5xl" />
               <span>Community Forest Resource (CFR) Rights</span>
@@ -73,7 +73,7 @@ export const About = () => {
         </div>
       </div>
       <div className="max-w-5xl mx-auto mb-12">
-        <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#1b4332] mb-4">
           Who Benefits?
         </h2>
         <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">
@@ -82,7 +82,7 @@ export const About = () => {
         </ul>
       </div>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-semibold text-green-700 mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-[#1b4332] mb-4">
           Importance of FRA
         </h2>
         <ul className="list-disc list-inside space-y-3 text-gray-700 text-lg">

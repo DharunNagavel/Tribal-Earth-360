@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 
-export const Navbar = ({ user,setuser }) => {
+export const Navbar = ({ user, setuser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPattaOpenMobile, setIsPattaOpenMobile] = useState(false);
   const [isPattaOpenDesktop, setIsPattaOpenDesktop] = useState(false);
@@ -45,7 +45,7 @@ export const Navbar = ({ user,setuser }) => {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     } else {
-      setIsScrolled(false);
+      setIsScrolled(true); // force solid color on other pages
     }
   }, [location]);
 
@@ -69,19 +69,20 @@ export const Navbar = ({ user,setuser }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Navbar background classes
   const navbarClasses =
     location.pathname === "/"
       ? isScrolled
-        ? "bg-green-700 shadow-md"
-        : "bg-white/20 backdrop-blur-md border border-white/30 shadow-lg"
-      : "bg-green-700 shadow-md";
+        ? "bg-[#78C6A3] shadow-md"
+        : "bg-[#78C6A3]/30 backdrop-blur-md border border-white/30 shadow-lg"
+      : "bg-[#78C6A3] shadow-md";
 
+  // Navbar hover color
   const hoverColor =
     location.pathname === "/" && !isScrolled
-      ? "hover:text-[#590d22]"
-      : "hover:text-yellow-300";
+      ? "hover:text-[#800000]" // maroon hover on glass
+      : "hover:text-[#800000]"; // normal hover when scrolled or other pages
 
-  // Dynamic routes: different for logged in vs logged out
   const menuItems = user
     ? [
         { name: "Home", path: "/" },
@@ -96,7 +97,7 @@ export const Navbar = ({ user,setuser }) => {
         },
         { name: "Map", path: "/map" },
         { name: "About FRA", path: "/about" },
-        { name: "Logout", action: () => { setuser(false); navigate("/auth"); } }, // or handle logout differently
+        { name: "Logout", action: () => { setuser(false); navigate("/auth"); } },
       ]
     : [
         { name: "Home", path: "/auth" },
@@ -146,13 +147,12 @@ export const Navbar = ({ user,setuser }) => {
                   {item.name} <ChevronDown size={18} />
                 </button>
                 {isPattaOpenDesktop && (
-                  <ul className="absolute left-0 top-full bg-green-800 mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
+                  <ul className="absolute left-0 top-full bg-[#78C6A3] mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
                     {item.subMenu.map((sub, j) => (
                       <li key={j}>
                         <Link
                           to={sub.path}
-                          className="block px-4 py-3 hover:bg-green-700 hover:text-yellow-300"
-                          onClick={handleItemClick}
+                          className="block px-3 py-2  hover:text-[#800000]"
                         >
                           {sub.name}
                         </Link>
@@ -189,7 +189,7 @@ export const Navbar = ({ user,setuser }) => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden p-2 rounded-lg hover:bg-green-800"
+          className="lg:hidden p-2 rounded-lg "
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -198,8 +198,8 @@ export const Navbar = ({ user,setuser }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden text-white bg-green-800 px-5 py-4 rounded-b-lg">
-          <ul className="flex flex-col gap-4 text-lg">
+        <div className="lg:hidden bg-[#78C6A3] px-4 pb-3">
+          <ul className="flex flex-col gap-3 text-base">
             {menuItems.map((item, i) =>
               item.subMenu ? (
                 <li key={i} className="relative" ref={mobileDropdownWrapperRef}>
