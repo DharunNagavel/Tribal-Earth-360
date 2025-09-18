@@ -10,8 +10,8 @@ import CommunityResource from './pages/CommunityResource'
 import Map from './pages/Map'
 import { Digitalization } from './pages/Digitalization';
 import { Auth } from './pages/Auth'
-import Final from './pages/Final'
 import { useState } from 'react'
+import { Schemes } from './pages/Schemes';
 
 function AppContent() {
   const [user,setuser] = useState(false);
@@ -30,7 +30,7 @@ function AppContent() {
         <Route path='/map' element={<Map />} />
         <Route path='/auth' element={<Auth setuser={setuser} />} />
         <Route path='/digitalization' element={<Digitalization />} />
-        <Route path='/final' element={<Final />} />
+        <Route path='/schemes' element={<Schemes />} />
       </Routes>
       {!shouldHideNavbarFooter && <Footer />}
     </>

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-const Final = () => {
+const Final = ({ setvisible }) => {
   const pathRef = useRef(null);
   const svgRef = useRef(null);
 
@@ -35,8 +35,12 @@ const Final = () => {
     });
   }, []);
 
+  const handleButtonClick = () => {
+    setvisible('schemes');
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="bg-white shadow-lg rounded-lg p-10 max-w-md w-full flex flex-col items-center">
         <svg
           ref={svgRef}
@@ -57,6 +61,16 @@ const Final = () => {
         <h1 className="text-3xl font-semibold text-gray-800 text-center">
           Patta successfully Registered
         </h1>
+        <p className="mt-4 text-gray-600 text-center">
+          Thank you for registering your Patta. You will receive a confirmation email shortly.
+        </p>
+
+        <button 
+          onClick={handleButtonClick} 
+          className="mt-7 text-white bg-black p-2 rounded-xl cursor-pointer"
+        >
+          Featured Schemes
+        </button>
       </div>
     </div>
   );

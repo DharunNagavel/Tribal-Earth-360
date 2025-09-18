@@ -114,31 +114,36 @@ export const Navbar = ({ user,setuser }) => {
         { name: "Signup/Login", path: "/auth" },
       ];
 
+  const handleItemClick = () => {
+    setIsOpen(false);
+    setIsPattaOpenDesktop(false);
+  };
+
   return (
     <nav
-      className={`fixed w-full top-2 left-0 z-50 transition-all duration-500 rounded-4xl ${navbarClasses}`}
+      className={`fixed w-full rounded-4xl top-2 left-0 z-50 transition-all duration-500 ${navbarClasses}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2 sm:py-3 text-white">
+      <div className="px-4 sm:px-6 lg:px-8 flex justify-between w-full items-center py-3 text-white">
         {/* Logo */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-3">
           <img
             src={Logo}
             alt="TribalEarth360 Logo"
             className="h-10 w-10 sm:h-12 sm:w-12 object-cover rounded-full bg-white p-1"
           />
-          <h1 className="text-lg sm:text-2xl font-bold">TribalEarth360</h1>
+          <h1 className="text-xl sm:text-2xl font-bold">TribalEarth360</h1>
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex gap-5 text-base sm:text-lg items-center">
+        <ul className="hidden lg:flex gap-6 text-lg items-center">
           {menuItems.map((item, i) =>
             item.subMenu ? (
               <li key={i} className="relative" ref={desktopDropdownRef}>
                 <button
                   onClick={() => setIsPattaOpenDesktop(!isPattaOpenDesktop)}
-                  className={`flex items-center gap-1 sm:gap-2 ${hoverColor} focus:outline-none`}
+                  className={`flex items-center gap-1 ${hoverColor} focus:outline-none py-2 px-1`}
                 >
-                  {item.name} <ChevronDown size={16} />
+                  {item.name} <ChevronDown size={18} />
                 </button>
                 {isPattaOpenDesktop && (
                   <ul className="absolute left-0 top-full bg-green-800 mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
@@ -146,7 +151,8 @@ export const Navbar = ({ user,setuser }) => {
                       <li key={j}>
                         <Link
                           to={sub.path}
-                          className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300"
+                          className="block px-4 py-3 hover:bg-green-700 hover:text-yellow-300"
+                          onClick={handleItemClick}
                         >
                           {sub.name}
                         </Link>
@@ -155,9 +161,25 @@ export const Navbar = ({ user,setuser }) => {
                   </ul>
                 )}
               </li>
+            ) : item.action ? (
+              <li key={i}>
+                <button 
+                  onClick={() => {
+                    item.action();
+                    handleItemClick();
+                  }} 
+                  className={`${hoverColor} py-2 px-1`}
+                >
+                  {item.name}
+                </button>
+              </li>
             ) : (
               <li key={i}>
-                <Link to={item.path} className={hoverColor}>
+                <Link 
+                  to={item.path} 
+                  className={`${hoverColor} py-2 px-1`}
+                  onClick={handleItemClick}
+                >
                   {item.name}
                 </Link>
               </li>
@@ -176,33 +198,53 @@ export const Navbar = ({ user,setuser }) => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-green-800 px-4 pb-3">
-          <ul className="flex flex-col gap-3 text-base">
+        <div className="lg:hidden text-white bg-green-800 px-5 py-4 rounded-b-lg">
+          <ul className="flex flex-col gap-4 text-lg">
             {menuItems.map((item, i) =>
               item.subMenu ? (
                 <li key={i} className="relative" ref={mobileDropdownWrapperRef}>
                   <button
-                    className={`flex justify-between items-center w-full ${hoverColor}`}
+                    className={`flex justify-between items-center w-full py-3 ${hoverColor}`}
                     onClick={() => setIsPattaOpenMobile(!isPattaOpenMobile)}
                   >
-                    {item.name} <ChevronDown size={16} />
+                    {item.name} <ChevronDown size={18} />
                   </button>
                   <ul
                     ref={pattaDropdownRef}
-                    className="ml-3 mt-2 flex flex-col gap-2 text-sm overflow-hidden h-0 opacity-0"
+                    className="ml-4 mt-2 flex flex-col gap-3 text-base overflow-hidden h-0 opacity-0"
                   >
                     {item.subMenu.map((sub, j) => (
                       <li key={j}>
-                        <Link to={sub.path} className={hoverColor}>
+                        <Link 
+                          to={sub.path} 
+                          className={`block py-2 ${hoverColor}`}
+                          onClick={() => setIsOpen(false)}
+                        >
                           {sub.name}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
+              ) : item.action ? (
+                <li key={i}>
+                  <button 
+                    onClick={() => {
+                      item.action();
+                      setIsOpen(false);
+                    }} 
+                    className={`block w-full text-left py-3 ${hoverColor}`}
+                  >
+                    {item.name}
+                  </button>
+                </li>
               ) : (
                 <li key={i}>
-                  <Link to={item.path} className={hoverColor}>
+                  <Link 
+                    to={item.path} 
+                    className={`block py-3 ${hoverColor}`}
+                    onClick={() => setIsOpen(false)}
+                  >
                     {item.name}
                   </Link>
                 </li>
