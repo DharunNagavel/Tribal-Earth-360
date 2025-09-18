@@ -319,7 +319,6 @@ const Individual = () => {
                   className={`w-full p-3 border rounded-lg ${errors.state ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select State</option>
-                  <option value="">Kerala</option>
                   {Object.keys(indiaStateData).map(state => (
                     <option key={state} value={state}>{state}</option>
                   ))}

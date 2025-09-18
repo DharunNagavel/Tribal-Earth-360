@@ -396,7 +396,7 @@
               "Tirukalukundram": [
                 "Tirukalukundram",
                 "Maraimalai Nagar",
-                "Vallakottai",
+                "Vellakottai",
                 "Agaram",
                 "Perumbakkam",
                 "Pazhaverkadu",
@@ -1785,7 +1785,7 @@
                 "Periyanagalur",
                 "Kaveripattinam East",
                 "Singarapettai",
-                "Kallavi",
+                "Kellavi",
                 "Pochampalli South",
                 "Kattinayanapalli",
                 "Pulikundram",
@@ -1969,6 +1969,193 @@
                 "Sengappadai",
                 "Villur",
                 "Thennamanallur"
+              ]
+            }
+          }
+        }
+      },
+      "Thanjavur": {
+        "taluks": {
+          "Thanjavur": {
+            "panchayats": {
+              "Thanjavur Block": [
+                "Thanjavur",
+                "Orathanadu",
+                "Pattukkottai",
+                "Peravurani",
+                "Thiruvaiyaru",
+                "Thiruvidaimarudur",
+                "Kumbakonam",
+                "Papanasam"
+              ]
+            }
+          }
+        }
+      },
+      "Theni": {
+        "taluks": {
+          "Theni": {
+            "panchayats": {
+              "Theni Block": [
+                "Theni",
+                "Bodinayakkanur",
+                "Periyakulam",
+                "Uthamapalayam",
+                "Andipatti",
+                "Chinnamanur"
+              ]
+            }
+          }
+        }
+      },
+      "Tiruchirappalli": {
+        "taluks": {
+          "Tiruchirappalli": {
+            "panchayats": {
+              "Tiruchirappalli Block": [
+                "Tiruchirappalli",
+                "Srirangam",
+                "Thuraiyur",
+                "Musiri",
+                "Manapparai",
+                "Lalgudi",
+                "Thottiyam"
+              ]
+            }
+          }
+        }
+      },
+      "Tirunelveli": {
+        "taluks": {
+          "Tirunelveli": {
+            "panchayats": {
+              "Tirunelveli Block": [
+                "Tirunelveli",
+                "Ambasamudram",
+                "Nanguneri",
+                "Radhapuram",
+                "Valliyoor",
+                "Cheranmahadevi",
+                "Sankarankovil"
+              ]
+            }
+          }
+        }
+      },
+      "Tiruppur": {
+        "taluks": {
+          "Tiruppur": {
+            "panchayats": {
+              "Tiruppur Block": [
+                "Tiruppur",
+                "Avinashipalayam",
+                "Kangeyam",
+                "Dharapuram",
+                "Udumalpet",
+                "Palladam",
+                "Madathukulam"
+              ]
+            }
+          }
+        }
+      },
+      "Tiruvallur": {
+        "taluks": {
+          "Tiruvallur": {
+            "panchayats": {
+              "Tiruvallur Block": [
+                "Tiruvallur",
+                "Ponneri",
+                "Gummidipoondi",
+                "Poonamallee",
+                "Ambattur",
+                "Thiruttani",
+                "Pallipattu"
+              ]
+            }
+          }
+        }
+      },
+      "Tiruvannamalai": {
+        "taluks": {
+          "Tiruvannamalai": {
+            "panchayats": {
+              "Tiruvannamalai Block": [
+                "Tiruvannamalai",
+                "Chengam",
+                "Thandarampattu",
+                "Polur",
+                "Cheyyar",
+                "Vandavasi",
+                "Chetpet"
+              ]
+            }
+          }
+        }
+      },
+      "Tiruvarur": {
+        "taluks": {
+          "Tiruvarur": {
+            "panchayats": {
+              "Tiruvarur Block": [
+                "Tiruvarur",
+                "Nannilam",
+                "Kodavasal",
+                "Mannargudi",
+                "Thiruthuraipoondi",
+                "Needamangalam",
+                "Valangaiman"
+              ]
+            }
+          }
+        }
+      },
+      "Vellore": {
+        "taluks": {
+          "Vellore": {
+            "panchayats": {
+              "Vellore Block": [
+                "Vellore",
+                "Gudiyatham",
+                "Tirupattur",
+                "Ranipet",
+                "Walajah",
+                "Arakkonam",
+                "Arcot"
+              ]
+            }
+          }
+        }
+      },
+      "Viluppuram": {
+        "taluks": {
+          "Viluppuram": {
+            "panchayats": {
+              "Viluppuram Block": [
+                "Viluppuram",
+                "Tindivanam",
+                "Vanur",
+                "Gingee",
+                "Marakkanam",
+                "Sankarapuram",
+                "Kandachipuram"
+              ]
+            }
+          }
+        }
+      },
+      "Virudhunagar": {
+        "taluks": {
+          "Virudhunagar": {
+            "panchayats": {
+              "Virudhunagar Block": [
+                "Virudhunagar",
+                "Aruppukkottai",
+                "Rajapalayam",
+                "Sattur",
+                "Sivakasi",
+                "Srivilliputhur",
+                "Tiruchuli"
               ]
             }
           }
