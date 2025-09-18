@@ -299,7 +299,7 @@ export default function IndiaMap() {
 
         {/* Fit to region center */}
         <MapActions
-          selectedRegion={selectedRegion}
+          selectedRegion={selectedRegion}  
           features={[...stateFeatures, ...districtFeatures]}
         />
       </MapContainer>
