@@ -53,12 +53,13 @@ export const Login = ({setvisible,setuser}) => {
           <div className=''>
             <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>Login</h1>
           </div>
-          <input type="mail" value={mail} onChange={(e) => {setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+          <input type="mail" value={mail} required onChange={(e) => {setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
           <div style={{ position: 'relative' }}>
             <input
               type={showPassword ? "text" : "password"}
               className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400 w-full pr-10'
               placeholder='Enter the Password'
+              required
               id='login-password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}

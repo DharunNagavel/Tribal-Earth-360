@@ -1,14 +1,16 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
+import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 
-export const Navbar = ({ user }) => {
+export const Navbar = ({ user,setuser }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPattaOpenMobile, setIsPattaOpenMobile] = useState(false);
   const [isPattaOpenDesktop, setIsPattaOpenDesktop] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const pattaDropdownRef = useRef(null);
   const desktopDropdownRef = useRef(null);
@@ -83,6 +85,7 @@ export const Navbar = ({ user }) => {
   const menuItems = user
     ? [
         { name: "Home", path: "/" },
+        { name: "Digitalize", path: "/digitalization" },
         {
           name: "Patta",
           subMenu: [
@@ -93,10 +96,11 @@ export const Navbar = ({ user }) => {
         },
         { name: "Map", path: "/map" },
         { name: "About FRA", path: "/about" },
-        { name: "Logout", path: "/auth" }, // or handle logout differently
+        { name: "Logout", action: () => { setuser(false); navigate("/auth"); } }, // or handle logout differently
       ]
     : [
         { name: "Home", path: "/auth" },
+        { name: "Digitalize", path: "/auth" },
         {
           name: "Patta",
           subMenu: [

@@ -115,11 +115,11 @@ export const Signup = ({setvisible,setuser}) => {
             <div className='w-full max-w-md'>
                 <form ref={formRef} onSubmit={handleSubmit} action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg w-full justify-center'>
                     <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>SignUp</h1>
-                    <input type="text" value={username} onChange={(e)=>{setusername(e.target.value)}} placeholder='Enter the Username' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
-                    <input type="mail" value={mail} onChange={(e)=>{setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
-                    <input type="tel" value={aadar} onChange={(e)=>{setaadar(e.target.value)}} placeholder='Enter the Aadar No' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+                    <input type="text" required value={username} onChange={(e)=>{setusername(e.target.value)}} placeholder='Enter the Username' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+                    <input type="mail" required value={mail} onChange={(e)=>{setmail(e.target.value)}} placeholder='Enter the Mail id' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
+                    <input type="tel" required value={aadar} onChange={(e)=>{setaadar(e.target.value)}} placeholder='Enter the Aadar No' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />
                     <select value={department} onChange={(e)=>{setdepartment(e.target.value)}} className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400'>
-                        <option selected>Select your Department</option>
+                        <option value="" disabled>Select your Department</option>
                         <option>Gram Sabha</option>
                         <option>Forest Rights Committee (FRC)</option>
                         <option>Sub-Divisional Level Committee (SDLC)</option>
@@ -152,6 +152,7 @@ export const Signup = ({setvisible,setuser}) => {
                             className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400 w-full pr-10'
                             placeholder='Enter the Password'
                             id='password'
+                            required
                             value={password}
                             onChange={(e)=>{setpassword(e.target.value)}}
                         />
@@ -170,6 +171,7 @@ export const Signup = ({setvisible,setuser}) => {
                             type={showConfirmPassword ? "text" : "password"}
                             className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400 w-full pr-10'
                             placeholder='Conform Password'
+                            required
                             id='confirm-password'
                         />
                         <button
