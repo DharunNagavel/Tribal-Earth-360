@@ -1,1624 +1,1979 @@
 {
-"Tamil Nadu": {
-"districts": {
-"Chennai": {
-"talukas": {
-"Egmore-Nungambakam": {
-"panchayats": {
-"Koyambedu": [
-"Koyambedu",
-"MMDA Colony",
-"Kolathur",
-"Villivakkam",
-"Anna Nagar",
-"Aminjikarai",
-"Purasawalkam",
-"Perambur"
-],
-"Nungambakkam": [
-"Nungambakkam",
-"Puliyur",
-"T.Nagar",
-"Alwarpet",
-"Mylapore",
-"RA Puram",
-"Adyar",
-"Guindy"
-],
-"Tondiarpet": [
-"Tondiarpet",
-"Royapuram",
-"Washermanpet",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills"
-],
-"Ambattur": [
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Alandur": [
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Pallavaram",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Sholinganallur": [
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam",
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam"
-],
-"Saidapet": [
-"Saidapet",
-"Gandhi Nagar",
-"Kotturpuram",
-"Jafferkhanpet",
-"Ashok Nagar",
-"KK Nagar",
-"Vadapalani",
-"Saligramam"
-],
-"Thiruvallur": [
-"Thiruvallur",
-"Poonamallee",
-"Avadi",
-"Tiruvallur",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet"
-]
-}
-},
-"Mylapore-Triplicane": {
-"panchayats": {
-"Mylapore": [
-"Mylapore",
-"Mandaveli",
-"RA Puram",
-"Alwarpet",
-"Teynampet",
-"Nandanam",
-"Cit Nagar",
-"Kotturpuram"
-],
-"Triplicane": [
-"Triplicane",
-"Chepauk",
-"Thiruvallikeni",
-"Marina Beach",
-"Chintadripet",
-"Pudupet",
-"Egmore",
-"Choolai"
-],
-"Santhome": [
-"Santhome",
-"Luz",
-"Mylapore",
-"Mandaveli",
-"RA Puram",
-"Adyar",
-"Besant Nagar",
-"Thiruvanmiyur"
-],
-"Thousand Lights": [
-"Thousand Lights",
-"Nungambakkam",
-"T.Nagar",
-"Pondy Bazaar",
-"Thyagaraya Nagar",
-"Kodambakkam",
-"Vadapalani",
-"Ashok Nagar"
-],
-"Aminjikarai": [
-"Aminjikarai",
-"Purasawalkam",
-"Kilpauk",
-"Chetpet",
-"Egmore",
-"Poonamallee High Road",
-"Arumbakkam",
-"Villivakkam"
-],
-"Vepery": [
-"Vepery",
-"Purasawalkam",
-"Perambur",
-"Kolathur",
-"Ayanavaram",
-"Otteri",
-"Pattalam",
-"Broadway"
-],
-"Royapuram": [
-"Royapuram",
-"Washermanpet",
-"Tondiarpet",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills"
-],
-"Perambur": [
-"Perambur",
-"Ayanavaram",
-"Kolathur",
-"Villivakkam",
-"Moolakadai",
-"Ennore",
-"Tiruvottiyur",
-"Manali"
-]
-}
-},
-"Guindy": {
-"panchayats": {
-"Guindy": [
-"Guindy",
-"Saidapet",
-"Gandhi Nagar",
-"Kotturpuram",
-"Adyar",
-"Tharamani",
-"Velachery",
-"Taramani"
-],
-"Velachery": [
-"Velachery",
-"Taramani",
-"Perungudi",
-"Thoraipakkam",
-"Pallikaranai",
-"Kovilambakkam",
-"Medavakkam",
-"Nanganallur"
-],
-"Adyar": [
-"Adyar",
-"Thiruvanmiyur",
-"Besant Nagar",
-"RA Puram",
-"Kotturpuram",
-"Gandhi Nagar",
-"Saidapet",
-"Guindy"
-],
-"Thiruvanmiyur": [
-"Thiruvanmiyur",
-"Adyar",
-"Besant Nagar",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam",
-"Kottivakkam"
-],
-"Pallavaram": [
-"Pallavaram",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur",
-"Guduvancheri",
-"Urapakkam",
-"Pammal"
-],
-"Tambaram": [
-"Tambaram",
-"Chromepet",
-"Pallavaram",
-"Perungalathur",
-"Vandalur",
-"Guduvancheri",
-"Urapakkam",
-"Pammal"
-],
-"Chromepet": [
-"Chromepet",
-"Pallavaram",
-"Tambaram",
-"Perungalathur",
-"Vandalur",
-"Guduvancheri",
-"Urapakkam",
-"Pammal"
-],
-"Perungalathur": [
-"Perungalathur",
-"Tambaram",
-"Chromepet",
-"Pallavaram",
-"Vandalur",
-"Guduvancheri",
-"Urapakkam",
-"Pammal"
-]
-}
-},
-"Tiruvottiyur": {
-"panchayats": {
-"Tiruvottiyur": [
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills",
-"Ennore",
-"Kathivakkam",
-"Wimco Nagar"
-],
-"Manali": [
-"Manali",
-"Tiruvottiyur",
-"Mathur",
-"Madhavaram",
-"Red Hills",
-"Ennore",
-"Kathivakkam",
-"Wimco Nagar"
-],
-"Madhavaram": [
-"Madhavaram",
-"Red Hills",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Ennore",
-"Kathivakkam",
-"Wimco Nagar"
-],
-"Red Hills": [
-"Red Hills",
-"Madhavaram",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Ennore",
-"Kathivakkam",
-"Wimco Nagar"
-],
-"Ennore": [
-"Ennore",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills",
-"Kathivakkam",
-"Wimco Nagar"
-],
-"Kathivakkam": [
-"Kathivakkam",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills",
-"Ennore",
-"Wimco Nagar"
-],
-"Wimco Nagar": [
-"Wimco Nagar",
-"Tiruvottiyur",
-"Manali",
-"Mathur",
-"Madhavaram",
-"Red Hills",
-"Ennore",
-"Kathivakkam"
-],
-"Mathur": [
-"Mathur",
-"Manali",
-"Tiruvottiyur",
-"Madhavaram",
-"Red Hills",
-"Ennore",
-"Kathivakkam",
-"Wimco Nagar"
-]
-}
-},
-"Ambattur": {
-"panchayats": {
-"Ambattur": [
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Korattur": [
-"Korattur",
-"Ambattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Mogappair": [
-"Mogappair",
-"Ambattur",
-"Korattur",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Padi": [
-"Padi",
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Thirumangalam",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Thirumangalam": [
-"Thirumangalam",
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Anna Nagar West",
-"Valasaravakkam",
-"Porur"
-],
-"Anna Nagar West": [
-"Anna Nagar West",
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Valasaravakkam",
-"Porur"
-],
-"Valasaravakkam": [
-"Valasaravakkam",
-"Porur",
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West"
-],
-"Porur": [
-"Porur",
-"Valasaravakkam",
-"Ambattur",
-"Korattur",
-"Mogappair",
-"Padi",
-"Thirumangalam",
-"Anna Nagar West"
-]
-}
-},
-"Poonamallee": {
-"panchayats": {
-"Poonamallee": [
-"Poonamallee",
-"Avadi",
-"Tiruvallur",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet",
-"Kadambathur"
-],
-"Avadi": [
-"Avadi",
-"Poonamallee",
-"Tiruvallur",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet",
-"Kadambathur"
-],
-"Tiruvallur": [
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet",
-"Kadambathur"
-],
-"Gummidipoondi": [
-"Gummidipoondi",
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet",
-"Kadambathur"
-],
-"Tiruttani": [
-"Tiruttani",
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Gummidipoondi",
-"Pallipattu",
-"R.K.Pet",
-"Kadambathur"
-],
-"Pallipattu": [
-"Pallipattu",
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Gummidipoondi",
-"Tiruttani",
-"R.K.Pet",
-"Kadambathur"
-],
-"R.K.Pet": [
-"R.K.Pet",
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"Kadambathur"
-],
-"Kadambathur": [
-"Kadambathur",
-"Tiruvallur",
-"Poonamallee",
-"Avadi",
-"Gummidipoondi",
-"Tiruttani",
-"Pallipattu",
-"R.K.Pet"
-]
-}
-},
-"Sholinganallur": {
-"panchayats": {
-"Sholinganallur": [
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam",
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam"
-],
-"Karapakkam": [
-"Karapakkam",
-"Sholinganallur",
-"Okkiyam Thuraipakkam",
-"Perumbakkam",
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam"
-],
-"Okkiyam Thuraipakkam": [
-"Okkiyam Thuraipakkam",
-"Sholinganallur",
-"Karapakkam",
-"Perumbakkam",
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam"
-],
-"Perumbakkam": [
-"Perumbakkam",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam"
-],
-"Kottivakkam": [
-"Kottivakkam",
-"Palavakkam",
-"Neelankarai",
-"Kovalam",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam"
-],
-"Palavakkam": [
-"Palavakkam",
-"Kottivakkam",
-"Neelankarai",
-"Kovalam",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam"
-],
-"Neelankarai": [
-"Neelankarai",
-"Palavakkam",
-"Kottivakkam",
-"Kovalam",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam"
-],
-"Kovalam": [
-"Kovalam",
-"Neelankarai",
-"Palavakkam",
-"Kottivakkam",
-"Sholinganallur",
-"Karapakkam",
-"Okkiyam Thuraipakkam",
-"Perumbakkam"
-]
-}
-},
-"Alandur": {
-"panchayats": {
-"Alandur": [
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Pallavaram",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Adambakkam": [
-"Adambakkam",
-"Alandur",
-"Nanganallur",
-"Pallavaram",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Nanganallur": [
-"Nanganallur",
-"Alandur",
-"Adambakkam",
-"Pallavaram",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Pallavaram": [
-"Pallavaram",
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Chromepet",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Chromepet": [
-"Chromepet",
-"Pallavaram",
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Tambaram",
-"Perungalathur",
-"Vandalur"
-],
-"Tambaram": [
-"Tambaram",
-"Chromepet",
-"Pallavaram",
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Perungalathur",
-"Vandalur"
-],
-"Perungalathur": [
-"Perungalathur",
-"Tambaram",
-"Chromepet",
-"Pallavaram",
-"Alandur",
-"Adambakkam",
-"Nanganallur",
-"Vandalur"
-],
-"Vandalur": [
-"Vandalur",
-"Perungalathur",
-"Tambaram",
-"Chromepet",
-"Pallavaram",
-"Alandur",
-"Adambakkam",
-"Nanganallur"
-]
-}
-}
-}
-},
-"Kancheepuram": {
-"talukas": {
-"Kancheepuram": {
-"panchayats": {
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Sitheri": [
-"Sitheri",
-"Nattapettai",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Walajabad": [
-"Walajabad",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-]
-}
-},
-"Sriperumbudur": {
-"panchayats": {
-"Sriperumbudur": [
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Semmenchery",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam"
-],
-"Vadambakkam": [
-"Vadambakkam",
-"Sriperumbudur",
-"Irungattukottai",
-"Semmenchery",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam"
-],
-"Irungattukottai": [
-"Irungattukottai",
-"Sriperumbudur",
-"Vadambakkam",
-"Semmenchery",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam"
-],
-"Semmenchery": [
-"Semmenchery",
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Semmenchery",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Semmenchery",
-"Walajabad",
-"Madurantakam"
-],
-"Walajabad": [
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Semmenchery",
-"Madurantakam"
-],
-"Madurantakam": [
-"Madurantakam",
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Vadambakkam",
-"Irungattukottai",
-"Semmenchery"
-]
-}
-},
-"Uthiramerur": {
-"panchayats": {
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Walajabad": [
-"Walajabad",
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Uthiramerur",
-"Sriperumbudur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-]
-}
-},
-"Walajabad": {
-"panchayats": {
-"Walajabad": [
-"Walajabad",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Walajabad",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Uthiramerur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Uthiramerur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur"
-],
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Walajabad",
-"Sriperumbudur",
-"Uthiramerur",
-"Madurantakam",
-"Cheyyur"
-]
-}
-},
-"Madurantakam": {
-"panchayats": {
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Madurantakam",
-"Cheyyur",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Madurantakam",
-"Cheyyur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Madurantakam",
-"Cheyyur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Walajabad": [
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Madurantakam",
-"Cheyyur",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-]
-}
-},
-"Cheyyur": {
-"panchayats": {
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Cheyyur",
-"Madurantakam",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Cheyyur",
-"Madurantakam",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Cheyyur",
-"Madurantakam",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Walajabad": [
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Cheyyur",
-"Madurantakam",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Cheyyur",
-"Madurantakam"
-],
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Cheyyur",
-"Madurantakam"
-]
-}
-},
-"Periachanthangal": {
-"panchayats": {
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Periachanthangal",
-"Chinna Chanthangal",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Periachanthangal",
-"Chinna Chanthangal",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Periachanthangal",
-"Chinna Chanthangal",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Walajabad": [
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Periachanthangal",
-"Chinna Chanthangal",
-"Madurantakam",
-"Cheyyur"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Periachanthangal",
-"Chinna Chanthangal"
-]
-}
-},
-"Chinna Chanthangal": {
-"panchayats": {
-"Chinna Chanthangal": [
-"Chinna Chanthangal",
-"Periachanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Periachanthangal": [
-"Periachanthangal",
-"Chinna Chanthangal",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Kanchipuram": [
-"Kanchipuram",
-"Chinna Chanthangal",
-"Periachanthangal",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Sriperumbudur": [
-"Sriperumbudur",
-"Kanchipuram",
-"Chinna Chanthangal",
-"Periachanthangal",
-"Uthiramerur",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Uthiramerur": [
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Chinna Chanthangal",
-"Periachanthangal",
-"Walajabad",
-"Madurantakam",
-"Cheyyur"
-],
-"Walajabad": [
-"Walajabad",
-"Uthiramerur",
-"Kanchipuram",
-"Sriperumbudur",
-"Chinna Chanthangal",
-"Periachanthangal",
-"Madurantakam",
-"Cheyyur"
-],
-"Madurantakam": [
-"Madurantakam",
-"Cheyyur",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Chinna Chanthangal",
-"Periachanthangal"
-],
-"Cheyyur": [
-"Cheyyur",
-"Madurantakam",
-"Kanchipuram",
-"Sriperumbudur",
-"Uthiramerur",
-"Walajabad",
-"Chinna Chanthangal",
-"Periachanthangal"
-]
-}
-}
-}
-},
-"Coimbatore": {
-"talukas": {
-"Coimbatore North": {
-"panchayats": {
-"Coimbatore": [
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Saibaba Colony",
-"Race Course",
-"Vadavalli",
-"Thondamuthur",
-"Perur"
-],
-"Gandhipuram": [
-"Gandhipuram",
-"Coimbatore",
-"RS Puram",
-"Saibaba Colony",
-"Race Course",
-"Vadavalli",
-"Thondamuthur",
-"Perur"
-],
-"RS Puram": [
-"RS Puram",
-"Coimbatore",
-"Gandhipuram",
-"Saibaba Colony",
-"Race Course",
-"Vadavalli",
-"Thondamuthur",
-"Perur"
-],
-"Saibaba Colony": [
-"Saibaba Colony",
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Race Course",
-"Vadavalli",
-"Thondamuthur",
-"Perur"
-],
-"Race Course": [
-"Race Course",
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Saibaba Colony",
-"Vadavalli",
-"Thondamuthur",
-"Perur"
-],
-"Vadavalli": [
-"Vadavalli",
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Saibaba Colony",
-"Race Course",
-"Thondamuthur",
-"Perur"
-],
-"Thondamuthur": [
-"Thondamuthur",
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Saibaba Colony",
-"Race Course",
-"Vadavalli",
-"Perur"
-],
-"Perur": [
-"Perur",
-"Coimbatore",
-"Gandhipuram",
-"RS Puram",
-"Saibaba Colony",
-"Race Course",
-"Vadavalli",
-"Thondamuthur"
-]
-}
-},
-"Coimbatore South": {
-"panchayats": {
-"Peelamedu": [
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Kuniyamuthur",
-"Ganapathy",
-"Saraswathipuram",
-"Sitra",
-"Kovaipudur"
-],
-"Singanallur": [
-"Singanallur",
-"Peelamedu",
-"Kurichi",
-"Kuniyamuthur",
-"Ganapathy",
-"Saraswathipuram",
-"Sitra",
-"Kovaipudur"
-],
-"Kurichi": [
-"Kurichi",
-"Peelamedu",
-"Singanallur",
-"Kuniyamuthur",
-"Ganapathy",
-"Saraswathipuram",
-"Sitra",
-"Kovaipudur"
-],
-"Kuniyamuthur": [
-"Kuniyamuthur",
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Ganapathy",
-"Saraswathipuram",
-"Sitra",
-"Kovaipudur"
-],
-"Ganapathy": [
-"Ganapathy",
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Kuniyamuthur",
-"Saraswathipuram",
-"Sitra",
-"Kovaipudur"
-],
-"Saraswathipuram": [
-"Saraswathipuram",
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Kuniyamuthur",
-"Ganapathy",
-"Sitra",
-"Kovaipudur"
-],
-"Sitra": [
-"Sitra",
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Kuniyamuthur",
-"Ganapathy",
-"Saraswathipuram",
-"Kovaipudur"
-],
-"Kovaipudur": [
-"Kovaipudur",
-"Peelamedu",
-"Singanallur",
-"Kurichi",
-"Kuniyamuthur",
-"Ganapathy",
-"Saraswathipuram",
-"Sitra"
-]
-}
-},
-"Pollachi": {
-"panchayats": {
-"Pollachi": [
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Valparai",
-"Udumalpet",
-"Pongalur",
-"Madathukulam",
-"Avanashi"
-],
-"Kinathukadavu": [
-"Kinathukadavu",
-"Pollachi",
-"Anamalai",
-"Valparai",
-"Udumalpet",
-"Pongalur",
-"Madathukulam",
-"Avanashi"
-],
-"Anamalai": [
-"Anamalai",
-"Pollachi",
-"Kinathukadavu",
-"Valparai",
-"Udumalpet",
-"Pongalur",
-"Madathukulam",
-"Avanashi"
-],
-"Valparai": [
-"Valparai",
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Udumalpet",
-"Pongalur",
-"Madathukulam",
-"Avanashi"
-],
-"Udumalpet": [
-"Udumalpet",
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Valparai",
-"Pongalur",
-"Madathukulam",
-"Avanashi"
-],
-"Pongalur": [
-"Pongalur",
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Valparai",
-"Udumalpet",
-"Madathukulam",
-"Avanashi"
-],
-"Madathukulam": [
-"Madathukulam",
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Valparai",
-"Udumalpet",
-"Pongalur",
-"Avanashi"
-],
-"Avanashi": [
-"Avanashi",
-"Pollachi",
-"Kinathukadavu",
-"Anamalai",
-"Valparai",
-"Udumalpet",
-"Pongalur",
-"Madathukulam"
-]
-}
-},
-"Tiruppur": {
-"panchayats": {
-"Tiruppur": [
-"Tiruppur",
-"Kangeyam",
-"Dharapuram",
-"Udumalpet",
-"Palladam",
-"Av"]}
-}
-}
-}
-}
-}
+  "Tamil Nadu": {
+    "districts": {
+      "Ariyalur": {
+        "taluks": {
+          "Ariyalur": {
+            "panchayats": {
+              "Ariyalur": [
+                "Ariyalur",
+                "Kallankurichi",
+                "Meensuruti",
+                "Varadarajapuram",
+                "Kalleri",
+                "Manakudaiyan",
+                "Nallur",
+                "Suthamalli"
+              ],
+              "Keelapalur": [
+                "Keelapalur",
+                "Pudupalayam",
+                "Karaivetti",
+                "Vilangudi",
+                "Kulumur",
+                "Reddipalayam",
+                "Ottakoil",
+                "Govindapuram"
+              ],
+              "Thirumanur": [
+                "Thirumanur",
+                "Ottar",
+                "Pullambadi",
+                "Sendurai",
+                "Jayankondam",
+                "Kodukkur",
+                "Varadarajapuram",
+                "Veppathur"
+              ]
+            }
+          },
+          "Udayarpalayam": {
+            "panchayats": {
+              "Andimadam": [
+                "Andimadam",
+                "Ayanthathanur",
+                "Paluvur",
+                "Vilanthai",
+                "Pandaravadai",
+                "Pappakudi",
+                "Sivayam",
+                "Melur"
+              ],
+              "Ayangudi": [
+                "Ayangudi",
+                "Kudavasal",
+                "Cholapuram",
+                "Suthamalli",
+                "Irungalur",
+                "Ukkadai",
+                "Muttuvancheri",
+                "Varadarajapuram"
+              ],
+              "Viragalur": [
+                "Viragalur",
+                "Kallagam",
+                "Thirumangalam",
+                "Thiruppuvanam",
+                "Reddiyur",
+                "Pudukudi",
+                "Kudikadu",
+                "Melakaruppur"
+              ]
+            }
+          },
+          "Sendurai": {
+            "panchayats": {
+              "Sendurai": [
+                "Sendurai",
+                "Veppur",
+                "Vellur",
+                "Manakkal",
+                "Okkur",
+                "Melakaruppur",
+                "Irungalur",
+                "Kottur"
+              ],
+              "Varadarajapuram": [
+                "Varadarajapuram",
+                "Govindapuram",
+                "Kulumur",
+                "Pallur",
+                "Kallankurichi",
+                "Ottakoil",
+                "Melur",
+                "Kattupudur"
+              ]
+            }
+          },
+          "Jayankondam": {
+            "panchayats": {
+              "Jayankondam": [
+                "Jayankondam",
+                "Veppur",
+                "Andimadam",
+                "Keelapalur",
+                "Meensuruti",
+                "Pappakudi",
+                "Nallur",
+                "Suthamalli"
+              ],
+              "Kodukkur": [
+                "Kodukkur",
+                "Varadarajapuram",
+                "Govindapuram",
+                "Ottakoil",
+                "Reddipalayam",
+                "Pullambadi",
+                "Manakkal",
+                "Vellur"
+              ]
+            }
+          }
+        }
+      },
+      "Chengalpattu": {
+        "taluks": {
+          "Acharapakkam": {
+            "panchayats": {
+              "Acharapakkam": [
+                "Acharapakkam",
+                "Arasur",
+                "Kaduvettipattu",
+                "Periyankuppam",
+                "Thiruvakkarai",
+                "Andikuppam",
+                "Mambakkam",
+                "Ezhilnatham",
+                "Pichirai",
+                "Meyyur"
+              ],
+              "Melmaruvathur": [
+                "Melmaruvathur",
+                "Pakkam",
+                "Veerappanchatram",
+                "Kumarapakkam",
+                "Kolakkadu",
+                "Kadambur",
+                "Nallur",
+                "Vembakkam",
+                "Annamalai",
+                "Pillaiyarpuram"
+              ],
+              "Paganur": [
+                "Paganur",
+                "Kavanur",
+                "Sekkadu",
+                "Alankuppam",
+                "Saliyamangalam",
+                "Vellore",
+                "Kothur",
+                "Arangur",
+                "Nerumbur",
+                "Pudupakkam"
+              ],
+              "Periyapalayam": [
+                "Periyapalayam",
+                "Kudikadu",
+                "Periyaseerampattu",
+                "Kattuputhur",
+                "Kolathur",
+                "Annankoil",
+                "Vellur",
+                "Kandhiyur",
+                "Mettuvari",
+                "Pudupakkam"
+              ]
+            }
+          },
+          "Chithamur": {
+            "panchayats": {
+              "Chithamur": [
+                "Chithamur",
+                "Kovilancheri",
+                "Vengal",
+                "Marakkanam",
+                "Poondi",
+                "Thirunalur",
+                "Kilambakkam",
+                "Koonimedu",
+                "Pillaiyarkuppam",
+                "Kachirapalayam"
+              ],
+              "Chengadu": [
+                "Chengadu",
+                "Varappuzha",
+                "Ariyur",
+                "Sankarapuram",
+                "Kothachery",
+                "Nainarkuppam",
+                "Punnaiyur",
+                "Kudumbur",
+                "Vengal North",
+                "Kudikadu"
+              ],
+              "Koonimedu": [
+                "Koonimedu",
+                "Thiruvakkarai",
+                "Kuthukalvalasai",
+                "Kannanur",
+                "Perumalapattu",
+                "Mammalapuram",
+                "Nayampattu",
+                "Penchikalpet",
+                "Kovilpattu",
+                "Muthalnatham"
+              ]
+            }
+          },
+          "Kattankulathur": {
+            "panchayats": {
+              "Kattankulathur": [
+                "Alapakkam",
+                "Anjur",
+                "Appur",
+                "Athur",
+                "Chettipuniyam",
+                "Kalvoy",
+                "Karanaipuducheri",
+                "Kayarambedu",
+                "Keerapakkam",
+                "Mannivakkam"
+              ],
+              "Veerapuram": [
+                "Veerapuram",
+                "Vazhunambakkam",
+                "Nanguneri",
+                "Thiruvallur",
+                "Kondancheri",
+                "Kavankarai",
+                "Periyavelur",
+                "Pudupakkam",
+                "Sinnur",
+                "Kondancheri R.F."
+              ],
+              "Kumizhi": [
+                "Kumizhi",
+                "Kumarapuram",
+                "Pudupakkam",
+                "Kaveripakkam",
+                "Vellampakkam",
+                "Kolapakkam",
+                "Pattipulam",
+                "Kundrathur",
+                "Kovilancheri",
+                "Pallikaranai"
+              ]
+            }
+          },
+          "Lathur": {
+            "panchayats": {
+              "Lathur": [
+                "Lathur",
+                "Keezhpoovanur",
+                "Periyapattu",
+                "Korakkai",
+                "Manalani",
+                "Rettanai",
+                "Melpoovanur",
+                "Kandanchavadi",
+                "Parakkal",
+                "Sengunthapuram"
+              ],
+              "Vandalur": [
+                "Vandalur",
+                "Thuraippakkam",
+                "Siruseri",
+                "Kelambakkam",
+                "Palahalli",
+                "Puthur",
+                "Nallambakkam",
+                "Kattankulathur",
+                "Alandur",
+                "Nemilichery"
+              ],
+              "Nandivaram-Guduvancheri": [
+                "Nandivaram",
+                "Guduvancheri",
+                "Mambakkam",
+                "Perumbakkam",
+                "Thiruporur",
+                "Somanur",
+                "Kundrathur",
+                "Mudukulathur",
+                "Alandur",
+                "Kovilancheri"
+              ]
+            }
+          },
+          "Madurantakam": {
+            "panchayats": {
+              "Madurantakam": [
+                "Madurantakam",
+                "Kancheepuram Road",
+                "Pudupet",
+                "Poongar",
+                "Kolakalur",
+                "Kovilpathu",
+                "Kattuputhur",
+                "Kothambakkam",
+                "Somanur",
+                "Vellur"
+              ],
+              "Melmaruvathur": [
+                "Melmaruvathur",
+                "Vallar",
+                "Pudupakkam",
+                "Kadamparai",
+                "Annamalai",
+                "Pillaiyarpuram",
+                "Kolakkadu",
+                "Nallur",
+                "Vandavasi",
+                "Kalikiri"
+              ],
+              "Cheyyur": [
+                "Cheyyur",
+                "Kundrathur",
+                "Periyakuppam",
+                "Koonimedu",
+                "Kudikadu",
+                "Varaha Nagar",
+                "Chettupakkam",
+                "Muthialpet",
+                "Sankarpalayam",
+                "Narthangal"
+              ]
+            }
+          },
+          "St. Thomas Mount": {
+            "panchayats": {
+              "St. Thomas Mount": [
+                "St. Thomas Mount",
+                "Pallavaram",
+                "Chromepet",
+                "Nanganallur",
+                "Cowl Bazaar",
+                "Meenambakkam",
+                "Keelkattalai",
+                "Pozhichalur",
+                "Pammal",
+                "Anakaputhur"
+              ],
+              "Pallavaram": [
+                "Pallavaram",
+                "Chromepet",
+                "Guindy",
+                "Alwarpet",
+                "Teynampet",
+                "Velachery",
+                "Thoraipakkam",
+                "Adambakkam",
+                "Iyyappanthangal",
+                "Pazhavanthangal"
+              ]
+            }
+          },
+          "Thiruporur": {
+            "panchayats": {
+              "Thiruporur": [
+                "Thiruporur",
+                "Padur",
+                "Karanai",
+                "Kelambakkam",
+                "Vandalur East",
+                "Kundrathur",
+                "Perumbakkam",
+                "Kattupakkam",
+                "Poonamallee",
+                "Pazhaverkadu"
+              ],
+              "Mullipakkam": [
+                "Mullipakkam",
+                "Pattipulam",
+                "Kudikadu",
+                "Kovilur",
+                "Ponnur",
+                "Nayagapuram",
+                "Kuthambakkam",
+                "Kattankolathur",
+                "Pudupakkam",
+                "Thiruvallur"
+              ]
+            }
+          },
+          "Tirukalukundram": {
+            "panchayats": {
+              "Tirukalukundram": [
+                "Tirukalukundram",
+                "Maraimalai Nagar",
+                "Vallakottai",
+                "Agaram",
+                "Perumbakkam",
+                "Pazhaverkadu",
+                "Pazhaverkadu West",
+                "Kovur",
+                "Kadambathur",
+                "Velachery"
+              ],
+              "Melatheri": [
+                "Melatheri",
+                "Poondi",
+                "Vadanallur",
+                "Sengundram",
+                "Kuthambakkam",
+                "Manimangalam",
+                "Kovilur",
+                "Kolathur",
+                "Kundrathur",
+                "Kamberi"
+              ]
+            }
+          }
+        }
+      },
+      "Coimbatore": {
+        "taluks": {
+          "Annur": {
+            "panchayats": {
+              "Annur Block": [
+                "A.Mettupalayam",
+                "A.Sengappalli",
+                "Allapalayam",
+                "Ambothi",
+                "Kanjapalli",
+                "Kanvakkarai",
+                "Karegoundenpalayam",
+                "Kariampalayam",
+                "Kattampatti",
+                "Kunnathur",
+                "Kuppanur",
+                "Kuppepalayam",
+                "M.G.C.Palayam",
+                "Naranapuram",
+                "Odderpalayam",
+                "Pachapalayam",
+                "Pasur",
+                "Pilliappampalayam",
+                "Pogalur",
+                "Vadakkalur",
+                "Vadavalli"
+              ]
+            }
+          },
+          "Anamalai": {
+            "panchayats": {
+              "Anamalai Block": [
+                "Angalakurichi",
+                "Arthanaripalayam",
+                "Authupollachi",
+                "Divansapudur",
+                "Jallipatti",
+                "Kaliapuram",
+                "Kambalapatti",
+                "Kariyanchettipalayam",
+                "M.G.Pudur",
+                "Periapodu",
+                "Pethanaickenur",
+                "Pilchinnampalayam",
+                "Ramanamudalipdr",
+                "Somandurai",
+                "Subbegoundenpdr",
+                "Thathur",
+                "Thenchittur",
+                "Thensangampalayam",
+                "V.K.Nagoor"
+              ]
+            }
+          },
+          "Kinathukadavu": {
+            "panchayats": {
+              "Kinathukadavu Block": [
+                "A.Muthur",
+                "Andipalayam",
+                "Arasampalayam",
+                "Chettikkapalayam",
+                "Devanampalayam",
+                "Devarayapuram",
+                "Govindapuram",
+                "Kakkadavu",
+                "Kaniyalamplm",
+                "Kappalankarai",
+                "Kattampatti",
+                "Kodangipalayam",
+                "Kondampatti",
+                "Kothavadi",
+                "Kovilpalayam",
+                "Kulathupalayam",
+                "Kurunellipalayam",
+                "Kuthiriyalamplm",
+                "Mandrampalayam",
+                "Mettubavi",
+                "Mettupalayam",
+                "Mullupadi",
+                "Nallattipalayam",
+                "Panapatti",
+                "Periakalandai",
+                "Pottayandipurambu",
+                "Sirukalandai",
+                "Sokkanur",
+                "Solanur",
+                "Solavampalayam",
+                "Sulakkal",
+                "Vadapudur",
+                "Vadasithur",
+                "Varadanur"
+              ]
+            }
+          },
+          "Pollachi North": {
+            "panchayats": {
+              "Pollachi North Block": [
+                "A.Nagoor",
+                "Achipatti",
+                "Anupparpalayam",
+                "Avalappampatti",
+                "Ayyampalayam",
+                "Bodigoundenpalayam",
+                "Bodipalayam",
+                "Chikkarayapuram",
+                "Chinnanegamam",
+                "Devambadi",
+                "Eripatti",
+                "Giddasuramplm",
+                "Gollapatti",
+                "Kabulipalayam",
+                "Kallapatti",
+                "Kondegoundenplm",
+                "Kullakkapalyaam",
+                "Kullichettiplm",
+                "Kurumbapalayam",
+                "Mannur",
+                "Moolanur",
+                "N.Chandrapuram",
+                "Nalluthukuli",
+                "Okkilipalayam",
+                "Poosaripatti",
+                "Puliampatti",
+                "Puravipalayam",
+                "R.Ponnapuram",
+                "Ramapattinam",
+                "Rasakapalayam",
+                "Rasichettipalayam",
+                "Santhegoundenplm",
+                "Servakaranplm",
+                "Thalakkarai",
+                "Thimmankuthu",
+                "Thippampatti",
+                "Vadakkipalayam",
+                "Vellalapalayam",
+                "Z.Muthur"
+              ]
+            }
+          },
+          "Thondamuthur": {
+            "panchayats": {
+              "Thondamuthur Block": [
+                "Devarayapuram",
+                "Ikkarai Boluvampatti",
+                "Jagirnaickenplm",
+                "Madampatti",
+                "Madvarayapuram",
+                "Narasipuram",
+                "P.C.Palayam",
+                "Theethipalayam",
+                "Thennamanallur",
+                "Vellimalaipatinam"
+              ]
+            }
+          }
+        }
+      },
+      "Cuddalore": {
+        "taluks": {
+          "Cuddalore": {
+            "panchayats": {
+              "Cuddalore Block": [
+                "Alappakkam",
+                "Devanampattinam",
+                "Samiyarpettai",
+                "Thirupapuliyur",
+                "Kurinjipadi",
+                "Vandipalayam",
+                "Periyakuppam",
+                "Thazhanguda",
+                "Suthukulam",
+                "Sonanchavadi"
+              ]
+            }
+          },
+          "Panruti": {
+            "panchayats": {
+              "Panruti Block": [
+                "Panruti",
+                "Kadampuliyur",
+                "Kothavacheri",
+                "Melpattampakkam",
+                "Sirupakkam",
+                "Thiruthuraiyur",
+                "Periyakuppam",
+                "Ariyankuppam",
+                "Semakottai",
+                "Vilvarayanallur"
+              ]
+            }
+          },
+          "Kurinjipadi": {
+            "panchayats": {
+              "Kurinjipadi Block": [
+                "Kurinjipadi",
+                "Puduchattiram",
+                "Kollidam",
+                "Alappakkam",
+                "Siruvalur",
+                "Reddichavadi",
+                "Vadalur",
+                "Keelamoongiladi",
+                "Silambinathanpettai",
+                "Thondamanatham"
+              ]
+            }
+          },
+          "Virudhachalam": {
+            "panchayats": {
+              "Virudhachalam Block": [
+                "Virudhachalam",
+                "Pennadam",
+                "Vepur",
+                "Arasur",
+                "Kothavacheri",
+                "Palayamkottai",
+                "Seppakkam",
+                "Kumbakonam Colony",
+                "Sirupakkam",
+                "Koliyanur"
+              ]
+            }
+          },
+          "Neyveli": {
+            "panchayats": {
+              "Neyveli Block": [
+                "Neyveli Township",
+                "Therkkupattu",
+                "Vadalur",
+                "Block-10 Neyveli",
+                "Block-14 Neyveli",
+                "Block-20 Neyveli",
+                "Puthupalayam",
+                "Orathur",
+                "Muthandikuppam",
+                "Kanisapakkam"
+              ]
+            }
+          },
+          "Chidambaram": {
+            "panchayats": {
+              "Chidambaram Block": [
+                "Chidambaram",
+                "Annamalai Nagar",
+                "Killai",
+                "Bhuvanagiri",
+                "Keerapalayam",
+                "Perampattu",
+                "Kattumanarkoil",
+                "Meenakshipuram",
+                "Karuppur",
+                "Vadalur"
+              ]
+            }
+          },
+          "Kattumannarkoil": {
+            "panchayats": {
+              "Kattumannarkoil Block": [
+                "Kattumannarkoil",
+                "Srimushnam",
+                "Melbhuvanagiri",
+                "Anaikkarai",
+                "Manalmedu",
+                "Alapakkam",
+                "Parangipettai",
+                "Poovarasankuppam",
+                "Seppakkam",
+                "Killai"
+              ]
+            }
+          }
+        }
+      },
+      "Dharmapuri": {
+        "taluks": {
+          "Dharmapuri": {
+            "panchayats": {
+              "Dharmapuri Block": [
+                "Dharmapuri",
+                "Agraharam",
+                "Adiyamankottai",
+                "Somenahalli",
+                "Bommidi",
+                "Marandahalli",
+                "Eriyur",
+                "Parsanapalli",
+                "Lakshmananpatti",
+                "Rasipuram"
+              ]
+            }
+          },
+          "Palacode": {
+            "panchayats": {
+              "Palacode Block": [
+                "Palacode",
+                "Rayakottai",
+                "Bandahalli",
+                "Kondappanayakkanahalli",
+                "Selliampatti",
+                "Kottapatti",
+                "Bairnatham",
+                "Papparapatti",
+                "Kadathur",
+                "Pagalahalli"
+              ]
+            }
+          },
+          "Pennagaram": {
+            "panchayats": {
+              "Pennagaram Block": [
+                "Pennagaram",
+                "Papparapatti",
+                "Hogenakkal",
+                "Perumbalai",
+                "Alambadi",
+                "Marandahalli",
+                "Kottur",
+                "Thoppur",
+                "Kolathur",
+                "Papparapatti West"
+              ]
+            }
+          },
+          "Harur": {
+            "panchayats": {
+              "Harur Block": [
+                "Harur",
+                "Morappur",
+                "Kadathur",
+                "Karimangalam",
+                "Mollapalli",
+                "Periyanahalli",
+                "Adhiyamankottai",
+                "Palavadi",
+                "Veppampatti",
+                "Bommidi"
+              ]
+            }
+          },
+          "Pappireddipatti": {
+            "panchayats": {
+              "Pappireddipatti Block": [
+                "Pappireddipatti",
+                "Molayanur",
+                "Kottapatti",
+                "Laddivadi",
+                "Vennampatti",
+                "Sitheri",
+                "Koneripatti",
+                "Ponnampatti",
+                "Puliyur",
+                "Ramiyampatti"
+              ]
+            }
+          },
+          "Karimangalam": {
+            "panchayats": {
+              "Karimangalam Block": [
+                "Karimangalam",
+                "Palayampudur",
+                "Periyanahalli",
+                "Kempanayakkanahalli",
+                "Nallampalli",
+                "Bairnatham",
+                "Papparapatti",
+                "Kovilur",
+                "Mookanur",
+                "Seerampatti"
+              ]
+            }
+          },
+          "Morappur": {
+            "panchayats": {
+              "Morappur Block": [
+                "Morappur",
+                "Sitheri Hills",
+                "Nallampalli",
+                "Baisuhalli",
+                "Kottapatti",
+                "Moolapatti",
+                "Periyanahalli",
+                "Sengalampatti",
+                "Palavadi",
+                "Koneripatti"
+              ]
+            }
+          },
+          "Nallampalli": {
+            "panchayats": {
+              "Nallampalli Block": [
+                "Nallampalli",
+                "Palayampudur",
+                "Vennampatti",
+                "Periyanahalli",
+                "Bairnatham",
+                "Molayanur",
+                "Laddivadi",
+                "Mollapalli",
+                "Veppampatti",
+                "Ramiyampatti"
+              ]
+            }
+          }
+        }
+      },
+      "Dindigul": {
+        "taluks": {
+          "Dindigul": {
+            "panchayats": {
+              "Dindigul Block": [
+                "Dindigul",
+                "Balakrishnapuram",
+                "Silvarpatti",
+                "Kalikkampatti",
+                "Neelakottai",
+                "Puthur",
+                "Seelapadi",
+                "Anjukulipatti",
+                "Ayyampalayam",
+                "Sempatti"
+              ]
+            }
+          },
+          "Palani": {
+            "panchayats": {
+              "Palani Block": [
+                "Palani",
+                "Ayakudi",
+                "Idumbavanam",
+                "Pudupatti",
+                "Kothaimangalam",
+                "Thalaiyuthu",
+                "Poombarai",
+                "Puduchatram",
+                "Keeranur",
+                "Thalaiyuthu Colony"
+              ]
+            }
+          },
+          "Oddanchatram": {
+            "panchayats": {
+              "Oddanchatram Block": [
+                "Oddanchatram",
+                "Kallimandhayam",
+                "Pannaikadu",
+                "Athikombai",
+                "Vedasandur East",
+                "Gandhigramam",
+                "Kallipatti",
+                "Reddiyarchatram",
+                "Kombupatti",
+                "Aruppukottai"
+              ]
+            }
+          },
+          "Vedasandur": {
+            "panchayats": {
+              "Vedasandur Block": [
+                "Vedasandur",
+                "Chinnalapatti",
+                "Padiyur",
+                "Sitharevu",
+                "Pudupatti",
+                "Reddiyapatti",
+                "Veerakkal",
+                "Alagapuri",
+                "Sembatti",
+                "Vembarpatti"
+              ]
+            }
+          },
+          "Natham": {
+            "panchayats": {
+              "Natham Block": [
+                "Natham",
+                "Athoor",
+                "Sikkalnayakanpettai",
+                "Kosavapatti",
+                "Thadikombu",
+                "Kombai",
+                "Seelathikulam",
+                "Pudupatti",
+                "Pallapatti",
+                "Anjukulipatti"
+              ]
+            }
+          },
+          "Nilakottai": {
+            "panchayats": {
+              "Nilakottai Block": [
+                "Nilakottai",
+                "Pannaikadu",
+                "Kundalpatti",
+                "Thimmarasanayakkanur",
+                "Keeranur",
+                "Ayyampalayam",
+                "Kottur",
+                "Jeyamangalam",
+                "Reddiyapatti",
+                "Chinnalapatti"
+              ]
+            }
+          },
+          "Kodaikanal": {
+            "panchayats": {
+              "Kodaikanal Block": [
+                "Kodaikanal",
+                "Poomparai",
+                "Vilpatti",
+                "Attuvampatti",
+                "Palani Hills",
+                "Pannaikadu",
+                "Perumalmalai",
+                "Shenbaganur",
+                "Poondi",
+                "Kundar"
+              ]
+            }
+          },
+          "Athoor": {
+            "panchayats": {
+              "Athoor Block": [
+                "Athoor",
+                "Ayyampalayam",
+                "Thadikombu",
+                "Aruppukottai",
+                "Kosavapatti",
+                "Reddiyarchatram",
+                "Kovilur",
+                "Sitharevu",
+                "Veerakkal",
+                "Balakrishnapuram"
+              ]
+            }
+          },
+          "Vadamadurai": {
+            "panchayats": {
+              "Vadamadurai Block": [
+                "Vadamadurai",
+                "Kottapatti",
+                "Anjukulipatti",
+                "Puduchatram",
+                "Athikombai",
+                "Silvarpatti",
+                "Sembatti",
+                "Kundalpatti",
+                "Thalaiyuthu",
+                "Veerakkal"
+              ]
+            }
+          },
+          "Reddiyarchatram": {
+            "panchayats": {
+              "Reddiyarchatram Block": [
+                "Reddiyarchatram",
+                "Oddanchatram Colony",
+                "Athoor Colony",
+                "Kosavapatti",
+                "Perumalmalai",
+                "Seelapadi",
+                "Poombarai",
+                "Sitharevu",
+                "Kundar",
+                "Vilpatti"
+              ]
+            }
+          }
+        }
+      },
+      "Erode": {
+        "taluks": {
+          "Erode": {
+            "panchayats": {
+              "Erode Block": [
+                "Erode",
+                "Veerappanchatram",
+                "Periya Semur",
+                "Nanjai Uthukuli",
+                "Veppadai",
+                "Kallipatti",
+                "Nanjai Kalamangalam",
+                "Kasipalayam",
+                "Surampatti",
+                "Ellapalayam"
+              ]
+            }
+          },
+          "Modakkurichi": {
+            "panchayats": {
+              "Modakkurichi Block": [
+                "Modakkurichi",
+                "Arachalur",
+                "Avalpoondurai",
+                "Vellode",
+                "Karumandisellipalayam",
+                "Perundurai Road",
+                "Nallampatti",
+                "Kavindapadi",
+                "Unjalur",
+                "Vilakkethi"
+              ]
+            }
+          },
+          "Kodumudi": {
+            "panchayats": {
+              "Kodumudi Block": [
+                "Kodumudi",
+                "Sengodampalayam",
+                "Chinnathottampalayam",
+                "Elumathur",
+                "Kumilamparappu",
+                "Sakkarakottai",
+                "Karur Road",
+                "Palakkarai",
+                "Ayyampalayam",
+                "Kandasamypalayam"
+              ]
+            }
+          },
+          "Perundurai": {
+            "panchayats": {
+              "Perundurai Block": [
+                "Perundurai",
+                "Kanjikoil",
+                "Chennimalai",
+                "Thingalur",
+                "Vellode Colony",
+                "Koneripatti",
+                "Nasiyanur",
+                "Thindal",
+                "Palampalayam",
+                "Komarapalayam"
+              ]
+            }
+          },
+          "Gobichettipalayam": {
+            "panchayats": {
+              "Gobichettipalayam Block": [
+                "Gobichettipalayam",
+                "Punjaipuliampatti",
+                "Nagadevampalayam",
+                "Perundurai Colony",
+                "Kavundapadi",
+                "Velampalayam",
+                "Kolappalur",
+                "Kullampalayam",
+                "Kalingiyam",
+                "Ammapalayam"
+              ]
+            }
+          },
+          "Sathyamangalam": {
+            "panchayats": {
+              "Sathyamangalam Block": [
+                "Sathyamangalam",
+                "Kembanaickenpalayam",
+                "Kanakampalayam",
+                "Thalavadi",
+                "Gettavadi",
+                "Hasanur",
+                "Bannari",
+                "Thalampalayam",
+                "Kunderipallam",
+                "Thalavadi Hills"
+              ]
+            }
+          },
+          "Nambiyur": {
+            "panchayats": {
+              "Nambiyur Block": [
+                "Nambiyur",
+                "Appakudal",
+                "Chithode",
+                "Velampalayam",
+                "Vilamundi",
+                "Kuruppanaickenpalayam",
+                "Kangeyampalayam",
+                "Kavundapadi East",
+                "Puliyampatti",
+                "Kombupalayam"
+              ]
+            }
+          },
+          "Bhavani": {
+            "panchayats": {
+              "Bhavani Block": [
+                "Bhavani",
+                "Komarapalayam",
+                "Athani",
+                "Odayapatti",
+                "Mylampatti",
+                "Sithode",
+                "Velampalayam",
+                "Kuttapalayam",
+                "Kalingarayanpalayam",
+                "Andhiyur Road"
+              ]
+            }
+          },
+          "Anthiyur": {
+            "panchayats": {
+              "Anthiyur Block": [
+                "Anthiyur",
+                "Athani Colony",
+                "Akkaraipalayam",
+                "Appakudal",
+                "Nallampalli",
+                "Sembulichampalayam",
+                "Koneripatti",
+                "Naduppalayam",
+                "Ammapalayam",
+                "Olagadam"
+              ]
+            }
+          },
+          "Ammapet": {
+            "panchayats": {
+              "Ammapet Block": [
+                "Ammapet",
+                "Hasanur Colony",
+                "Thalavadi Colony",
+                "Kunderipallam",
+                "Thimmampalayam",
+                "Vilamundi Hills",
+                "Chikkahalli",
+                "Thalampalayam Colony",
+                "Kodanthur",
+                "Kuthiriyur"
+              ]
+            }
+          },
+          "Talavadi": {
+            "panchayats": {
+              "Talavadi Block": [
+                "Talavadi",
+                "Dhimbam",
+                "Kempanayakkanpalayam",
+                "Gettavadi Colony",
+                "Hasanur Hills",
+                "Thalavadi Hills East",
+                "Bejalatti",
+                "Pungampadi",
+                "Thengumarahada",
+                "Dhoddapura"
+              ]
+            }
+          }
+        }
+      },
+      "Chennai": {
+        "taluks": {
+          "Fort-Tondiarpet": {
+            "panchayats": {
+              "Fort-Tondiarpet Block": [
+                "Tondiarpet",
+                "Royapuram",
+                "Korukkupet",
+                "Washermenpet",
+                "Thiruvottiyur"
+              ]
+            }
+          },
+          "Perambur": {
+            "panchayats": {
+              "Perambur Block": [
+                "Perambur",
+                "Ayanavaram",
+                "Kolathur",
+                "Vyasarpadi",
+                "Sembium"
+              ]
+            }
+          },
+          "Purasawalkam": {
+            "panchayats": {
+              "Purasawalkam Block": [
+                "Purasawalkam",
+                "Pulianthope",
+                "Egmore",
+                "Park Town",
+                "Choolai"
+              ]
+            }
+          },
+          "Egmore": {
+            "panchayats": {
+              "Egmore Block": [
+                "Egmore",
+                "Nungambakkam",
+                "Kilpauk",
+                "Chetpet",
+                "Choolaimedu"
+              ]
+            }
+          },
+          "Mylapore": {
+            "panchayats": {
+              "Mylapore Block": [
+                "Mylapore",
+                "Santhome",
+                "Triplicane",
+                "Foreshore Estate",
+                "Mandaveli"
+              ]
+            }
+          },
+          "Mambalam": {
+            "panchayats": {
+              "Mambalam Block": [
+                "T. Nagar",
+                "West Mambalam",
+                "Saidapet",
+                "Nandanam",
+                "Ashok Nagar"
+              ]
+            }
+          },
+          "Guindy": {
+            "panchayats": {
+              "Guindy Block": [
+                "Guindy",
+                "Adyar",
+                "Velachery",
+                "Thiruvanmiyur",
+                "Kotturpuram"
+              ]
+            }
+          },
+          "Madhavaram": {
+            "panchayats": {
+              "Madhavaram Block": [
+                "Madhavaram",
+                "Manali",
+                "Mathur",
+                "Red Hills",
+                "Puzhal"
+              ]
+            }
+          },
+          "Alandur": {
+            "panchayats": {
+              "Alandur Block": [
+                "Alandur",
+                "Meenambakkam",
+                "Nanganallur",
+                "Palavanthangal",
+                "St. Thomas Mount"
+              ]
+            }
+          },
+          "Ambattur": {
+            "panchayats": {
+              "Ambattur Block": [
+                "Ambattur",
+                "Mogappair",
+                "Korattur",
+                "Padi",
+                "Anna Nagar West"
+              ]
+            }
+          },
+          "Velachery": {
+            "panchayats": {
+              "Velachery Block": [
+                "Velachery",
+                "Pallikaranai",
+                "Madipakkam",
+                "Perungudi",
+                "Taramani"
+              ]
+            }
+          }
+        }
+      },
+      "Kallakurichi": {
+        "taluks": {
+          "Kallakurichi": {
+            "panchayats": {
+              "Kallakurichi Block": [
+                "Kallakurichi",
+                "Veeracholapuram",
+                "Sivapuri",
+                "Sangkarapuram",
+                "Narasimhapuram",
+                "Manmangalam",
+                "Pudur",
+                "Sengamedu",
+                "Melur",
+                "Sivayam"
+              ]
+            }
+          },
+          "Sankarapuram": {
+            "panchayats": {
+              "Sankarapuram Block": [
+                "Sankarapuram",
+                "Kallapadi",
+                "Kadambur",
+                "Nookaravatta",
+                "Vadakkanandal",
+                "Gopalapuram",
+                "Periyakandigai",
+                "Melnariyappanur",
+                "Nedungal",
+                "Pudur Colony"
+              ]
+            }
+          },
+          "Ulundurpet": {
+            "panchayats": {
+              "Ulundurpet Block": [
+                "Ulundurpet",
+                "Tholur",
+                "Eriyur",
+                "Kachirayapalayam",
+                "Poomalai",
+                "Tholudur",
+                "Vellur",
+                "Ananthapuram",
+                "Karunapuram",
+                "Melpadi"
+              ]
+            }
+          },
+          "Chinnasalem": {
+            "panchayats": {
+              "Chinnasalem Block": [
+                "Chinnasalem",
+                "Arakandanallur",
+                "Narasimmapuram",
+                "Elavanasur",
+                "Kattuedayar",
+                "Kuppanatham",
+                "Pappireddipatti",
+                "Sathapadi",
+                "Alathur",
+                "Govindhapuram"
+              ]
+            }
+          },
+          "Kalvarayan Hills": {
+            "panchayats": {
+              "Kalvarayan Hills Block": [
+                "Kalvarayan Hills East",
+                "Kalvarayan Hills West",
+                "Pudur Hills",
+                "Kottur Hills",
+                "Periyur",
+                "Nallur",
+                "Velli Hills",
+                "Chinnasalem Hills",
+                "Thalavanur",
+                "Kachirapalayam Hills"
+              ]
+            }
+          },
+          "Thirunavalur": {
+            "panchayats": {
+              "Thirunavalur Block": [
+                "Thirunavalur",
+                "Siruvangur",
+                "Manampoondi",
+                "Kandachipuram",
+                "Periyakurukkai",
+                "Neduncheri",
+                "Arunachalam",
+                "Pazhanjur",
+                "Karuvatchi",
+                "Villikollai"
+              ]
+            }
+          }
+        }
+      },
+      "Kanchipuram": {
+        "taluks": {
+          "Kanchipuram": {
+            "panchayats": {
+              "Kanchipuram Block": [
+                "Kanchipuram",
+                "Orikkai",
+                "Magaral",
+                "Pillaiyarpalayam",
+                "Karukkupalayam",
+                "Kilambi",
+                "Sevilimedu",
+                "Sankarapuram",
+                "Ponpadi",
+                "Adakkalavan"
+              ]
+            }
+          },
+          "Uthiramerur": {
+            "panchayats": {
+              "Uthiramerur Block": [
+                "Uthiramerur",
+                "Acharapakkam",
+                "Perunagar",
+                "Acharavakkam",
+                "Nedumaram",
+                "Kalpattu",
+                "Kunnavakkam",
+                "Pallavaramangalam",
+                "Veliyur",
+                "Kolliyur"
+              ]
+            }
+          },
+          "Walajabad": {
+            "panchayats": {
+              "Walajabad Block": [
+                "Walajabad",
+                "Puthirankottai",
+                "Kavanthandalam",
+                "Anakaputhur",
+                "Oragadam",
+                "Pattunoolchatram",
+                "Thiruparkadal",
+                "Melmaduramangalam",
+                "Sennakarumbur",
+                "Pillaipakkam"
+              ]
+            }
+          },
+          "Sriperumbudur": {
+            "panchayats": {
+              "Sriperumbudur Block": [
+                "Sriperumbudur",
+                "Irungattukottai",
+                "Sunguvarchatram",
+                "Pillaipakkam",
+                "Thandalam",
+                "Vadakkupattu",
+                "Kundrathur Colony",
+                "Kollapancheri",
+                "Puthencruz",
+                "Mannur"
+              ]
+            }
+          },
+          "Kundrathur": {
+            "panchayats": {
+              "Kundrathur Block": [
+                "Kundrathur",
+                "Mangadu",
+                "Gerugambakkam",
+                "Kolapakkam",
+                "Tharapakkam",
+                "Kovur",
+                "Pozhichalur",
+                "Thandalam Colony",
+                "Kumananchavadi",
+                "Moulivakkam"
+              ]
+            }
+          }
+        }
+      },
+      "Kanniyakumari": {
+        "taluks": {
+          "Agastheeswaram": {
+            "panchayats": {
+              "Agastheeswaram Block": [
+                "Nagercoil",
+                "Agastheeswaram",
+                "Suchindram",
+                "Kottaram",
+                "Vattavilai",
+                "Ramanputhoor",
+                "Meenakshipuram",
+                "Parakkai",
+                "Kanyakumari",
+                "Vadasery"
+              ]
+            }
+          },
+          "Thovalai": {
+            "panchayats": {
+              "Thovalai Block": [
+                "Thovalai",
+                "Aralvaimozhi",
+                "Eraniel",
+                "Palliyadi",
+                "Azhagiyapandiapuram",
+                "Therkalpudur",
+                "Veeyannoor",
+                "Suchindram South",
+                "Boothapandi",
+                "Vattakottai"
+              ]
+            }
+          },
+          "Kalkulam": {
+            "panchayats": {
+              "Kalkulam Block": [
+                "Padmanabhapuram",
+                "Thuckalay",
+                "Eraniel West",
+                "Marthandam",
+                "Thirparappu",
+                "Mulagumoodu",
+                "Arumanai",
+                "Pacode",
+                "Kaliyakkavilai",
+                "Melpuram"
+              ]
+            }
+          },
+          "Vilavancode": {
+            "panchayats": {
+              "Vilavancode Block": [
+                "Vilavancode",
+                "Marthandam South",
+                "Edaicode",
+                "Thiruvattar",
+                "Thirparappu East",
+                "Melpuram South",
+                "Painkulam",
+                "Palliyadi South",
+                "Mulagumoodu East",
+                "Eraniel Colony"
+              ]
+            }
+          },
+          "Killiyoor": {
+            "panchayats": {
+              "Killiyoor Block": [
+                "Killiyoor",
+                "Colachel",
+                "Karungal",
+                "Kurumpanai",
+                "Rajakkamangalam",
+                "Mandaikadu",
+                "Muttom",
+                "Midalam",
+                "Enayam",
+                "Pazhugal"
+              ]
+            }
+          },
+          "Thiruvattar": {
+            "panchayats": {
+              "Thiruvattar Block": [
+                "Thiruvattar",
+                "Kulasekaram",
+                "Ponmanai",
+                "Maruthancode",
+                "Karungal East",
+                "Vellamcode",
+                "Mulloorthurai",
+                "Kollancode",
+                "Manakady",
+                "Pechiparai"
+              ]
+            }
+          }
+        }
+      },
+      "Karur": {
+        "taluks": {
+          "Karur": {
+            "panchayats": {
+              "Karur Block": [
+                "Karur",
+                "Thanthoni",
+                "Inam Karur",
+                "Vennamalai",
+                "Nerur",
+                "Koviloor",
+                "Govindampalayam",
+                "Vazhaikaalpatty",
+                "Renganathapuram",
+                "P. Jothi Nagar"
+              ]
+            }
+          },
+          "Aravakurichi": {
+            "panchayats": {
+              "Aravakurichi Block": [
+                "Aravakurichi",
+                "Koolipalayam",
+                "Venjamangudalur",
+                "Chinnadharapuram",
+                "Mookanankurichi",
+                "Velayuthampalayam",
+                "Kavalkaranpatti",
+                "Koolipalayam Colony",
+                "Rangamalai",
+                "Pallapatti"
+              ]
+            }
+          },
+          "Kadavur": {
+            "panchayats": {
+              "Kadavur Block": [
+                "Kadavur",
+                "Chinna Dharapuram South",
+                "Kalugur",
+                "Puliyur",
+                "Kurichi",
+                "Vangal",
+                "Pallapatti South",
+                "Palaviduthi",
+                "Thanthoni West",
+                "Nanjaikal"
+              ]
+            }
+          },
+          "Krishnarayapuram": {
+            "panchayats": {
+              "Krishnarayapuram Block": [
+                "Krishnarayapuram",
+                "Sengal",
+                "Mahadanapuram",
+                "Mayanur",
+                "Thogamalai",
+                "Chinnandipatty",
+                "Velanchithur",
+                "Nallur",
+                "Cholapalayam",
+                "P. Vellalapatti"
+              ]
+            }
+          },
+          "Kulithalai": {
+            "panchayats": {
+              "Kulithalai Block": [
+                "Kulithalai",
+                "Puthambur",
+                "Lalgudi Colony",
+                "Pazhamapuram",
+                "Musiri Road",
+                "Manavasi",
+                "Keezhavelur",
+                "Thogaimalai East",
+                "Inam Karur East",
+                "Mohanur"
+              ]
+            }
+          },
+          "Manmangalam": {
+            "panchayats": {
+              "Manmangalam Block": [
+                "Manmangalam",
+                "Suvargoundanur",
+                "Kattalai",
+                "Pappampalayam",
+                "Chinna Pappampatti",
+                "Sottaiyur",
+                "Pavithram",
+                "Rasipalayam",
+                "Thokkupattipudur",
+                "Thanthonimalai Colony"
+              ]
+            }
+          },
+          "Pugalur": {
+            "panchayats": {
+              "Pugalur Block": [
+                "Pugalur",
+                "Noyyal",
+                "Paramathi",
+                "Kuppuchipalayam",
+                "Punnam",
+                "Nallur East",
+                "Velliyanai",
+                "Vangal West",
+                "Puthur",
+                "Sukkaliyur"
+              ]
+            }
+          },
+          "Thogamalai": {
+            "panchayats": {
+              "Thogamalai Block": [
+                "Thogamalai",
+                "Thirukampuliyur",
+                "Kalladai",
+                "Vazhavandhi",
+                "Rasampalayam",
+                "Keelavelur South",
+                "Sithalavai",
+                "Palayapalayam",
+                "Inungur",
+                "Kovilur"
+              ]
+            }
+          }
+        }
+      },
+      "Krishnagiri": {
+        "taluks": {
+          "Krishnagiri": {
+            "panchayats": {
+              "Krishnagiri Block": [
+                "Krishnagiri",
+                "Barugur",
+                "Pochampalli",
+                "Orappam",
+                "Chandrapuram",
+                "Kodiyalam",
+                "Sigaralapalli",
+                "Upparapatti",
+                "Gangaleri",
+                "Elathagiri"
+              ]
+            }
+          },
+          "Hosur": {
+            "panchayats": {
+              "Hosur Block": [
+                "Hosur",
+                "Bagalur",
+                "Begapalli",
+                "Zuzuvadi",
+                "Mathigiri",
+                "Mookandapalli",
+                "Kelamangalam",
+                "Achettipalli",
+                "Chennathur",
+                "Samanapalli"
+              ]
+            }
+          },
+          "Denkanikottai": {
+            "panchayats": {
+              "Thally Block": [
+                "Thally",
+                "Shoolagiri",
+                "Agrahara",
+                "Baliganapalli",
+                "Anchetty",
+                "Kottur",
+                "Periyakanapalli",
+                "Agalam",
+                "Kundapatti",
+                "Kappalnatham"
+              ]
+            }
+          },
+          "Pochampalli": {
+            "panchayats": {
+              "Bargur Block": [
+                "Bargur",
+                "Mallupatti",
+                "Kaveripattinam",
+                "Gundalapatti",
+                "Palepalli",
+                "Singiripalli",
+                "Chinnampalli",
+                "Soolagiri",
+                "Kottapatti",
+                "Athimugam"
+              ]
+            }
+          },
+          "Uthangarai": {
+            "panchayats": {
+              "Uthangarai Block": [
+                "Uthangarai",
+                "Natrampalli",
+                "Periyanagalur",
+                "Kaveripattinam East",
+                "Singarapettai",
+                "Kallavi",
+                "Pochampalli South",
+                "Kattinayanapalli",
+                "Pulikundram",
+                "Sanamavu"
+              ]
+            }
+          }
+        }
+      },
+      "Madurai": {
+        "taluks": {
+          "Madurai North": {
+            "panchayats": {
+              "Madurai East Block": [
+                "Andarkottaram",
+                "Angadimangalam",
+                "Arumbanur",
+                "Ayilangudi",
+                "Chinnamangulam",
+                "Elangiyendal",
+                "Kadaikinaru",
+                "Karseri",
+                "Mangulam",
+                "Narasingam",
+                "Othakadai",
+                "Poolampatti",
+                "Vandiyur"
+              ]
+            }
+          },
+          "Madurai South": {
+            "panchayats": {
+              "Madurai West Block": [
+                "Adalai",
+                "Alathur",
+                "Boothakudi",
+                "Chettikulam",
+                "Kulamangalam",
+                "Samayanallur",
+                "Usilampatti",
+                "Vairavanatham",
+                "Veerapandi"
+              ]
+            }
+          },
+          "Thirupparankundram": {
+            "panchayats": {
+              "Thirupparankundram Block": [
+                "Achampattu Yerkudi",
+                "C. Puliyankulam",
+                "Karadipatti",
+                "Keelamathur",
+                "Nagamalaipudukottai",
+                "Nilaiyur I Bit",
+                "Nilaiyur II Bit",
+                "Solankuruni",
+                "Silaiman",
+                "Viradhanur"
+              ]
+            }
+          },
+          "Melur": {
+            "panchayats": {
+              "Melur Block": [
+                "Ambalakaranpatti",
+                "A. Valayapatti",
+                "Thaniamangalam",
+                "Vellalore",
+                "Veppadappu",
+                "Pulipatti",
+                "Therkkutheru",
+                "Puduchukkampatti"
+              ]
+            }
+          },
+          "Kottampatti": {
+            "panchayats": {
+              "Kottampatti Block": [
+                "Attapatti",
+                "Chokkalingapuram",
+                "Kesampatti",
+                "Kodukkampatti",
+                "Pallapatti",
+                "Pottapatti",
+                "Sekkipatti",
+                "Vanjinagaram"
+              ]
+            }
+          },
+          "Vadipatti": {
+            "panchayats": {
+              "Vadipatti Block": [
+                "Andipatti",
+                "Irumbadi",
+                "Karuppatti",
+                "Kutladampatti",
+                "Melakkal",
+                "Thenkarai",
+                "Viralipatti"
+              ]
+            }
+          },
+          "Alanganallur": {
+            "panchayats": {
+              "Alanganallur Block": [
+                "Achampatti",
+                "Alagapuri",
+                "B. Mettupatti",
+                "Kallanai",
+                "Vadugapatti",
+                "Valayapatti"
+              ]
+            }
+          },
+          "Usilampatti": {
+            "panchayats": {
+              "Usilampatti Block": [
+                "Alligundam",
+                "Doddappanaickanur",
+                "Nakkalapatti",
+                "Rajakkapatti",
+                "Seemanothu"
+              ]
+            }
+          },
+          "Chellampatti": {
+            "panchayats": {
+              "Chellampatti Block": [
+                "Karumathur",
+                "Kodikulam",
+                "Kuruvakudi",
+                "Mudalaikulam",
+                "Pullaneri",
+                "Veppanuthu"
+              ]
+            }
+          },
+          "Sedapatti": {
+            "panchayats": {
+              "Sedapatti Block": [
+                "Athankaraipatti",
+                "Athipatti",
+                "Mallapuram",
+                "Peraiyampatty",
+                "Uthapuram",
+                "Veppampatty"
+              ]
+            }
+          },
+          "Thirumangalam": {
+            "panchayats": {
+              "Thirumangalam Block": [
+                "Alampatty",
+                "Alappulacheri",
+                "Karadigal",
+                "Kappalur",
+                "Sorikkampatty",
+                "Uchapatti",
+                "Vidathakulam"
+              ]
+            }
+          },
+          "T. Kallupatti": {
+            "panchayats": {
+              "T. Kallupatti Block": [
+                "Appakkarai",
+                "Chinnapoolampatti",
+                "Kumarapuram",
+                "Lakshimipuram",
+                "Nallamaram",
+                "Pappaiyapuram"
+              ]
+            }
+          },
+          "Kallikudi": {
+            "panchayats": {
+              "Kallikudi Block": [
+                "Avalsoorampatty",
+                "Chennampatti",
+                "K.Vellakulam",
+                "Sengappadai",
+                "Villur",
+                "Thennamanallur"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
 }

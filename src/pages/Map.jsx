@@ -363,29 +363,6 @@ export default function IndiaMap() {
     });
   };
 
-  // District-level interaction
-  const onEachDistrict = (feature, layer) => {
-    const name = getName(feature);
-    layer.bindTooltip(name, { sticky: true, direction: "auto" });
-    layer.on({
-      click: () => {
-        setSelectedRegion(name);
-        getWeather(name);
-        // No FRA data for districts
-        setFraStats(null);
-      }
-    });
-  };
-
-  // Filter districts by active state
-  const filteredDistricts = useMemo(() => {
-    if (!activeState) return [];
-    return districtFeatures.filter((f) => {
-      const stateProp = f.properties.STATE_NAME || f.properties.st_nm || f.properties.NAME_1;
-      return stateProp?.toLowerCase() === activeState.toLowerCase();
-    });
-  }, [activeState, districtFeatures]);
-
   // Search handler for states/districts
   const handleSearch = (evt) => {
     evt?.preventDefault?.();
@@ -440,7 +417,7 @@ export default function IndiaMap() {
       <div className="absolute top-6 right-6 z-[1200] flex items-center bg-white rounded-full shadow-md overflow-hidden">
         <input
           type="text"
-          placeholder="Search State or District"
+          placeholder="Search State"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -456,11 +433,11 @@ export default function IndiaMap() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-[350px] bg-white shadow-lg transform transition-transform duration-300 z-[1100] ${
+        className={`rounded-e-4xl fixed top-0 left-0 h-full w-[350px] bg-white shadow-lg  transform transition-transform duration-300 z-[1100] ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between bg-[#78C6A3] text-white p-4">
+        <div className="flex items-center justify-between rounded-tr-4xl bg-[#78C6A3] text-white p-4">
           <h2 className="text-xl font-bold">FRA Dashboard</h2>
           <button
             onClick={() => setIsOpen(false)}
@@ -605,14 +582,6 @@ export default function IndiaMap() {
           ref={geoJsonRef}
         />
 
-        {/* Districts of selected state */}
-        {activeState && (
-          <GeoJSON
-            data={filteredDistricts}
-            style={{ color: "#ffffff", weight: 2, fillOpacity: 0 }}
-            onEachFeature={onEachDistrict}
-          />
-        )}
 
         {/* Weather overlay */}
         <TileLayer

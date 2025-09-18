@@ -47,7 +47,7 @@ const Individual = () => {
 
   useEffect(() => {
     if (formData.state && indiaStateData[formData.state]) {
-      setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts));
+      setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts || {}));
     } else {
       setFilteredDistricts([]);
     }
@@ -66,7 +66,12 @@ const Individual = () => {
 
   useEffect(() => {
     if (formData.state && formData.district && indiaStateData[formData.state]?.districts[formData.district]) {
-      setFilteredTalukas(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas));
+      const districtData = indiaStateData[formData.state].districts[formData.district];
+      if (districtData && districtData.taluks) {
+        setFilteredTalukas(Object.keys(districtData.taluks));
+      } else {
+        setFilteredTalukas([]);
+      }
     } else {
       setFilteredTalukas([]);
     }
@@ -83,8 +88,13 @@ const Individual = () => {
 
   useEffect(() => {
     if (formData.state && formData.district && formData.taluka && 
-        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]) {
-      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats));
+        indiaStateData[formData.state]?.districts[formData.district]?.taluks[formData.taluka]) {
+      const talukData = indiaStateData[formData.state].districts[formData.district].taluks[formData.taluka];
+      if (talukData && talukData.panchayats) {
+        setFilteredPanchayats(Object.keys(talukData.panchayats));
+      } else {
+        setFilteredPanchayats([]);
+      }
     } else {
       setFilteredPanchayats([]);
     }
@@ -99,8 +109,9 @@ const Individual = () => {
 
   useEffect(() => {
     if (formData.state && formData.district && formData.taluka && formData.gramPanchayat && 
-        indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]?.panchayats[formData.gramPanchayat]) {
-      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats[formData.gramPanchayat]);
+        indiaStateData[formData.state]?.districts[formData.district]?.taluks[formData.taluka]?.panchayats[formData.gramPanchayat]) {
+      const panchayatData = indiaStateData[formData.state].districts[formData.district].taluks[formData.taluka].panchayats[formData.gramPanchayat];
+      setFilteredVillages(panchayatData || []);
     } else {
       setFilteredVillages([]);
     }
