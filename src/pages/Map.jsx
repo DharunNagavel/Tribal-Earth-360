@@ -1,10 +1,11 @@
 // src/components/IndiaMap.jsx
-import { useRef, useState, useMemo, useEffect } from "react";
+import React, { useRef, useState, useMemo, useEffect } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import L from "leaflet";
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 import { FcSearch } from "react-icons/fc";
 import "leaflet/dist/leaflet.css";
+
 import rawIndiaStates from "../assets/in.json";       // India states GeoJSON
 import rawIndiaDistricts from "../assets/in_districts.json"; // India districts GeoJSON
 
@@ -238,7 +239,7 @@ export default function IndiaMap() {
                     </>
                   ) : (
                     <h1 className="bg-green-600 text-2xl text-white rounded-xl p-3 m-2">
-                      Pick a District
+                      Pick a State
                     </h1>
                   )}
                 </div>
@@ -298,7 +299,7 @@ export default function IndiaMap() {
 
         {/* Fit to region center */}
         <MapActions
-          selectedRegion={selectedRegion}
+          selectedRegion={selectedRegion}  
           features={[...stateFeatures, ...districtFeatures]}
         />
       </MapContainer>

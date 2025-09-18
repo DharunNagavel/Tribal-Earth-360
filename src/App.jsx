@@ -18,6 +18,8 @@ function AppContent() {
   const location = useLocation();
   const hideNavbarFooterRoutes = ["/auth", "/map"]; 
   const shouldHideNavbarFooter = hideNavbarFooterRoutes.includes(location.pathname);
+ 
+
   return (
     <>
       {!shouldHideNavbarFooter && <Navbar user={user} setuser={setuser} />}
