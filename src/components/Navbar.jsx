@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { gsap } from "gsap";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.jpg";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +51,11 @@ export const Navbar = () => {
         : "bg-white/20 backdrop-blur-md border border-white/30 shadow-lg"
       : "bg-green-700 shadow-md";
 
+  // Determine hover color based on navbar state
+  const hoverColor = (location.pathname === "/" && !isScrolled) 
+    ? "hover:text-[#590d22]" 
+    : "hover:text-yellow-300";
+
   return (
     <nav
       className={`fixed w-full top-2 left-0 z-50 transition-all duration-500 rounded-4xl ${navbarClasses}`}
@@ -69,29 +74,29 @@ export const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-5 text-base sm:text-lg items-center">
           <li>
-            <Link to="/" className="hover:text-yellow-300">Home</Link>
+            <Link to="/" className={hoverColor}>Home</Link>
           </li>
           <li className="relative">
             <button
               onClick={() => setIsPattaOpenDesktop(!isPattaOpenDesktop)}
-              className="flex items-center gap-1 sm:gap-2 hover:text-yellow-300 focus:outline-none"
+              className={`flex items-center gap-1 sm:gap-2 ${hoverColor} focus:outline-none`}
             >
               Patta <ChevronDown size={16} />
             </button>
             {isPattaOpenDesktop && (
               <ul className="absolute left-0 top-full bg-green-800 mt-1 rounded-lg shadow-lg w-48 text-base overflow-hidden z-10">
                 <li>
-                  <Link to="/individual" className="block px-3 py-2 hover:bg-green-700">
+                  <Link to="/individual" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
                     Individual
                   </Link>
                 </li>
                 <li>
-                  <Link to="/community" className="block px-3 py-2 hover:bg-green-700">
+                  <Link to="/community" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
                     Community
                   </Link>
                 </li>
                 <li>
-                  <Link to="/resource" className="block px-3 py-2 hover:bg-green-700">
+                  <Link to="/resource" className="block px-3 py-2 hover:bg-green-700 hover:text-yellow-300">
                     Community Resource
                   </Link>
                 </li>
@@ -99,13 +104,13 @@ export const Navbar = () => {
             )}
           </li>
           <li>
-            <Link to="/map" className="hover:text-yellow-300">Map</Link>
+            <Link to="/map" className={hoverColor}>Map</Link>
           </li>
           <li>
-            <Link to="/about" className="hover:text-yellow-300">About FRA</Link>
+            <Link to="/about" className={hoverColor}>About FRA</Link>
           </li>
           <li>
-            <Link to="/auth" className="hover:text-yellow-300">Signup/Login</Link>
+            <Link to="/auth" className={hoverColor}>Signup/Login</Link>
           </li>
         </ul>
 
@@ -123,11 +128,11 @@ export const Navbar = () => {
         <div className="lg:hidden bg-green-800 px-4 pb-3">
           <ul className="flex flex-col gap-3 text-base">
             <li>
-              <Link to="/" className="hover:text-yellow-300">Home</Link>
+              <Link to="/" className={hoverColor}>Home</Link>
             </li>
             <li className="relative">
               <button
-                className="flex justify-between items-center w-full hover:text-yellow-300"
+                className={`flex justify-between items-center w-full ${hoverColor}`}
                 onClick={() => setIsPattaOpenMobile(!isPattaOpenMobile)}
               >
                 Patta <ChevronDown size={16} />
@@ -137,30 +142,30 @@ export const Navbar = () => {
                 className="ml-3 mt-2 flex flex-col gap-2 text-sm overflow-hidden h-0 opacity-0"
               >
                 <li>
-                  <Link to="/individual" className="hover:text-yellow-300">
+                  <Link to="/individual" className={hoverColor}>
                     Individual
                   </Link>
                 </li>
                 <li>
-                  <Link to="/community" className="hover:text-yellow-300">
+                  <Link to="/community" className={hoverColor}>
                     Community
                   </Link>
                 </li>
                 <li>
-                  <Link to="/resource" className="hover:text-yellow-300">
+                  <Link to="/resource" className={hoverColor}>
                     Community Resource
                   </Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link to="/map" className="hover:text-yellow-300">Map</Link>
+              <Link to="/map" className={hoverColor}>Map</Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-yellow-300">About FRA</Link>
+              <Link to="/about" className={hoverColor}>About FRA</Link>
             </li>
             <li>
-              <Link to="/auth" className="hover:text-yellow-300">Signup/Login</Link>
+              <Link to="/auth" className={hoverColor}>Signup/Login</Link>
             </li>
           </ul>
         </div>

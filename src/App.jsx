@@ -10,18 +10,15 @@ import CommunityResource from './pages/CommunityResource'
 import Map from './pages/Map'
 import { Digitalization } from './pages/Digitalization';
 import { Auth } from './pages/Auth'
+import Final from './pages/Final'
 
 function AppContent() {
   const location = useLocation();
-
-  // 👇 List of routes where you don't want the Navbar
-  const hideNavbarRoutes = ["/map"];
-
-  const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
-
+  const hideNavbarFooterRoutes = ["/auth", "/map"]; 
+  const shouldHideNavbarFooter = hideNavbarFooterRoutes.includes(location.pathname);
   return (
     <>
-      {!shouldHideNavbar && <Navbar />}
+      {!shouldHideNavbarFooter && <Navbar />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -31,8 +28,9 @@ function AppContent() {
         <Route path='/map' element={<Map />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/digitalization' element={<Digitalization />} />
+        <Route path='/final' element={<Final />} />
       </Routes>
-      <Footer />
+      {!shouldHideNavbarFooter && <Footer />}
     </>
   )
 }

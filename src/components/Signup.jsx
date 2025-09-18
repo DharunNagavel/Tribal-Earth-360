@@ -4,23 +4,9 @@ import { gsap } from 'gsap';
 import { Link } from 'react-router-dom'
 import { Login } from './Login';
 import  { useState } from 'react';
-export const Signup = ({setvisible}) => {
-    const formRef = useRef(null);
-    const titleRef = useRef(null);
 
-    useEffect(() => {
-        gsap.fromTo(
-            formRef.current,
-            { y: 60, opacity: 0, scale: 0.95 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' }
-        );
-        gsap.fromTo(
-            titleRef.current,
-            { y: -40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.2 }
-        );
-    }, []);
-    const stateDistricts = {
+// Move stateDistricts object outside the component
+ const stateDistricts = {
   "Andhra Pradesh": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Krishna", "Kurnool", "Prakasam", "SPS Nellore", "Srikakulam", "Visakhapatnam", "Vizianagaram", "West Godavari", "YSR Kadapa"],
   "Arunachal Pradesh": ["Tawang", "West Kameng", "East Kameng", "Papum Pare", "Kurung Kumey", "Kra Daadi", "Lower Subansiri", "Upper Subansiri", "West Siang", "East Siang", "Siang", "Upper Siang", "Lower Siang", "Lower Dibang Valley", "Dibang Valley", "Anjaw", "Lohit", "Namsai", "Changlang", "Tirap", "Longding"],
   "Assam": ["Baksa", "Barpeta", "Biswanath", "Bongaigaon", "Cachar", "Charaideo", "Chirang", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Dima Hasao", "Goalpara", "Golaghat", "Hailakandi", "Hojai", "Jorhat", "Kamrup", "Kamrup Metropolitan", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Majuli", "Morigaon", "Nagaon", "Nalbari", "Sivasagar", "Sonitpur", "South Salmara-Mankachar", "Tinsukia", "Udalguri", "West Karbi Anglong"],
@@ -59,16 +45,33 @@ export const Signup = ({setvisible}) => {
   "Puducherry": ["Karaikal", "Mahe", "Puducherry", "Yanam"]
 };
 
-        const [showPassword, setShowPassword] = useState(false);
-        const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-        const handleTogglePassword = (e) => {
-            e.preventDefault();
-            setShowPassword((prev) => !prev);
-        };
-        const handleToggleConfirmPassword = (e) => {
-            e.preventDefault();
-            setShowConfirmPassword((prev) => !prev);
-        };
+export const Signup = ({setvisible}) => {
+    const formRef = useRef(null);
+    const titleRef = useRef(null);
+
+    useEffect(() => {
+        gsap.fromTo(
+            formRef.current,
+            { y: 60, opacity: 0, scale: 0.95 },
+            { y: 0, opacity: 1, scale: 1, duration: 0.7, ease: 'power3.out' }
+        );
+        gsap.fromTo(
+            titleRef.current,
+            { y: -40, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out', delay: 0.2 }
+        );
+    }, []);
+    
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    const handleTogglePassword = (e) => {
+        e.preventDefault();
+        setShowPassword((prev) => !prev);
+    };
+    const handleToggleConfirmPassword = (e) => {
+        e.preventDefault();
+        setShowConfirmPassword((prev) => !prev);
+    };
 
     const [selectedState, setSelectedState] = useState('');
     const [districts, setDistricts] = useState([]);
@@ -84,9 +87,10 @@ export const Signup = ({setvisible}) => {
     const handleDistrictChange = (e) => {
         setSelectedDistrict(e.target.value);
     };
+    
     return (
         <div className='bg-green-100 w-full h-screen flex justify-center items-center'>
-            <div className='w-full max-w-md'>
+            <div className='w-full max-w-md '>
                 <form ref={formRef} action="" className='flex flex-col gap-4 bg-white p-10 rounded-lg shadow-lg w-full justify-center'>
                     <h1 ref={titleRef} className='text-5xl font-bold text-center text-green-700 m-3'>SignUp</h1>
                     <input type="text" placeholder='Enter the Username' className='bg-green-200 border-2 rounded-xl border-green-400 p-2 focus:outline-green-400' />

@@ -90,7 +90,7 @@ export const Home = () => {
         <div className="absolute left-1/2 transform -translate-x-1/2 bottom-16 sm:bottom-24 md:bottom-32 lg:bottom-40">
           <button
             onClick={handleScrollToFeatures}
-            className="bg-green-600 text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base md:text-lg"
+            className="bg-black text-white font-bold px-6 py-3 rounded-full shadow-lg hover:bg-green-700 transition text-base md:text-lg"
           >
             Get Started
           </button>
