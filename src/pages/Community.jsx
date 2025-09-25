@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import indiaStateData from "../assets/india_state_data.json";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -36,8 +36,8 @@ const Community = () => {
 
   // Cascading dropdowns for location
   useEffect(() => {
-    if (formData.state && indiaStateData[formData.state]) {
-      setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts));
+    if (formData.state && indiaStateData?.[formData.state]) {
+      setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts || {}));
     } else {
       setFilteredDistricts([]);
     }
@@ -54,8 +54,8 @@ const Community = () => {
   }, [formData.state]);
 
   useEffect(() => {
-    if (formData.state && formData.district && indiaStateData[formData.state]?.districts[formData.district]) {
-      setFilteredTalukas(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas));
+    if (formData.state && formData.district && indiaStateData?.[formData.state]?.districts?.[formData.district]) {
+      setFilteredTalukas(Object.keys(indiaStateData[formData.state].districts[formData.district].taluks || {}));
     } else {
       setFilteredTalukas([]);
     }
@@ -69,9 +69,10 @@ const Community = () => {
       formData.state &&
       formData.district &&
       formData.taluka &&
-      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]
+      indiaStateData?.[formData.state]?.districts?.[formData.district]?.taluks?.[formData.taluka]
     ) {
-      setFilteredPanchayats(Object.keys(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats));
+      setFilteredPanchayats(Object.keys(
+  indiaStateData?.[formData.state]?.districts?.[formData.district]?.taluks?.[formData.taluka]?.panchayats || {}));
     } else {
       setFilteredPanchayats([]);
     }
@@ -85,9 +86,9 @@ const Community = () => {
       formData.district &&
       formData.taluka &&
       formData.grampanchayat &&
-      indiaStateData[formData.state]?.districts[formData.district]?.talukas[formData.taluka]?.panchayats[formData.grampanchayat]
+      indiaStateData?.[formData.state]?.districts?.[formData.district]?.taluks?.[formData.taluka]?.panchayats?.[formData.grampanchayat]
     ) {
-      setFilteredVillages(indiaStateData[formData.state].districts[formData.district].talukas[formData.taluka].panchayats[formData.grampanchayat]);
+      setFilteredVillages(Object.keys(indiaStateData?.[formData.state]?.districts?.[formData.district]?.taluks?.[formData.taluka]?.panchayats || {}));
     } else {
       setFilteredVillages([]);
     }
@@ -114,8 +115,6 @@ const Community = () => {
       if (!formData.taluka) newErrors.taluka = 'Please select tehsil/taluka';
       if (!formData.grampanchayat) newErrors.grampanchayat = 'Please select gram panchayat';
       if (!formData.village) newErrors.village = 'Please select village';
-    } else if (sectionNum === 3) {
-      // No mandatory fields here, but could add if needed
     }
     if (sectionNum === 3 && !formData.declaration) {
       newErrors.declaration = 'You must accept the declaration';
@@ -286,7 +285,7 @@ const Community = () => {
                   } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select State</option>
-                  {Object.keys(indiaStateData).map((state) => (
+                  {Object.keys(indiaStateData || {}).map((state) => (
                     <option key={state} value={state}>
                       {state}
                     </option>
@@ -444,57 +443,55 @@ const Community = () => {
               />
               <textarea
                 name="communitytenuresofhabitatandhabitation"
-                placeholder="4. Community tenures of habitat and habitation (PTGs, pre-agricultural)"
+                placeholder="4. Community tenures of habitat and habitation, if any"
                 value={formData.communitytenuresofhabitatandhabitation}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
                 name="righttoaccessbiodiversity"
-                placeholder="5. Right to access biodiversity, traditional knowledge, etc."
+                placeholder="5. Right to access biodiversity, if any"
                 value={formData.righttoaccessbiodiversity}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
                 name="othertraditionalrights"
-                placeholder="6. Other traditional rights, if any"
+                placeholder="6. Other traditional rights enjoyed, if any"
                 value={formData.othertraditionalrights}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
                 name="evidenceinsupport"
-                placeholder="7. Evidence in support (attach documents if any)"
+                placeholder="7. Evidence in support of rights vested with community"
                 value={formData.evidenceinsupport}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
               <textarea
                 name="anyotherinformation"
-                placeholder="8. Any other information"
+                placeholder="8. Any other information relevant to community rights"
                 value={formData.anyotherinformation}
                 onChange={handleInputChange}
                 className="w-full p-2 border border-green-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-400"
               />
 
-              <div className="mt-4">
-                <label className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    name="declaration"
-                    checked={formData.declaration}
-                    onChange={handleInputChange}
-                    className="text-green-600 focus:ring-green-500 rounded"
-                  />
-                  <span className="ml-2">
-                    I hereby declare that the information provided is true to the best of my knowledge and belief.
-                  </span>
+              <div className="mt-4 flex items-start">
+                <input
+                  type="checkbox"
+                  name="declaration"
+                  checked={formData.declaration}
+                  onChange={handleInputChange}
+                  className="mr-2 mt-1"
+                />
+                <label>
+                  I declare that the information given above is true to the best of my knowledge and belief.
                 </label>
-                {errors.declaration && (
-                  <p className="text-red-600 text-sm mt-1">{errors.declaration}</p>
-                )}
               </div>
+              {errors.declaration && (
+                <p className="text-red-600 text-sm mt-1">{errors.declaration}</p>
+              )}
 
               <div className="flex justify-between mt-6">
                 <button
@@ -508,7 +505,7 @@ const Community = () => {
                   type="submit"
                   className="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-lg"
                 >
-                  Submit Claim
+                  Submit
                 </button>
               </div>
             </div>
