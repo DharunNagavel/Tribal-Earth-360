@@ -1,119 +1,221 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useNavigate } from "react-router-dom";
+import indiaStateData from "../assets/india_state_data.json";
+
+// Zod schema definition
+const communityResourceSchema = z.object({
+  // Section 1: Basic Info
+  village: z.string().min(1, "Please select village"),
+  grampanchayat: z.string().min(1, "Please select gram panchayat"),
+  taluka: z.string().min(1, "Please select tehsil/taluka"),
+  district: z.string().min(1, "Please select district"),
+  state: z.string().min(1, "Please select state"),
+  nameofmembersofthegramsabha: z.string().min(1, "Names of Gram Sabha members are required"),
+  compartmentno: z.string().min(1, "Compartment number is required"),
+
+  // Section 2: Bordering Villages
+  borderingvillages: z.array(z.string()).min(1, "At least one bordering village is required"),
+
+  // Section 3: Evidence & Declaration
+  listofevidenceinsupport: z.string().min(1, "List of evidence is required"),
+  declaration: z.boolean().refine(val => val === true, {
+    message: "You must accept the declaration",
+  }),
+});
 
 const CommunityResource = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    village: "",
-    grampanchayat: "",
-    taluka: "",
-    district: "",
-    nameofmembersofthegramsabha: "",
-    compartmentno: "",
-    borderingvillages: ["", "", ""],
-    listofevidenceinsupport: "",
-    declaration: false,
+  
+  // Location dropdown states
+  const [filteredDistricts, setFilteredDistricts] = useState([]);
+  const [filteredTalukas, setFilteredTalukas] = useState([]);
+  const [filteredPanchayats, setFilteredPanchayats] = useState([]);
+  const [filteredVillages, setFilteredVillages] = useState([]);
+
+  // Initialize React Hook Form with Zod resolver
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    trigger,
+    formState: { errors, isSubmitting }
+  } = useForm({
+    resolver: zodResolver(communityResourceSchema),
+    mode: "onChange",
+    defaultValues: {
+      state: "",
+      district: "",
+      taluka: "",
+      grampanchayat: "",
+      village: "",
+      nameofmembersofthegramsabha: "",
+      compartmentno: "",
+      borderingvillages: ["", "", ""],
+      listofevidenceinsupport: "",
+      declaration: false,
+    }
   });
 
-  const [errors, setErrors] = useState({});
+  // Watch form values
+  const watchedState = watch("state");
+  const watchedDistrict = watch("district");
+  const watchedTaluka = watch("taluka");
+  const watchedGramPanchayat = watch("grampanchayat");
+  const watchedBorderingVillages = watch("borderingvillages");
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+  // Cascading dropdowns for location
+  useEffect(() => {
+    if (watchedState && indiaStateData?.[watchedState]) {
+      setFilteredDistricts(Object.keys(indiaStateData[watchedState].districts || {}));
+    } else {
+      setFilteredDistricts([]);
+      setValue("district", "");
+      setValue("taluka", "");
+      setValue("grampanchayat", "");
+      setValue("village", "");
+    }
+    setFilteredTalukas([]);
+    setFilteredPanchayats([]);
+    setFilteredVillages([]);
+  }, [watchedState, setValue]);
 
+  useEffect(() => {
+    if (watchedState && watchedDistrict && indiaStateData?.[watchedState]?.districts?.[watchedDistrict]) {
+      const districtData = indiaStateData[watchedState].districts[watchedDistrict];
+      if (districtData && districtData.taluks) {
+        setFilteredTalukas(Object.keys(districtData.taluks));
+      } else {
+        setFilteredTalukas([]);
+      }
+    } else {
+      setFilteredTalukas([]);
+    }
+    
+    setValue("taluka", "");
+    setValue("grampanchayat", "");
+    setValue("village", "");
+    setFilteredPanchayats([]);
+    setFilteredVillages([]);
+  }, [watchedDistrict, setValue, watchedState]);
+
+  useEffect(() => {
+    if (
+      watchedState &&
+      watchedDistrict &&
+      watchedTaluka &&
+      indiaStateData?.[watchedState]?.districts?.[watchedDistrict]?.taluks?.[watchedTaluka]
+    ) {
+      const talukData = indiaStateData[watchedState].districts[watchedDistrict].taluks[watchedTaluka];
+      if (talukData && talukData.panchayats) {
+        setFilteredPanchayats(Object.keys(talukData.panchayats));
+      } else {
+        setFilteredPanchayats([]);
+      }
+    } else {
+      setFilteredPanchayats([]);
+    }
+    
+    setValue("grampanchayat", "");
+    setValue("village", "");
+    setFilteredVillages([]);
+  }, [watchedTaluka, setValue, watchedState, watchedDistrict]);
+
+  useEffect(() => {
+    if (
+      watchedState &&
+      watchedDistrict &&
+      watchedTaluka &&
+      watchedGramPanchayat &&
+      indiaStateData?.[watchedState]?.districts?.[watchedDistrict]?.taluks?.[watchedTaluka]?.panchayats?.[watchedGramPanchayat]
+    ) {
+      const panchayatData = indiaStateData[watchedState].districts[watchedDistrict].taluks[watchedTaluka].panchayats[watchedGramPanchayat];
+      setFilteredVillages(panchayatData || []);
+    } else {
+      setFilteredVillages([]);
+    }
+    
+    setValue("village", "");
+  }, [watchedGramPanchayat, setValue, watchedState, watchedDistrict, watchedTaluka]);
+
+  // Handle bordering villages changes
   const handleBorderingChange = (index, value) => {
-    const updated = [...formData.borderingvillages];
+    const updated = [...watchedBorderingVillages];
     updated[index] = value;
-    setFormData((prev) => ({ ...prev, borderingvillages: updated }));
+    setValue("borderingvillages", updated);
+    trigger("borderingvillages");
   };
 
-  const validateSection = (section) => {
-    const newErrors = {};
-    if (section === 3 && !formData.declaration) {
-      newErrors.declaration = "You must accept the declaration";
+  // Section-wise validation
+  const validateSection = async (sectionNum) => {
+    let fieldsToValidate = [];
+
+    if (sectionNum === 1) {
+      fieldsToValidate = [
+        "state",
+        "district", 
+        "taluka",
+        "grampanchayat",
+        "village",
+        "nameofmembersofthegramsabha",
+        "compartmentno"
+      ];
+    } else if (sectionNum === 2) {
+      fieldsToValidate = ["borderingvillages"];
+    } else if (sectionNum === 3) {
+      fieldsToValidate = ["listofevidenceinsupport", "declaration"];
     }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    const result = await trigger(fieldsToValidate);
+    return result;
   };
 
-  const showSection = (section) => {
-    if (section > currentSection && !validateSection(currentSection)) {
-      alert("Please complete all required fields before proceeding.");
-      return;
+  const showSection = async (sectionNum) => {
+    if (sectionNum > currentSection) {
+      const isValid = await validateSection(currentSection);
+      if (!isValid) {
+        alert("Please complete all required fields before proceeding.");
+        return;
+      }
     }
-    setCurrentSection(section);
-    setErrors({});
+    setCurrentSection(sectionNum);
   };
 
-  // Transform formData to AI API format
-  const transformForAI = (data) => ({
-    State: data.district,
-    "Village": data.village,
-    "Gram Panchayat": data.grampanchayat,
-    "Taluka": data.taluka,
-    "District": data.district,
-    "Compartment No": data.compartmentno,
-    "Bordering Villages": data.borderingvillages.join(", "),
-    "List of Evidence": data.listofevidenceinsupport,
-    "FDST community": "N/A",
-    "OTFD community": "N/A",
-    "Community rights such as nistar": "No",
-    "Rights over minor forest produce": "No",
-    "Uses": "N/A",
-    "Grazing": "No",
-    "Traditional resource access for nomadic and pastoralist": "No",
-    "Community tenures of habitat and habitation": "No",
-    "Right to access biodiversity": "No",
-    "Other traditional rights": "No"
-  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateSection(currentSection)) return;
-
+  const onSubmit = async (data) => {
     try {
       // 1️⃣ Submit form to Node.js backend
       await axios.post(
         "http://localhost:7000/api/v1/patta/communityresource",
-        formData
-      );
-
-      // 2️⃣ Call Flask AI API
-      const aiResponse = await axios.post(
-        "http://localhost:5000/api/community-resources/predict",
-        { userData: transformForAI(formData) }
+        data
       );
 
       // 3️⃣ Navigate to Displayscheme with AI recommendations
       navigate("/schemes", {
         state: {
-          formData,
+          formData: data,
           formType: "communityResources",
-          recommendedSchemes: aiResponse.data.recommendedSchemes || [],
-          communityName: formData.village,
         },
       });
 
       // 4️⃣ Reset form
-      setFormData({
-        village: "",
-        grampanchayat: "",
-        taluka: "",
-        district: "",
-        nameofmembersofthegramsabha: "",
-        compartmentno: "",
-        borderingvillages: ["", "", ""],
-        listofevidenceinsupport: "",
-        declaration: false,
-      });
+      setValue("state", "");
+      setValue("district", "");
+      setValue("taluka", "");
+      setValue("grampanchayat", "");
+      setValue("village", "");
+      setValue("nameofmembersofthegramsabha", "");
+      setValue("compartmentno", "");
+      setValue("borderingvillages", ["", "", ""]);
+      setValue("listofevidenceinsupport", "");
+      setValue("declaration", false);
+      
       setCurrentSection(1);
-      setErrors({});
     } catch (err) {
       console.error(err);
       alert("An error occurred. Please try again.");
@@ -163,83 +265,152 @@ const CommunityResource = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* Section 1 */}
           {currentSection === 1 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
-                <label className="block font-medium mb-1">
-                  1. Village / Gram Sabha:
+                <label className="block text-green-900 font-medium mb-1">
+                  1. State: <span className="text-red-600">*</span>
                 </label>
-                <input
-                  type="text"
-                  name="village"
-                  value={formData.village}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
-                />
+                <select
+                  {...register("state")}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.state ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                >
+                  <option value="">Select State</option>
+                  {Object.keys(indiaStateData || {}).map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                {errors.state && <p className="text-red-600 text-sm mt-1">{errors.state.message}</p>}
               </div>
 
               <div>
-                <label className="block font-medium mb-1">2. Gram Panchayat:</label>
-                <input
-                  type="text"
-                  name="grampanchayat"
-                  value={formData.grampanchayat}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
-                />
+                <label className="block text-green-900 font-medium mb-1">
+                  2. District: <span className="text-red-600">*</span>
+                </label>
+                <select
+                  {...register("district")}
+                  disabled={!watchedState}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.district ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                >
+                  <option value="">Select District</option>
+                  {filteredDistricts.map((district) => (
+                    <option key={district} value={district}>
+                      {district}
+                    </option>
+                  ))}
+                </select>
+                {errors.district && <p className="text-red-600 text-sm mt-1">{errors.district.message}</p>}
               </div>
 
               <div>
-                <label className="block font-medium mb-1">3. Tehsil / Taluka:</label>
-                <input
-                  type="text"
-                  name="taluka"
-                  value={formData.taluka}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
-                />
+                <label className="block text-green-900 font-medium mb-1">
+                  3. Tehsil / Taluka: <span className="text-red-600">*</span>
+                </label>
+                <select
+                  {...register("taluka")}
+                  disabled={!watchedDistrict}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.taluka ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                >
+                  <option value="">Select Tehsil/Taluka</option>
+                  {filteredTalukas.map((taluka) => (
+                    <option key={taluka} value={taluka}>
+                      {taluka}
+                    </option>
+                  ))}
+                </select>
+                {errors.taluka && <p className="text-red-600 text-sm mt-1">{errors.taluka.message}</p>}
               </div>
 
               <div>
-                <label className="block font-medium mb-1">4. District:</label>
-                <input
-                  type="text"
-                  name="district"
-                  value={formData.district}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
-                />
+                <label className="block text-green-900 font-medium mb-1">
+                  4. Gram Panchayat: <span className="text-red-600">*</span>
+                </label>
+                <select
+                  {...register("grampanchayat")}
+                  disabled={!watchedTaluka}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.grampanchayat ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                >
+                  <option value="">Select Gram Panchayat</option>
+                  {filteredPanchayats.map((panchayat) => (
+                    <option key={panchayat} value={panchayat}>
+                      {panchayat}
+                    </option>
+                  ))}
+                </select>
+                {errors.grampanchayat && (
+                  <p className="text-red-600 text-sm mt-1">{errors.grampanchayat.message}</p>
+                )}
               </div>
 
               <div>
-                <label className="block font-medium mb-1">
-                  5. Name(s) of members of the Gram Sabha:
+                <label className="block text-green-900 font-medium mb-1">
+                  5. Village / Gram Sabha: <span className="text-red-600">*</span>
+                </label>
+                <select
+                  {...register("village")}
+                  disabled={!watchedGramPanchayat}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.village ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                >
+                  <option value="">Select Village</option>
+                  {filteredVillages.map((village) => (
+                    <option key={village} value={village}>
+                      {village}
+                    </option>
+                  ))}
+                </select>
+                {errors.village && (
+                  <p className="text-red-600 text-sm mt-1">{errors.village.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-green-900 font-medium mb-1">
+                  6. Name(s) of members of the Gram Sabha: <span className="text-red-600">*</span>
                 </label>
                 <textarea
-                  name="nameofmembersofthegramsabha"
+                  {...register("nameofmembersofthegramsabha")}
                   placeholder="Attach list with ST/OTFD status"
-                  value={formData.nameofmembersofthegramsabha}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.nameofmembersofthegramsabha ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                  rows="3"
                 />
                 <p className="text-xs text-gray-500 mt-1">
                   (Attach as separate sheet, with Scheduled Tribe / OTFD status next to each member)
                 </p>
+                {errors.nameofmembersofthegramsabha && (
+                  <p className="text-red-600 text-sm mt-1">{errors.nameofmembersofthegramsabha.message}</p>
+                )}
               </div>
 
               <div>
-                <label className="block font-medium mb-1">
-                  6. Khasra / Compartment No(s):
+                <label className="block text-green-900 font-medium mb-1">
+                  7. Khasra / Compartment No(s): <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
-                  name="compartmentno"
-                  value={formData.compartmentno}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
+                  {...register("compartmentno")}
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.compartmentno ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
                 />
+                {errors.compartmentno && (
+                  <p className="text-red-600 text-sm mt-1">{errors.compartmentno.message}</p>
+                )}
               </div>
 
               <div className="flex justify-end">
@@ -258,20 +429,27 @@ const CommunityResource = () => {
           {currentSection === 2 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
-                <label className="block font-medium mb-2">7. Bordering Villages:</label>
-                {formData.borderingvillages.map((village, index) => (
+                <label className="block text-green-900 font-medium mb-2">
+                  8. Bordering Villages: <span className="text-red-600">*</span>
+                </label>
+                {watchedBorderingVillages.map((village, index) => (
                   <input
                     key={index}
                     type="text"
-                    placeholder={`(${index + 1})`}
+                    placeholder={`Bordering Village ${index + 1}`}
                     value={village}
                     onChange={(e) => handleBorderingChange(index, e.target.value)}
-                    className="w-full p-2 mb-2 border border-green-300 rounded-lg"
+                    className={`w-full p-3 mb-2 border rounded-lg ${
+                      errors.borderingvillages ? "border-red-500" : "border-green-300"
+                    } focus:outline-none focus:ring-2 focus:ring-green-400`}
                   />
                 ))}
                 <p className="text-xs text-gray-500">
                   (Include info regarding sharing of resources/responsibilities with any other villages)
                 </p>
+                {errors.borderingvillages && (
+                  <p className="text-red-600 text-sm mt-1">{errors.borderingvillages.message}</p>
+                )}
               </div>
 
               <div className="flex justify-between">
@@ -297,35 +475,37 @@ const CommunityResource = () => {
           {currentSection === 3 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6 space-y-4">
               <div>
-                <label className="block font-medium mb-1">
-                  8. List of Evidence in Support:
+                <label className="block text-green-900 font-medium mb-1">
+                  9. List of Evidence in Support: <span className="text-red-600">*</span>
                 </label>
                 <textarea
-                  name="listofevidenceinsupport"
+                  {...register("listofevidenceinsupport")}
                   placeholder="Attach supporting documents"
-                  value={formData.listofevidenceinsupport}
-                  onChange={handleInputChange}
-                  className="w-full p-2 border border-green-300 rounded-lg"
+                  className={`w-full p-3 border rounded-lg ${
+                    errors.listofevidenceinsupport ? "border-red-500" : "border-green-300"
+                  } focus:outline-none focus:ring-2 focus:ring-green-400`}
+                  rows="3"
                 />
-              </div>
-
-              <div>
-                <label className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    name="declaration"
-                    checked={formData.declaration}
-                    onChange={handleInputChange}
-                    className="text-green-600 focus:ring-green-500 rounded"
-                  />
-                  <span className="ml-2">
-                    I hereby declare that the information provided is true to the best of my knowledge and belief.
-                  </span>
-                </label>
-                {errors.declaration && (
-                  <p className="text-red-600 text-sm mt-1">{errors.declaration}</p>
+                {errors.listofevidenceinsupport && (
+                  <p className="text-red-600 text-sm mt-1">{errors.listofevidenceinsupport.message}</p>
                 )}
               </div>
+
+              <div className="flex items-start">
+                <input
+                  type="checkbox"
+                  {...register("declaration")}
+                  className={`mr-2 mt-1 ${
+                    errors.declaration ? "text-red-600" : "text-green-600"
+                  } focus:ring-green-500 rounded`}
+                />
+                <label className="text-green-900">
+                  I hereby declare that the information provided is true to the best of my knowledge and belief.
+                </label>
+              </div>
+              {errors.declaration && (
+                <p className="text-red-600 text-sm mt-1">{errors.declaration.message}</p>
+              )}
 
               <div className="flex justify-between">
                 <button
@@ -337,9 +517,10 @@ const CommunityResource = () => {
                 </button>
                 <button
                   type="submit"
-                  className="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-lg"
+                  disabled={isSubmitting}
+                  className="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-lg disabled:opacity-50"
                 >
-                  Submit Claim
+                  {isSubmitting ? "Submitting..." : "Submit Claim"}
                 </button>
               </div>
             </div>

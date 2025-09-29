@@ -1,37 +1,64 @@
 import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import indiaStateData from "../assets/india_state_data.json";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+// Zod schema definition
+const individualFormSchema = z.object({
+  // Section 1: Claimant Details
+  nameoftheclaimant: z.string().min(1, 'Please enter claimant name'),
+  nameofthespouse: z.string().optional(),
+  nameofFather: z.string().min(1, 'Please enter parent name'),
+  address: z.string().min(1, 'Please enter your address'),
+  state: z.string().min(1, 'Please select state'),
+  district: z.string().min(1, 'Please select district'),
+  taluka: z.string().min(1, 'Please select tehsil/taluka'),
+  gramPanchayat: z.string().min(1, 'Please select gram panchayat'),
+  village: z.string().min(1, 'Please select village'),
+  scheduledTribe: z.enum(['yes', 'no'], {
+    required_error: 'Please select an option',
+  }),
+  otherTraditionalForestDweller: z.enum(['yes', 'no'], {
+    required_error: 'Please select an option',
+  }),
+  name: z.string().min(1, 'Please enter family member name').optional(),
+  age: z.string().min(1, 'Please enter family member age').optional().refine(
+    (val) => !isNaN(Number(val)) && Number(val) > 0,
+    'Age must be a positive number'
+  ),
+  
+  // Section 2: Land Details
+  forHabitation: z.string().optional().transform(val => val || '0'),
+  forSelfCultivation: z.string().optional().transform(val => val || '0'),
+  disputedLands: z.string().optional(),
+  pattas: z.string().optional(),
+  alternativeLand: z.string().optional(),
+  landFromWhereDisplacedWithoutCompensation: z.string().optional(),
+  extentOfLandInForestVillages: z.string().optional().transform(val => val || '0'),
+  anyOtherTraditionalRight: z.string().optional(),
+  evidenceInSupport: z.string().optional(),
+  anyOtherInformation: z.string().optional(),
+  
+  // Declaration
+  declaration: z.boolean().refine(val => val === true, {
+    message: 'You must accept the declaration',
+  }),
+}).refine(
+  (data) => {
+    // Custom validation: At least one of scheduledTribe or otherTraditionalForestDweller must be 'yes'
+    return data.scheduledTribe === 'yes' || data.otherTraditionalForestDweller === 'yes';
+  },
+  {
+    message: 'You must be either a Scheduled Tribe or Other Traditional Forest Dweller',
+    path: ['scheduledTribe'],
+  }
+);
+
 const Individual = () => {
   const [currentSection, setCurrentSection] = useState(1);
-  const [formData, setFormData] = useState({
-    nameoftheclaimant: '',
-    nameofthespouse: '',
-    nameofFather: '',
-    address: '',
-    state: '',
-    district: '',
-    taluka: '',
-    gramPanchayat: '',
-    village: '',
-    scheduledTribe: '',
-    otherTraditionalForestDweller: '',
-    name: '',
-    age: '',
-    forHabitation: '',
-    forSelfCultivation: '',
-    disputedLands: '',
-    pattas: '',
-    alternativeLand: '',
-    landFromWhereDisplacedWithoutCompensation: '',
-    extentOfLandInForestVillages: '',
-    anyOtherTraditionalRight: '',
-    evidenceInSupport: '',
-    anyOtherInformation: '',
-    declaration: false
-  });
-
   const [filePreviews, setFilePreviews] = useState({
     stCertificate: [],
     spouseStCertificate: [],
@@ -39,34 +66,59 @@ const Individual = () => {
   });
 
   const navigate = useNavigate();
-  const [errors, setErrors] = useState({});
   const [filteredDistricts, setFilteredDistricts] = useState([]);
   const [filteredTalukas, setFilteredTalukas] = useState([]);
   const [filteredPanchayats, setFilteredPanchayats] = useState([]);
   const [filteredVillages, setFilteredVillages] = useState([]);
 
+  // Initialize React Hook Form with Zod resolver
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    trigger,
+    formState: { errors, isSubmitting }
+  } = useForm({
+    resolver: zodResolver(individualFormSchema),
+    mode: 'onChange',
+    defaultValues: {
+      scheduledTribe: undefined,
+      otherTraditionalForestDweller: undefined,
+      forHabitation: '',
+      forSelfCultivation: '',
+      extentOfLandInForestVillages: '',
+      declaration: false
+    }
+  });
+
+  // Watch form values for conditional logic
+  const watchedState = watch('state');
+  const watchedDistrict = watch('district');
+  const watchedTaluka = watch('taluka');
+  const watchedGramPanchayat = watch('gramPanchayat');
+  const watchedScheduledTribe = watch('scheduledTribe');
+  const watchedOtherTraditionalForestDweller = watch('otherTraditionalForestDweller');
+
+  // Update location-based dropdowns
   useEffect(() => {
-    if (formData.state && indiaStateData[formData.state]) {
-      setFilteredDistricts(Object.keys(indiaStateData[formData.state].districts || {}));
+    if (watchedState && indiaStateData[watchedState]) {
+      setFilteredDistricts(Object.keys(indiaStateData[watchedState].districts || {}));
     } else {
       setFilteredDistricts([]);
+      setValue('district', '');
+      setValue('taluka', '');
+      setValue('gramPanchayat', '');
+      setValue('village', '');
     }
-    
-    setFormData(prev => ({
-      ...prev,
-      district: '',
-      taluka: '',
-      gramPanchayat: '',
-      village: ''
-    }));
     setFilteredTalukas([]);
     setFilteredPanchayats([]);
     setFilteredVillages([]);
-  }, [formData.state]);
+  }, [watchedState, setValue]);
 
   useEffect(() => {
-    if (formData.state && formData.district && indiaStateData[formData.state]?.districts[formData.district]) {
-      const districtData = indiaStateData[formData.state].districts[formData.district];
+    if (watchedState && watchedDistrict && indiaStateData[watchedState]?.districts[watchedDistrict]) {
+      const districtData = indiaStateData[watchedState].districts[watchedDistrict];
       if (districtData && districtData.taluks) {
         setFilteredTalukas(Object.keys(districtData.taluks));
       } else {
@@ -76,20 +128,17 @@ const Individual = () => {
       setFilteredTalukas([]);
     }
     
-    setFormData(prev => ({
-      ...prev,
-      taluka: '',
-      gramPanchayat: '',
-      village: ''
-    }));
+    setValue('taluka', '');
+    setValue('gramPanchayat', '');
+    setValue('village', '');
     setFilteredPanchayats([]);
     setFilteredVillages([]);
-  }, [formData.district]);
+  }, [watchedDistrict, setValue, watchedState]);
 
   useEffect(() => {
-    if (formData.state && formData.district && formData.taluka && 
-        indiaStateData[formData.state]?.districts[formData.district]?.taluks[formData.taluka]) {
-      const talukData = indiaStateData[formData.state].districts[formData.district].taluks[formData.taluka];
+    if (watchedState && watchedDistrict && watchedTaluka && 
+        indiaStateData[watchedState]?.districts[watchedDistrict]?.taluks[watchedTaluka]) {
+      const talukData = indiaStateData[watchedState].districts[watchedDistrict].taluks[watchedTaluka];
       if (talukData && talukData.panchayats) {
         setFilteredPanchayats(Object.keys(talukData.panchayats));
       } else {
@@ -99,50 +148,37 @@ const Individual = () => {
       setFilteredPanchayats([]);
     }
     
-    setFormData(prev => ({
-      ...prev,
-      gramPanchayat: '',
-      village: ''
-    }));
+    setValue('gramPanchayat', '');
+    setValue('village', '');
     setFilteredVillages([]);
-  }, [formData.taluka]);
+  }, [watchedTaluka, setValue, watchedState, watchedDistrict]);
 
   useEffect(() => {
-    if (formData.state && formData.district && formData.taluka && formData.gramPanchayat && 
-        indiaStateData[formData.state]?.districts[formData.district]?.taluks[formData.taluka]?.panchayats[formData.gramPanchayat]) {
-      const panchayatData = indiaStateData[formData.state].districts[formData.district].taluks[formData.taluka].panchayats[formData.gramPanchayat];
+    if (watchedState && watchedDistrict && watchedTaluka && watchedGramPanchayat && 
+        indiaStateData[watchedState]?.districts[watchedDistrict]?.taluks[watchedTaluka]?.panchayats[watchedGramPanchayat]) {
+      const panchayatData = indiaStateData[watchedState].districts[watchedDistrict].taluks[watchedTaluka].panchayats[watchedGramPanchayat];
       setFilteredVillages(panchayatData || []);
     } else {
       setFilteredVillages([]);
     }
     
-    setFormData(prev => ({
-      ...prev,
-      village: ''
-    }));
-  }, [formData.gramPanchayat]);
+    setValue('village', '');
+  }, [watchedGramPanchayat, setValue, watchedState, watchedDistrict, watchedTaluka]);
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  // Handle radio button changes with validation
+  const handleRadioChange = (name, value) => {
+    setValue(name, value);
     
-    if (name === 'scheduledTribe') {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value,
-        otherTraditionalForestDweller: value === 'no' ? 'yes' : prev.otherTraditionalForestDweller
-      }));
-    } else if (name === 'otherTraditionalForestDweller') {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value,
-        scheduledTribe: value === 'no' ? 'yes' : prev.scheduledTribe
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [name]: type === 'checkbox' ? checked : value
-      }));
+    // Trigger validation for mutually exclusive fields
+    if (name === 'scheduledTribe' && value === 'yes') {
+      setValue('otherTraditionalForestDweller', 'no');
+      trigger('otherTraditionalForestDweller');
+    } else if (name === 'otherTraditionalForestDweller' && value === 'yes') {
+      setValue('scheduledTribe', 'no');
+      trigger('scheduledTribe');
     }
+    
+    trigger(name);
   };
 
   const handleFileUpload = (e, fileType) => {
@@ -166,57 +202,60 @@ const Individual = () => {
     }));
   };
 
-  const validateSection = (sectionNum) => {
-    const newErrors = {};
-    
+  const validateSection = async (sectionNum) => {
+    let fieldsToValidate = [];
+
     if (sectionNum === 1) {
-      if (!formData.nameoftheclaimant) newErrors.nameoftheclaimant = 'Please enter claimant name';
-      if (!formData.nameofFather) newErrors.nameofFather = 'Please enter parent name';
-      if (!formData.address) newErrors.address = 'Please enter your address';
-      if (!formData.state) newErrors.state = 'Please select state';
-      if (!formData.district) newErrors.district = 'Please select district';
-      if (!formData.village) newErrors.village = 'Please select village';
-      if (!formData.gramPanchayat) newErrors.gramPanchayat = 'Please select gram panchayat';
-      if (!formData.taluka) newErrors.taluka = 'Please select tehsil/taluka';
-      if (!formData.scheduledTribe) newErrors.scheduledTribe = 'Please select an option';
-      if (!formData.otherTraditionalForestDweller) newErrors.otherTraditionalForestDweller = 'Please select an option';
-      if (!formData.name) newErrors.name = 'Please enter family member name';
-      if (!formData.age) newErrors.age = 'Please enter family member age';
+      fieldsToValidate = [
+        'nameoftheclaimant', 'nameofFather', 'address', 'state', 'district', 
+        'taluka', 'gramPanchayat', 'village', 'scheduledTribe', 
+        'otherTraditionalForestDweller', 'name', 'age'
+      ];
+    } else if (sectionNum === 2) {
+      fieldsToValidate = [
+        'forHabitation', 'forSelfCultivation', 'disputedLands', 'pattas',
+        'alternativeLand', 'landFromWhereDisplacedWithoutCompensation',
+        'extentOfLandInForestVillages', 'anyOtherTraditionalRight',
+        'evidenceInSupport', 'anyOtherInformation'
+      ];
     }
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    const result = await trigger(fieldsToValidate);
+    return result;
   };
 
-  const showSection = (sectionNum) => {
-    if (sectionNum > currentSection && !validateSection(currentSection)) {
-      alert('Please complete all required fields before proceeding.');
-      return;
+  const showSection = async (sectionNum) => {
+    if (sectionNum > currentSection) {
+      const isValid = await validateSection(currentSection);
+      if (!isValid) {
+        alert('Please complete all required fields before proceeding.');
+        return;
+      }
     }
 
     setCurrentSection(sectionNum);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.declaration) {
-      setErrors((prev) => ({
-        ...prev,
-        declaration: "You must accept the declaration",
-      }));
+  const onSubmit = async (data) => {
+    if (!data.declaration) {
+      alert('You must accept the declaration');
       return;
     }
-    axios.post("http://localhost:7000/api/v1/patta/individual", formData)
-      .then((res) => {
-        console.log(res);
-        
-        // ✅ Pass formData to Displayscheme
-        navigate("/schemes", { state: { formData:formData,formType: "individual" } });
-      })
-      .catch((err) => {
-        console.log(err);
+
+    try {
+      const response = await axios.post("http://localhost:7000/api/v1/patta/individual", data);
+      console.log(response);
+      
+      navigate("/schemes", { 
+        state: { 
+          formData: data,
+          formType: "individual" 
+        } 
       });
+    } catch (err) {
+      console.log(err);
+      alert('Error submitting form. Please try again.');
+    }
   };
 
   return (
@@ -247,7 +286,7 @@ const Individual = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* Section 1: Claimant Details */}
           {currentSection === 1 && (
             <div className="border border-green-300 rounded-lg p-5 bg-green-50 mb-6">
@@ -259,12 +298,10 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="nameoftheclaimant"
-                  value={formData.nameoftheclaimant}
-                  onChange={handleInputChange}
+                  {...register('nameoftheclaimant')}
                   className={`w-full p-3 border rounded-lg ${errors.nameoftheclaimant ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 />
-                {errors.nameoftheclaimant && <p className="text-red-600 text-sm mt-1">{errors.nameoftheclaimant}</p>}
+                {errors.nameoftheclaimant && <p className="text-red-600 text-sm mt-1">{errors.nameoftheclaimant.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -273,9 +310,7 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="nameofthespouse"
-                  value={formData.nameofthespouse}
-                  onChange={handleInputChange}
+                  {...register('nameofthespouse')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                 />
               </div>
@@ -286,12 +321,10 @@ const Individual = () => {
                 </label>
                 <input
                   type="text"
-                  name="nameofFather"
-                  value={formData.nameofFather}
-                  onChange={handleInputChange}
+                  {...register('nameofFather')}
                   className={`w-full p-3 border rounded-lg ${errors.nameofFather ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 />
-                {errors.nameofFather && <p className="text-red-600 text-sm mt-1">{errors.nameofFather}</p>}
+                {errors.nameofFather && <p className="text-red-600 text-sm mt-1">{errors.nameofFather.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -299,13 +332,11 @@ const Individual = () => {
                   4. Address: <span className="text-red-600">*</span>
                 </label>
                 <textarea
-                  name="address"
-                  value={formData.address}
-                  onChange={handleInputChange}
+                  {...register('address')}
                   className={`w-full p-3 border rounded-lg ${errors.address ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                   rows="3"
                 />
-                {errors.address && <p className="text-red-600 text-sm mt-1">{errors.address}</p>}
+                {errors.address && <p className="text-red-600 text-sm mt-1">{errors.address.message}</p>}
               </div>
               
               <div className="mb-4">
@@ -313,9 +344,7 @@ const Individual = () => {
                   5. State: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="state"
-                  value={formData.state}
-                  onChange={handleInputChange}
+                  {...register('state')}
                   className={`w-full p-3 border rounded-lg ${errors.state ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                 >
                   <option value="">Select State</option>
@@ -323,7 +352,7 @@ const Individual = () => {
                     <option key={state} value={state}>{state}</option>
                   ))}
                 </select>
-                {errors.state && <p className="text-red-600 text-sm mt-1">{errors.state}</p>}
+                {errors.state && <p className="text-red-600 text-sm mt-1">{errors.state.message}</p>}
               </div>
               
               <div className="mb-4">
@@ -331,18 +360,16 @@ const Individual = () => {
                   6. District: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="district"
-                  value={formData.district}
-                  onChange={handleInputChange}
+                  {...register('district')}
                   className={`w-full p-3 border rounded-lg ${errors.district ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                  disabled={!formData.state}
+                  disabled={!watchedState}
                 >
                   <option value="">Select District</option>
                   {filteredDistricts.map(district => (
                     <option key={district} value={district}>{district}</option>
                   ))}
                 </select>
-                {errors.district && <p className="text-red-600 text-sm mt-1">{errors.district}</p>}
+                {errors.district && <p className="text-red-600 text-sm mt-1">{errors.district.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -350,18 +377,16 @@ const Individual = () => {
                   7. Tehsil/Taluka: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="taluka"
-                  value={formData.taluka}
-                  onChange={handleInputChange}
+                  {...register('taluka')}
                   className={`w-full p-3 border rounded-lg ${errors.taluka ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                  disabled={!formData.district}
+                  disabled={!watchedDistrict}
                 >
                   <option value="">Select Tehsil/Taluka</option>
                   {filteredTalukas.map(taluka => (
                     <option key={taluka} value={taluka}>{taluka}</option>
                   ))}
                 </select>
-                {errors.taluka && <p className="text-red-600 text-sm mt-1">{errors.taluka}</p>}
+                {errors.taluka && <p className="text-red-600 text-sm mt-1">{errors.taluka.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -369,18 +394,16 @@ const Individual = () => {
                   8. Gram Panchayat: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="gramPanchayat"
-                  value={formData.gramPanchayat}
-                  onChange={handleInputChange}
+                  {...register('gramPanchayat')}
                   className={`w-full p-3 border rounded-lg ${errors.gramPanchayat ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                  disabled={!formData.taluka}
+                  disabled={!watchedTaluka}
                 >
                   <option value="">Select Gram Panchayat</option>
                   {filteredPanchayats.map(panchayat => (
                     <option key={panchayat} value={panchayat}>{panchayat}</option>
                   ))}
                 </select>
-                {errors.gramPanchayat && <p className="text-red-600 text-sm mt-1">{errors.gramPanchayat}</p>}
+                {errors.gramPanchayat && <p className="text-red-600 text-sm mt-1">{errors.gramPanchayat.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -388,18 +411,16 @@ const Individual = () => {
                   9. Village: <span className="text-red-600">*</span>
                 </label>
                 <select
-                  name="village"
-                  value={formData.village}
-                  onChange={handleInputChange}
+                  {...register('village')}
                   className={`w-full p-3 border rounded-lg ${errors.village ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
-                  disabled={!formData.gramPanchayat}
+                  disabled={!watchedGramPanchayat}
                 >
                   <option value="">Select Village</option>
                   {filteredVillages.map(village => (
                     <option key={village} value={village}>{village}</option>
                   ))}
                 </select>
-                {errors.village && <p className="text-red-600 text-sm mt-1">{errors.village}</p>}
+                {errors.village && <p className="text-red-600 text-sm mt-1">{errors.village.message}</p>}
               </div>
 
               <div className="mb-4">
@@ -412,8 +433,8 @@ const Individual = () => {
                       type="radio"
                       name="scheduledTribe"
                       value="yes"
-                      checked={formData.scheduledTribe === 'yes'}
-                      onChange={handleInputChange}
+                      checked={watchedScheduledTribe === 'yes'}
+                      onChange={() => handleRadioChange('scheduledTribe', 'yes')}
                       className="text-green-600 focus:ring-green-500"
                     />
                     <span className="ml-2">Yes</span>
@@ -423,16 +444,16 @@ const Individual = () => {
                       type="radio"
                       name="scheduledTribe"
                       value="no"
-                      checked={formData.scheduledTribe === 'no'}
-                      onChange={handleInputChange}
+                      checked={watchedScheduledTribe === 'no'}
+                      onChange={() => handleRadioChange('scheduledTribe', 'no')}
                       className="text-green-600 focus:ring-green-500"
                     />
                     <span className="ml-2">No</span>
                   </label>
                 </div>
-                {errors.scheduledTribe && <p className="text-red-600 text-sm mt-1">{errors.scheduledTribe}</p>}
+                {errors.scheduledTribe && <p className="text-red-600 text-sm mt-1">{errors.scheduledTribe.message}</p>}
                 
-                {formData.scheduledTribe === 'yes' && (
+                {watchedScheduledTribe === 'yes' && (
                   <>
                     <label className="block text-green-900 font-medium mb-1 mt-3">
                       Attach authenticated copy of Certificate:
@@ -441,7 +462,7 @@ const Individual = () => {
                       type="file"
                       onChange={(e) => handleFileUpload(e, 'stCertificate')}
                       className="w-full p-2 border border-green-300 rounded-lg"
-                      accept=".pdf,.jpg,.jpeg,.png"
+                      accept=".pdf"
                     />
                     
                     <div className="mt-2">
@@ -472,10 +493,10 @@ const Individual = () => {
                       type="radio"
                       name="otherTraditionalForestDweller"
                       value="yes"
-                      checked={formData.otherTraditionalForestDweller === 'yes'}
-                      onChange={handleInputChange}
+                      checked={watchedOtherTraditionalForestDweller === 'yes'}
+                      onChange={() => handleRadioChange('otherTraditionalForestDweller', 'yes')}
                       className="text-green-600 focus:ring-green-500"
-                      disabled={formData.scheduledTribe === 'yes'}
+                      disabled={watchedScheduledTribe === 'yes'}
                     />
                     <span className="ml-2">Yes</span>
                   </label>
@@ -484,17 +505,17 @@ const Individual = () => {
                       type="radio"
                       name="otherTraditionalForestDweller"
                       value="no"
-                      checked={formData.otherTraditionalForestDweller === 'no'}
-                      onChange={handleInputChange}
+                      checked={watchedOtherTraditionalForestDweller === 'no'}
+                      onChange={() => handleRadioChange('otherTraditionalForestDweller', 'no')}
                       className="text-green-600 focus:ring-green-500"
-                      disabled={formData.scheduledTribe === 'yes'}
+                      disabled={watchedScheduledTribe === 'yes'}
                     />
                     <span className="ml-2">No</span>
                   </label>
                 </div>
-                {errors.otherTraditionalForestDweller && <p className="text-red-600 text-sm mt-1">{errors.otherTraditionalForestDweller}</p>}
+                {errors.otherTraditionalForestDweller && <p className="text-red-600 text-sm mt-1">{errors.otherTraditionalForestDweller.message}</p>}
                 
-                {formData.otherTraditionalForestDweller === 'yes' && formData.scheduledTribe !== 'yes' && (
+                {watchedOtherTraditionalForestDweller === 'yes' && watchedScheduledTribe !== 'yes' && (
                   <>
                     <label className="block text-green-900 font-medium mb-1 mt-3">
                       If Spouse is Scheduled Tribe, attach certificate:
@@ -503,7 +524,7 @@ const Individual = () => {
                       type="file"
                       onChange={(e) => handleFileUpload(e, 'spouseStCertificate')}
                       className="w-full p-2 border border-green-300 rounded-lg"
-                      accept=".pdf,.jpg,.jpeg,.png"
+                      accept=".pdf"
                     />
                     
                     <div className="mt-2">
@@ -536,13 +557,11 @@ const Individual = () => {
                     </label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
+                      {...register('name')}
                       className={`w-full p-3 border rounded-lg ${errors.name ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                       placeholder="Enter family member name"
                     />
-                    {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name.message}</p>}
                   </div>
                   
                   <div className="mb-3">
@@ -551,14 +570,12 @@ const Individual = () => {
                     </label>
                     <input
                       type="number"
-                      name="age"
-                      value={formData.age}
-                      onChange={handleInputChange}
+                      {...register('age')}
                       min="0"
                       className={`w-full p-3 border rounded-lg ${errors.age ? 'border-red-500' : 'border-green-300'} focus:outline-none focus:ring-2 focus:ring-green-400`}
                       placeholder="Enter age"
                     />
-                    {errors.age && <p className="text-red-600 text-sm mt-1">{errors.age}</p>}
+                    {errors.age && <p className="text-red-600 text-sm mt-1">{errors.age.message}</p>}
                   </div>
                 </div>
               </div>
@@ -598,9 +615,7 @@ const Individual = () => {
                   </label>
                   <input
                     type="number"
-                    name="forHabitation"
-                    value={formData.forHabitation}
-                    onChange={handleInputChange}
+                    {...register('forHabitation')}
                     min="0"
                     step="0.01"
                     className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -613,9 +628,7 @@ const Individual = () => {
                   </label>
                   <input
                     type="number"
-                    name="forSelfCultivation"
-                    value={formData.forSelfCultivation}
-                    onChange={handleInputChange}
+                    {...register('forSelfCultivation')}
                     min="0"
                     step="0.01"
                     className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -628,9 +641,7 @@ const Individual = () => {
                   14. Disputed Lands, if any:
                 </label>
                 <textarea
-                  name="disputedLands"
-                  value={formData.disputedLands}
-                  onChange={handleInputChange}
+                  {...register('disputedLands')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -641,9 +652,7 @@ const Individual = () => {
                   15. Pattas/Leases/Grants, if any:
                 </label>
                 <textarea
-                  name="pattas"
-                  value={formData.pattas}
-                  onChange={handleInputChange}
+                  {...register('pattas')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -654,9 +663,7 @@ const Individual = () => {
                   16. Land for In Situ Rehabilitation or Alternative Land, if any:
                 </label>
                 <textarea
-                  name="alternativeLand"
-                  value={formData.alternativeLand}
-                  onChange={handleInputChange}
+                  {...register('alternativeLand')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -667,9 +674,7 @@ const Individual = () => {
                   17. Land from Where Displaced Without Compensation:
                 </label>
                 <textarea
-                  name="landFromWhereDisplacedWithoutCompensation"
-                  value={formData.landFromWhereDisplacedWithoutCompensation}
-                  onChange={handleInputChange}
+                  {...register('landFromWhereDisplacedWithoutCompensation')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -681,9 +686,7 @@ const Individual = () => {
                 </label>
                 <input
                   type="number"
-                  name="extentOfLandInForestVillages"
-                  value={formData.extentOfLandInForestVillages}
-                  onChange={handleInputChange}
+                  {...register('extentOfLandInForestVillages')}
                   min="0"
                   step="0.01"
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -695,9 +698,7 @@ const Individual = () => {
                   19. Any Other Traditional Right, if any:
                 </label>
                 <textarea
-                  name="anyOtherTraditionalRight"
-                  value={formData.anyOtherTraditionalRight}
-                  onChange={handleInputChange}
+                  {...register('anyOtherTraditionalRight')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -708,9 +709,7 @@ const Individual = () => {
                   20. Evidence in Support:
                 </label>
                 <textarea
-                  name="evidenceInSupport"
-                  value={formData.evidenceInSupport}
-                  onChange={handleInputChange}
+                  {...register('evidenceInSupport')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -747,9 +746,7 @@ const Individual = () => {
                   21. Any Other Information:
                 </label>
                 <textarea
-                  name="anyOtherInformation"
-                  value={formData.anyOtherInformation}
-                  onChange={handleInputChange}
+                  {...register('anyOtherInformation')}
                   className="w-full p-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
                   rows="3"
                 />
@@ -781,41 +778,39 @@ const Individual = () => {
               
               <div className="mb-6">
                 <h3 className="text-lg font-medium text-green-800 mb-2">Claimant Details</h3>
-                <p><strong>Name:</strong> {formData.nameoftheclaimant || 'Not provided'}</p>
-                <p><strong>Spouse Name:</strong> {formData.nameofthespouse || 'Not provided'}</p>
-                <p><strong>Parent Name:</strong> {formData.nameofFather || 'Not provided'}</p>
-                <p><strong>Address:</strong> {formData.address || 'Not provided'}</p>
-                <p><strong>State:</strong> {formData.state || 'Not provided'}</p>
-                <p><strong>District:</strong> {formData.district || 'Not provided'}</p>
-                <p><strong>Village:</strong> {formData.village || 'Not provided'}</p>
-                <p><strong>Gram Panchayat:</strong> {formData.gramPanchayat || 'Not provided'}</p>
-                <p><strong>Tehsil/Taluka:</strong> {formData.taluka || 'Not provided'}</p>
-                <p><strong>Scheduled Tribe:</strong> {formData.scheduledTribe || 'Not provided'}</p>
-                <p><strong>Other Traditional Forest Dweller:</strong> {formData.otherTraditionalForestDweller || 'Not provided'}</p>
-                <p><strong>Family Member Name:</strong> {formData.name || 'Not provided'}</p>
-                <p><strong>Family Member Age:</strong> {formData.age || 'Not provided'}</p>
+                <p><strong>Name:</strong> {watch('nameoftheclaimant') || 'Not provided'}</p>
+                <p><strong>Spouse Name:</strong> {watch('nameofthespouse') || 'Not provided'}</p>
+                <p><strong>Parent Name:</strong> {watch('nameofFather') || 'Not provided'}</p>
+                <p><strong>Address:</strong> {watch('address') || 'Not provided'}</p>
+                <p><strong>State:</strong> {watch('state') || 'Not provided'}</p>
+                <p><strong>District:</strong> {watch('district') || 'Not provided'}</p>
+                <p><strong>Village:</strong> {watch('village') || 'Not provided'}</p>
+                <p><strong>Gram Panchayat:</strong> {watch('gramPanchayat') || 'Not provided'}</p>
+                <p><strong>Tehsil/Taluka:</strong> {watch('taluka') || 'Not provided'}</p>
+                <p><strong>Scheduled Tribe:</strong> {watch('scheduledTribe') || 'Not provided'}</p>
+                <p><strong>Other Traditional Forest Dweller:</strong> {watch('otherTraditionalForestDweller') || 'Not provided'}</p>
+                <p><strong>Family Member Name:</strong> {watch('name') || 'Not provided'}</p>
+                <p><strong>Family Member Age:</strong> {watch('age') || 'Not provided'}</p>
                 
                 <h3 className="text-lg font-medium text-green-800 mt-4 mb-2">Land Details</h3>
-                <p><strong>Land for Habitation:</strong> {formData.forHabitation || '0'} acres</p>
-                <p><strong>Land for Cultivation:</strong> {formData.forSelfCultivation || '0'} acres</p>
-                <p><strong>Disputed Lands:</strong> {formData.disputedLands || 'None'}</p>
-                <p><strong>Forest Village Land:</strong> {formData.extentOfLandInForestVillages || '0'} acres</p>
+                <p><strong>Land for Habitation:</strong> {watch('forHabitation') || '0'} acres</p>
+                <p><strong>Land for Cultivation:</strong> {watch('forSelfCultivation') || '0'} acres</p>
+                <p><strong>Disputed Lands:</strong> {watch('disputedLands') || 'None'}</p>
+                <p><strong>Forest Village Land:</strong> {watch('extentOfLandInForestVillages') || '0'} acres</p>
               </div>
               
               <div className="mb-4">
                 <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    name="declaration"
-                    checked={formData.declaration}
-                    onChange={handleInputChange}
+                    {...register('declaration')}
                     className="text-green-600 focus:ring-green-500 rounded"
                   />
                   <span className="ml-2">
                     I hereby declare that the information provided is true to the best of my knowledge and belief.
                   </span>
                 </label>
-                {errors.declaration && <p className="text-red-600 text-sm mt-1">{errors.declaration}</p>}
+                {errors.declaration && <p className="text-red-600 text-sm mt-1">{errors.declaration.message}</p>}
               </div>
               
               <div className="flex justify-between mt-6">
@@ -828,9 +823,10 @@ const Individual = () => {
                 </button>
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="bg-green-700 hover:bg-green-800 text-white py-2 px-5 rounded-lg"
                 >
-                  Submit Claim
+                  {isSubmitting ? "Submitting...." :"Submit Claim"}
                 </button>
               </div>
             </div>

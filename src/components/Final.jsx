@@ -40,7 +40,7 @@ const Final = ({ setvisible }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4 scroll-smooth scroll-m-0">
       <div className="bg-white shadow-lg rounded-lg p-10 max-w-md w-full flex flex-col items-center">
         <svg
           ref={svgRef}
