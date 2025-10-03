@@ -112,7 +112,7 @@ export const Navbar = ({ user, setuser }) => {
         },
         { name: "Map", path: "/auth" },
         { name: "About FRA", path: "/auth" },
-        { name: "Signup/Login", path: "/auth" },
+        { name: "Login", path: "/auth" },
       ];
 
   const handleItemClick = () => {
