@@ -1,4 +1,5 @@
 import React from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { Home } from './pages/Home' 
 import { About } from './pages/About'
@@ -43,6 +44,7 @@ function App() {
   return (
     <BrowserRouter>
       <AppContent />
+      <SpeedInsights />
     </BrowserRouter>
   )
 }
