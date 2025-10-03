@@ -5,6 +5,7 @@ import cors from 'cors';
 import cokkiesParser from 'cookie-parser';
 import pool from './db.js';
 import pattaRouter from './routes/patta.route.js';
+import { inject } from '@vercel/analytics';
 
 
 const app = express();
@@ -22,6 +23,7 @@ pool.connect()
         console.error('Error connecting to PostgreSQL database:', err);
     });
 
+inject();
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
