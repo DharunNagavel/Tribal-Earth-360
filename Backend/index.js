@@ -25,8 +25,6 @@ pool.connect()
 
 inject();
 
-console.log(DATABASE_URL)
-
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
