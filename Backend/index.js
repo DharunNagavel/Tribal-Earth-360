@@ -1,5 +1,5 @@
 import express from 'express';
-import {PORT} from './config/env.js'
+import {DATABASE_URL, PORT} from './config/env.js'
 import authRouter from './routes/auth.route.js';
 import cors from 'cors';
 import cokkiesParser from 'cookie-parser';
@@ -24,6 +24,8 @@ pool.connect()
     });
 
 inject();
+
+console.log(DATABASE_URL)
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
