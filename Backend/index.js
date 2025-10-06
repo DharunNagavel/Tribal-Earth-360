@@ -1,5 +1,5 @@
 import express from 'express';
-import {DATABASE_URL, PORT} from './config/env.js'
+import {PORT} from './config/env.js'
 import authRouter from './routes/auth.route.js';
 import cors from 'cors';
 import cokkiesParser from 'cookie-parser';

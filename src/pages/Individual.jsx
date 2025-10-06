@@ -243,7 +243,7 @@ const Individual = () => {
     }
 
     try {
-      const response = await axios.post("https://tribal-earth-360-bjjy.vercel.app/api/v1/patta/individual", data);
+      const response = await axios.post("http://localhost:7000/api/v1/patta/individual", data);
       console.log(response);
       
       navigate("/schemes", { 

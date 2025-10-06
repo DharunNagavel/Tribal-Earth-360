@@ -66,7 +66,7 @@ export const Login = ({ setvisible, setuser }) => {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        'https://tribal-earth-360-bjjy.vercel.app/api/v1/auth/signin',
+        'http://localhost:7000/api/v1/auth/signin',
         data
       );
       console.log(res);
