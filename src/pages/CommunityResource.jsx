@@ -191,7 +191,7 @@ const CommunityResource = () => {
     try {
       
       // 1️⃣ Submit form to Node.js backend
-      await axios.post("http://localhost:7000/api/v1/patta/communityresource",data);
+      await axios.post("https://tribal-earth-360-bjjy.vercel.app/api/v1/patta/communityresource",data);
 
       // 3️⃣ Navigate to Displayscheme with AI recommendations
       navigate("/schemes", {
